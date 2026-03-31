@@ -91,7 +91,7 @@ export default function Navbar() {
             {/* CTA (hidden on mobile) */}
             <div className="cta-desktop">
               <Button href="#" variant="primary" size="sm">
-                Télécharger
+                Téléchargement de L'appli
               </Button>
             </div>
 

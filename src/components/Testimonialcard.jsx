@@ -8,18 +8,20 @@ export default function TestimonialCard({ name, business, quote, active }) {
     <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      style={{
+    style={{
+        width: '100%',
+        height: `${height}px`,          // ← taille fixe transmise depuis le parent
         background: highlighted
           ? 'linear-gradient(135deg, var(--orange) 0%, var(--orange-dark) 100%)'
-          : 'var(--white)',
+          : '#fff',
         border: `1.5px solid ${highlighted ? 'transparent' : 'var(--gray-200)'}`,
-        borderRadius: 'var(--radius-lg)',
-        padding: '32px 28px',
+        borderRadius: '16px',
+        padding: '28px 24px',
+        boxSizing: 'border-box',
         transition: 'all 0.3s ease',
         transform: highlighted ? 'translateY(-4px)' : 'translateY(0)',
         boxShadow: highlighted ? 'var(--shadow-orange)' : 'var(--shadow-sm)',
         cursor: 'default',
-        minHeight: '220px',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
