@@ -72,7 +72,7 @@ export default function Hero() {
               href="#demo"
               style={{
                 display: 'inline-flex', alignItems: 'center',
-                padding: '14px 30px',
+               padding: '12px 25px',
                 background: '#1a2b3c',
                 color: '#fff',
                 borderRadius: '100px',
@@ -98,7 +98,7 @@ export default function Hero() {
               href="#"
               style={{
                 display: 'inline-flex', alignItems: 'center',
-                padding: '14px 30px',
+                padding: '10px 25px',
                 background: 'transparent',
                 color: '#fff',
                 border: '2px solid rgba(255,255,255,0.55)',
