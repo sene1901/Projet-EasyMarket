@@ -6,8 +6,7 @@ export default function PricingCard({
   price,
   period,
   features,
-  cta,
-  highlight
+  cta
 }) {
   const [hovered, setHovered] = useState(false);
 
