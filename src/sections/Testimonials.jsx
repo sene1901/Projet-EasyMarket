@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import CompanyCard from '../components/CompanyCard';
-import SectionTitle from '../components/SectionTitle';
+import  SectionTitle from '../components/SectionTitle';
 
 const TESTIMONIALS = [
   {
@@ -85,7 +85,7 @@ export default function TestimonialsSection() {
 
         {/* Titre */}
         <div className="reveal" style={{ textAlign: 'center', marginBottom: '60px' }}>
-          <SectionTitle
+          < SectionTitle
           
             title="Ils utilisent"
             highlight="EasyMarket"
