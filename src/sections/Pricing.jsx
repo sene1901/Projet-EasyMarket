@@ -76,7 +76,7 @@ export default function Pricing() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px', alignItems: 'center' }} className="pricing-grid">
           {PLANS.map((plan, i) => (
             <div key={i} className="reveal" style={{ transitionDelay: `${i * 0.12}s` }}>
-              <PricingCard{...plan} />
+              <PricingCard {...plan} />
             </div>
           ))}
         </div>
