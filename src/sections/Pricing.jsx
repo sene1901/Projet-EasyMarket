@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import PricingCard from '../components/PricingCard.jsx';
+import Pricingcard from '../components/Pricingcard.jsx';
 import SectionTitle from '../components/SectionTitle.jsx';
 
 const PLANS = [
@@ -76,7 +76,7 @@ export default function Pricing() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px', alignItems: 'center' }} className="pricing-grid">
           {PLANS.map((plan, i) => (
             <div key={i} className="reveal" style={{ transitionDelay: `${i * 0.12}s` }}>
-              <PricingCard {...plan} />
+              <Pricingcard {...plan} />
             </div>
           ))}
         </div>

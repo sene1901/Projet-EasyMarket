@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export default function PricingCard({
+export default function Pricingcard({
   plan,
   description,
   price,
