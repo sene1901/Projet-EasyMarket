@@ -85,7 +85,7 @@ export default function TestimonialsSection() {
 
         {/* Titre */}
         <div className="reveal" style={{ textAlign: 'center', marginBottom: '60px' }}>
-          < SectionTitle
+          <SectionTitle
           
             title="Ils utilisent"
             highlight="EasyMarket"
