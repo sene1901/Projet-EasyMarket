@@ -40,18 +40,18 @@ export default function FeatureCard({ title }) {
         }}
       >
         <img
-          src={logo}
-          alt="EasyMarket"
-          style={{
-            width: '28px',
-            height: '28px',
-            background: '#E47000',
-            objectFit: 'contain',
-            // inverse la couleur au hover pour rester visible sur fond orange
-            filter: hovered ? 'brightness(0) invert(1)' : 'none',
-            transition: 'filter 0.25s ease',
-          }}
-        />
+  src={logo}
+  alt="EasyMarket"
+  style={{
+    width: '28px',
+    height: '28px',
+    objectFit: 'contain',
+    filter: hovered
+      ? 'brightness(0) invert(1)' // blanc au hover
+      : 'invert(48%) sepia(95%) saturate(1500%) hue-rotate(5deg) brightness(95%) contrast(105%)', // orange
+    transition: 'filter 0.25s ease',
+  }}
+/>
       </div>
 
       {/* Titre */}

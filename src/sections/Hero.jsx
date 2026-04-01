@@ -5,7 +5,7 @@ export default function Hero() {
   return (
     <section
       id="apropos"
-      style={{
+    style={{
         background: 'linear-gradient(100deg, #F97316 0%, #FB8C00 60%, #F57C00 100%)',
         minHeight: '460px',
         display: 'flex',

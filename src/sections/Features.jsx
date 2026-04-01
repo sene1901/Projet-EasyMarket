@@ -129,6 +129,56 @@ export default function Features() {
             </div>
           </div>
         </div>
+        <style>{`
+
+/* ✅ TABLET */
+@media (max-width: 900px) {
+  .why-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+    text-align: center;
+  }
+
+  .why-grid img {
+    width: 260px !important;
+    min-height: auto !important;
+  }
+}
+
+/* ✅ MOBILE */
+@media (max-width: 600px) {
+
+  /* padding section */
+  #fonctionnalites {
+    padding: 60px 16px !important;
+  }
+
+  /* cercle background */
+  .why-grid div[style*="300px"] {
+    width: 200px !important;
+    height: 200px !important;
+  }
+
+  /* téléphone */
+  .why-grid img {
+    width: 220px !important;
+  }
+
+  /* cards */
+  .why-grid > div:last-child > div:last-child {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+}
+
+/* ✅ PETIT MOBILE */
+@media (max-width: 400px) {
+  .why-grid img {
+    width: 180px !important;
+  }
+}
+
+`}</style>
       </section>
 
       {/* ─── SECTION 2 : Comment ça marche ─── */}
@@ -252,6 +302,49 @@ export default function Features() {
 
     </div>
   </div>
+
+  <section> 
+  
+
+  {/* CSS responsive  */}
+  <style>{`
+    /*  TABLET */
+    @media (max-width: 900px) {
+      .fk-grid {
+        grid-template-columns: 1fr !important;
+        gap: 40px !important;
+      }
+      .fk-grid img {
+        width: 260px !important;
+        min-height: auto !important;
+      }
+    }
+
+    /*  MOBILE */
+    @media (max-width: 600px) {
+      section {
+        padding: 60px 16px !important;
+      }
+      .fk-grid img {
+        width: 220px !important;
+      }
+      .fk-grid > div img {
+        width: 100% !important;
+      }
+      /* Cards grid stack */
+      .fk-grid > div:nth-child(1) > div > div {
+        grid-template-columns: 1fr !important;
+      }
+    }
+
+    /*  PETIT MOBILE */
+    @media (max-width: 400px) {
+      .fk-grid img {
+        width: 180px !important;
+      }
+    }
+  `}</style>
+</section>
 </section>
 
       <style>{`

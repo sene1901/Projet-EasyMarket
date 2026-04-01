@@ -1,91 +1,51 @@
-import { motion } from 'framer-motion'
+import { motion } from 'framer-motion';
 
-/**
- * BoutiqueCard — carte boutique avec vraie image
- * Props :
- *   name        : string  — nom de la boutique
- *   description : string  — texte descriptif
- *   image       : string  — chemin vers l'image (ex: /boutiques/grandkabir.png)
- *   previewLabel: string  — nom affiché en overlay sur l'image
- *   link        : string  — URL de la boutique
- *   delay       : number  — délai animation
- */
-export default function BoutiqueCard({
-  name,
-  description,
-  image,
-  previewLabel,
-  link = '#',
-  delay = 0,
-}) {
+export default function BoutiqueCard({ name, description, image, url = '', link = '#', delay = 0 }) {
   return (
     <motion.div
-      className="bg-white rounded-2xl overflow-hidden border border-gray-100 flex flex-col h-full
-                 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
-      style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.07)' }}
+      className="bg-white rounded-2xl overflow-hidden flex flex-col h-full"
+      style={{ border: '1px solid #eee', boxShadow: '0 2px 16px rgba(0,0,0,0.07)' }}
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay }}
+      whileHover={{ y: -4, boxShadow: '0 12px 32px rgba(0,0,0,0.12)' }}
     >
-      {/* ── Zone image preview ── */}
-      <div className="relative overflow-hidden" style={{ height: 160 }}>
-
-        {/* Image réelle */}
-        {image ? (
-          <img
-            src={image}
-            alt={`Aperçu de ${name}`}
-            className="w-full h-full object-cover object-center"
-          />
-        ) : (
-          /* Fallback gradient si pas d'image */
-          <div
-            className="w-full h-full"
-            style={{ background: 'linear-gradient(135deg, #1a2e4a, #2a4a6e)' }}
-          />
-        )}
-
-        {/* Overlay sombre pour lisibilité du texte */}
-        <div className="absolute inset-0 bg-black/35" />
-
-        {/* Barre navigateur simulée en haut */}
-        <div className="absolute top-0 left-0 right-0 flex items-center gap-2 px-3 py-1.5"
-             style={{ background: 'rgba(255,255,255,0.15)', backdropFilter: 'blur(4px)' }}>
-          <div className="flex gap-1">
-            <div className="w-2 h-2 rounded-full bg-white/50" />
-            <div className="w-2 h-2 rounded-full bg-white/50" />
-            <div className="w-2 h-2 rounded-full bg-white/50" />
+      {/* ── Preview navigateur ── */}
+      <div style={{ height: 160, position: 'relative', overflow: 'hidden', background: '#f5f5f5' }}>
+        {/* Barre navigateur */}
+        <div style={{ background: '#f0f0f0', borderBottom: '1px solid #e0e0e0', padding: '6px 10px', display: 'flex', alignItems: 'center', gap: 6 }}>
+          <div style={{ display: 'flex', gap: 4 }}>
+            <div style={{ width: 8, height: 8, borderRadius: '50%', background: '#FF5F57' }} />
+            <div style={{ width: 8, height: 8, borderRadius: '50%', background: '#FEBC2E' }} />
+            <div style={{ width: 8, height: 8, borderRadius: '50%', background: '#28C840' }} />
           </div>
-          <div className="flex-1 bg-white/25 rounded" style={{ height: 10 }} />
+          <div style={{ flex: 1, background: '#fff', borderRadius: 4, height: 16, display: 'flex', alignItems: 'center', padding: '0 8px' }}>
+            <span style={{ fontSize: 9, color: '#999', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+              {url || `${name.toLowerCase().replace(/\s/g, '')}.easymarket.sn`}
+            </span>
+          </div>
         </div>
 
-        {/* Nom de la boutique en overlay centré */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <span
-            className="text-white font-bold tracking-widest uppercase text-lg"
-            style={{ textShadow: '0 2px 10px rgba(0,0,0,0.6)' }}
-          >
-            {previewLabel || name}
-          </span>
-        </div>
+        {/* Screenshot ou placeholder */}
+        {image ? (
+          <img src={image} alt={`Aperçu ${name}`}
+            style={{ width: '100%', height: 'calc(160px - 29px)', objectFit: 'cover', objectPosition: 'top', display: 'block' }} />
+        ) : (
+          <div style={{ width: '100%', height: 'calc(160px - 29px)', background: 'linear-gradient(135deg,#1a2e4a,#2a4a6e)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <span style={{ color: '#fff', fontSize: 18, fontWeight: 900, letterSpacing: 2, textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}>{name.toUpperCase()}</span>
+          </div>
+        )}
       </div>
 
-      {/* ── Contenu texte ── */}
-      <div className="p-5 flex flex-col flex-1">
-        <h3 className="font-bold text-gray-900 text-base mb-2">{name}</h3>
-        <p className="text-gray-500 text-sm leading-relaxed flex-1 mb-4">
-          {description}
-        </p>
-        <a
-          href={link}
-          className="text-sm font-semibold inline-flex items-center gap-1 group"
-          style={{ color: '#F97316' }}
-        >
-          Visiter la boutique
-          <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
+      {/* ── Texte ── */}
+      <div style={{ padding: '18px 20px 20px', display: 'flex', flexDirection: 'column', flex: 1 }}>
+        <h3 style={{ fontSize: 17, fontWeight: 800, color: '#1a1a1a', marginBottom: 8 }}>{name}</h3>
+        <p style={{ fontSize: 13, color: '#888', lineHeight: 1.65, flex: 1, marginBottom: 16 }}>{description}</p>
+        <a href={link} style={{ fontSize: 13, fontWeight: 700, color: '#FF6B00', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 4 }}>
+          Visiter la boutique <span>→</span>
         </a>
       </div>
     </motion.div>
-  )
+  );
 }
