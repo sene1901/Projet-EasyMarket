@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import CompanyCard from '../components/CompanyCard';
-import SectionTitle from '../components/SectionTitle';
+import SectionTitle from '../components/SectionTitle.jsx';
 
 const TESTIMONIALS = [
   {

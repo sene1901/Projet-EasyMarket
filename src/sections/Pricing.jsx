@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import PricingCard from '../components/PricingCard.jsx';
-import SectionTitle from '../components/SectionTitle';
+import SectionTitle from '../components/SectionTitle.jsx';
 
 const PLANS = [
   {
