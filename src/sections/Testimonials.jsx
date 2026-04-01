@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import CompanyCard from '../components/CompanyCard';
-import  SectionTitle from '../components/SectionTitle';
+import SectionTitle from '../components/SectionTitle';
 
 const TESTIMONIALS = [
   {
@@ -27,7 +27,7 @@ const GAP     = 20;
 const VISIBLE = 4;     
 export default function TestimonialsSection() {
   const ref          = useRef(null);
-  const trackRef     = useRef(null);
+  const trackRef    = useRef(null);
   const timerRef     = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [startIndex,  setStartIndex]  = useState(0);
