@@ -1,4 +1,4 @@
-// Features.jsx — version complète avec les 3 sections
+// Features.jsx — version complète corrigée
 
 import React, { useEffect, useRef } from 'react';
 import phone from '../assets/phone.png';
@@ -21,33 +21,16 @@ const HOW_STEPS = [
 ];
 
 const KEY_FEATURES = [
-  "Gestion des ventes et dépenses",
-  "Import / export de produits",
-  "Factures et tickets de caisse",
-  "Multi-utilisateurs · Contrôle à distance",
-  "Gestion du stock en temps réel",
+  'Gestion des ventes et dépenses',
+  'Import / export de produits',
+  'Factures et tickets de caisse',
+  'Multi-utilisateurs · Contrôle à distance',
+  'Gestion du stock en temps réel',
   "Site e-commerce lié à l'application",
-  "Tableau de bord de performance",
-  "Suivi des encaissements et décaissements",
-  "Suivi des meilleurs produits",
+  'Tableau de bord de performance',
+  'Suivi des encaissements et décaissements',
+  'Suivi des meilleurs produits',
 ];
-
-
-  
-
-// Styles réutilisables
-const cardStyle = {
-  background: '#fff',
-  borderRadius: '14px',
-  padding: '14px 16px',
-  display: 'flex',
-  alignItems: 'center',
-  gap: '10px',
-  boxShadow: '0 2px 10px rgba(0,0,0,0.05)',
-  border: '1px solid #f0f0f0',
-  transition: 'box-shadow 0.2s, transform 0.2s',
-  cursor: 'default',
-};
 
 const dotStyle = {
   width: '14px',
@@ -56,7 +39,9 @@ const dotStyle = {
   borderRadius: '50% 50% 50% 0',
   transform: 'rotate(-45deg)',
   flexShrink: 0,
+  marginTop: '2px',
 };
+
 function useReveal() {
   const ref = useRef(null);
   useEffect(() => {
@@ -79,29 +64,26 @@ export default function Features() {
   return (
     <div ref={ref}>
 
-      {/* ─── SECTION 1 : Pourquoi EasyMarket ─── */}
+      {/* ══════════════════════════════════════
+          SECTION 1 — Pourquoi EasyMarket
+      ══════════════════════════════════════ */}
       <section id="fonctionnalites" style={{ padding: '100px 24px', background: '#f0f2f5' }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
-
-
-
-
-        
-          <div className="why-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px', alignItems: 'center' }}>
-
-           
-          
-          
-          
-          {/* Phone */}
+          <div
+            className="why-grid"
+            style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px', alignItems: 'center' }}
+          >
+            {/* Phone */}
             <div className="reveal" style={{ display: 'flex', justifyContent: 'center', position: 'relative' }}>
               <div style={{
                 position: 'absolute', width: '300px', height: '300px',
                 background: '#e2e6ea', borderRadius: '50%',
-                top: '50%', left: '50%', transform: 'translate(-50%, -50%)', zIndex: 1,
+                top: '50%', left: '50%',
+                transform: 'translate(-50%, -50%)', zIndex: 1,
               }} />
               <img
-                src={phone} alt="EasyMarket app"
+                src={phone}
+                alt="EasyMarket app"
                 style={{
                   width: '370px', minHeight: '500px', maxWidth: '100%',
                   transform: 'rotate(-12deg)',
@@ -113,12 +95,13 @@ export default function Features() {
               />
             </div>
 
-            {/* Text + Cards */}
+            {/* Texte + Cards */}
             <div className="reveal">
-              <div style={{ color: '#ff6b00', fontSize: '32px', fontWeight: '700', marginBottom: '14px' }}>
-                <span style={{ color: '#1a1919' }}>Pourquoi</span> EasyMarket ?
+              <div style={{ fontSize: '32px', fontWeight: 700, marginBottom: '14px' }}>
+                <span style={{ color: '#1a1919' }}>Pourquoi </span>
+                <span style={{ color: '#FF6B00' }}>EasyMarket ?</span>
               </div>
-              <h2 style={{ fontSize: '20px', fontWeight: '400', marginBottom: '24px', lineHeight: '1.25' }}>
+              <h2 style={{ fontSize: '20px', fontWeight: 400, marginBottom: '24px', lineHeight: 1.25 }}>
                 Prenez de meilleures décisions pour votre boutique
               </h2>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
@@ -129,67 +112,35 @@ export default function Features() {
             </div>
           </div>
         </div>
+
         <style>{`
-
-/* ✅ TABLET */
-@media (max-width: 900px) {
-  .why-grid {
-    grid-template-columns: 1fr !important;
-    gap: 40px !important;
-    text-align: center;
-  }
-
-  .why-grid img {
-    width: 260px !important;
-    min-height: auto !important;
-  }
-}
-
-/* ✅ MOBILE */
-@media (max-width: 600px) {
-
-  /* padding section */
-  #fonctionnalites {
-    padding: 60px 16px !important;
-  }
-
-  /* cercle background */
-  .why-grid div[style*="300px"] {
-    width: 200px !important;
-    height: 200px !important;
-  }
-
-  /* téléphone */
-  .why-grid img {
-    width: 220px !important;
-  }
-
-  /* cards */
-  .why-grid > div:last-child > div:last-child {
-    grid-template-columns: 1fr !important;
-    gap: 12px !important;
-  }
-}
-
-/* ✅ PETIT MOBILE */
-@media (max-width: 400px) {
-  .why-grid img {
-    width: 180px !important;
-  }
-}
-
-`}</style>
+          @media (max-width: 900px) {
+            .why-grid { grid-template-columns: 1fr !important; gap: 40px !important; text-align: center; }
+            .why-grid img { width: 260px !important; min-height: auto !important; }
+          }
+          @media (max-width: 600px) {
+            #fonctionnalites { padding: 60px 16px !important; }
+            .why-grid img { width: 220px !important; }
+            .why-grid > div:last-child > div:last-child { grid-template-columns: 1fr !important; gap: 12px !important; }
+          }
+          @media (max-width: 400px) {
+            .why-grid img { width: 180px !important; }
+          }
+        `}</style>
       </section>
 
-      {/* ─── SECTION 2 : Comment ça marche ─── */}
-      <section  id="demo"  style={{ padding: '100px 24px', background: '#fff' }}>
+      {/* ══════════════════════════════════════
+          SECTION 2 — Comment ça marche
+      ══════════════════════════════════════ */}
+      <section id="demo" style={{ padding: '100px 24px', background: '#fff' }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
-          <h2 className="reveal" style={{ fontSize: '32px', fontWeight: '800', textAlign: 'center', marginBottom: '10px' }}>
+          <h2 className="reveal" style={{ fontSize: '32px', fontWeight: 800, textAlign: 'center', marginBottom: '10px' }}>
             Comment ça marche
           </h2>
           <p className="reveal" style={{ textAlign: 'center', color: '#888', fontSize: '15px', marginBottom: '48px' }}>
             Une gestion simple.<br />Des décisions plus intelligentes.
           </p>
+
           <div className="reveal how-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
             {HOW_STEPS.map((step, i) => (
               <div
@@ -200,10 +151,9 @@ export default function Features() {
                   padding: '30px 24px',
                   color: '#fff',
                   fontSize: '15px',
-                  fontWeight: '700',
-                  lineHeight: '1.5',
+                  fontWeight: 700,
+                  lineHeight: 1.5,
                   minHeight: '100px',
-              
                   display: 'flex',
                   alignItems: 'flex-end',
                   transition: 'transform 0.2s, box-shadow 0.2s',
@@ -225,140 +175,131 @@ export default function Features() {
         </div>
       </section>
 
-      {/* ─── SECTION 3 : Fonctionnalités clés ─── */}
-  
+      {/* ══════════════════════════════════════
+          SECTION 3 — Fonctionnalités clés
+      ══════════════════════════════════════ */}
+      <section style={{ padding: '90px 24px', background: '#F7F8FA' }}>
+        <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
+          <div
+            className="fk-grid"
+            style={{
+              display: 'grid',
+              gridTemplateColumns: '1fr 1fr',
+              gap: '64px',
+              alignItems: 'center',
+            }}
+          >
+            {/* Gauche — titre + cards + bouton */}
+            <div className="reveal">
+              <h2 style={{ fontSize: '32px', fontWeight: 900, marginBottom: '10px', lineHeight: 1.2 }}>
+                <span style={{ color: '#FF6B00' }}>Fonctionnalités</span>{' '}
+                <span style={{ color: '#1a1a1a' }}>clés</span>
+              </h2>
+              <p style={{ fontSize: '14px', fontWeight: 400, color: '#aaa', marginBottom: '28px', lineHeight: 1.6 }}>
+                Tout ce qu'il vous faut pour gérer et développer votre commerce
+              </p>
 
-<section style={{ padding: '90px 24px', background: '#F7F8FA', borderTop: '1px solid #eaeaea' }}>
-  <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
-    <div className="fk-grid" style={{
-      display: 'grid',
-      gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-      gap: '64px',
-      alignItems: 'center',
-    }}>
+              {/* Cards 2 colonnes */}
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginBottom: '36px' }}>
+                {KEY_FEATURES.map((feat, i) => (
+                  <div
+                    key={i}
+                    style={{
+                      background: '#fff',
+                      borderRadius: '12px',
+                      padding: '13px 15px',
+                      display: 'flex',
+                      alignItems: 'flex-start',
+                      gap: '10px',
+                      boxShadow: '0 2px 8px rgba(0,0,0,0.05)',
+                      border: '1px solid #f0f0f0',
+                      transition: 'box-shadow 0.2s, transform 0.2s',
+                      cursor: 'default',
+                    }}
+                    onMouseEnter={e => {
+                      e.currentTarget.style.boxShadow = '0 6px 20px rgba(0,0,0,0.09)';
+                      e.currentTarget.style.transform = 'translateY(-2px)';
+                    }}
+                    onMouseLeave={e => {
+                      e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.05)';
+                      e.currentTarget.style.transform = 'translateY(0)';
+                    }}
+                  >
+                    <div style={dotStyle} />
+                    <span style={{ fontSize: '13px', fontWeight: 600, color: '#1a1a1a', lineHeight: 1.4 }}>
+                      {feat}
+                    </span>
+                  </div>
+                ))}
+              
+               <button
+                style={{
+                  background: '#053965', color: '#fff', border: 'none',
+                  padding: '13px 24px', borderRadius: '30px',
+                  fontSize: '14px', fontWeight: 700, cursor: 'pointer',
+                  fontFamily: 'inherit', transition: 'background 0.2s, transform 0.2s',
+                }}
+                onMouseEnter={e => { e.currentTarget.style.background = '#074d8c'; e.currentTarget.style.transform = 'translateY(-1px)'; }}
+                onMouseLeave={e => { e.currentTarget.style.background = '#053965'; e.currentTarget.style.transform = 'translateY(0)'; }}
+              >
+                Demander une démo
+              </button>
+                </div>
 
-      {/* Left */}
-      <div className="reveal">
-        <h2 style={{ fontSize: '34px', fontWeight: 900, color: '#1a1a1a', marginBottom: '10px' }}>
-          <span style={{ color: '#FF6B00' }}>Fonctionnalités</span> clés
-        </h2>
-        <p style={{ fontSize: '14px', fontWeight: 400, color: '#aaa', marginBottom: '28px', lineHeight: 1.6 }}>
-          Tout ce qu'il vous faut pour gérer et développer votre commerce
-        </p>
 
-        {/* Cards grid */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px', marginBottom: '36px' }}>
-          {KEY_FEATURES.map((feat, i) => (
-            <div
-              key={i}
-              style={cardStyle}
-              onMouseEnter={e => { e.currentTarget.style.boxShadow = '0 6px 20px rgba(0,0,0,0.09)'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
-              onMouseLeave={e => { e.currentTarget.style.boxShadow = '0 2px 10px rgba(0,0,0,0.05)'; e.currentTarget.style.transform = 'translateY(0)'; }}
-            >
-              <div style={dotStyle} />
-              <span style={{ fontSize: '12.5px', fontWeight: 500, color: '#2a2a2a', lineHeight: 1.4 }}>
-                {feat}
-              </span>
+
+
+             
             </div>
-          ))}
-          {/* Dernier item pleine largeur */}
-          <div style={{ ...cardStyle, gridColumn: '1 / -1' }}>
-            <div style={dotStyle} />
-            <span style={{ fontSize: '12.5px', fontWeight: 500, color: '#2a2a2a' }}>
-              Suivi des meilleurs produits
-            </span>
+
+            {/* Droite — Phone droit */}
+            <div className="reveal" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+              <img
+                src={phone}
+                alt="App EasyMarket"
+                style={{
+                  width: '320px',
+                  maxWidth: '100%',
+                  filter: 'drop-shadow(0 24px 48px rgba(0,0,0,0.18))',
+                  transition: 'transform 0.4s ease',
+                }}
+                onMouseEnter={e => { e.currentTarget.style.transform = 'scale(1.03)'; }}
+                onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)'; }}
+              />
+            </div>
           </div>
         </div>
 
-        <button
-          style={{
-            background: '#053965', color: '#fff', border: 'none',
-            padding: '13px 30px', borderRadius: '30px',
-            fontSize: '14px', fontWeight: 700, cursor: 'pointer',
-            fontFamily: 'inherit', transition: 'background 0.2s, transform 0.2s',
-          }}
-          onMouseEnter={e => { e.currentTarget.style.background = '#074d8c'; e.currentTarget.style.transform = 'translateY(-1px)'; }}
-          onMouseLeave={e => { e.currentTarget.style.background = '#053965'; e.currentTarget.style.transform = 'translateY(0)'; }}
-        >
-          Demander une démo
-        </button>
-      </div>
+        <style>{`
+          @media (max-width: 900px) {
+            .fk-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+            .fk-grid img { width: 260px !important; }
+          }
+          @media (max-width: 600px) {
+            .fk-grid img { width: 220px !important; }
+          }
+          @media (max-width: 400px) {
+            .fk-grid img { width: 180px !important; }
+          }
+        `}</style>
+      </section>
 
-      {/* Phone */}
-      <div className="reveal" style={{ display: 'flex', justifyContent: 'center' }}>
-        <img
-          src={phone}
-          alt="App EasyMarket"
-          style={{
-            width: '370px',
-                minHeight: '500px', maxWidth: '100%',
-            filter: 'drop-shadow(0 30px 70px rgba(0,0,0,0.22))',
-            transition: 'transform 0.4s ease',
-          }}
-          onMouseEnter={e => { e.currentTarget.style.transform = 'scale(1.03) rotate(-1deg)'; }}
-          onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1) rotate(0deg)'; }}
-        />
-      </div>
-
-    </div>
-  </div>
-
-  <section> 
-  
-
-  {/* CSS responsive  */}
-  <style>{`
-    /*  TABLET */
-    @media (max-width: 900px) {
-      .fk-grid {
-        grid-template-columns: 1fr !important;
-        gap: 40px !important;
-      }
-      .fk-grid img {
-        width: 260px !important;
-        min-height: auto !important;
-      }
-    }
-
-    /*  MOBILE */
-    @media (max-width: 600px) {
-      section {
-        padding: 60px 16px !important;
-      }
-      .fk-grid img {
-        width: 220px !important;
-      }
-      .fk-grid > div img {
-        width: 100% !important;
-      }
-      /* Cards grid stack */
-      .fk-grid > div:nth-child(1) > div > div {
-        grid-template-columns: 1fr !important;
-      }
-    }
-
-    /*  PETIT MOBILE */
-    @media (max-width: 400px) {
-      .fk-grid img {
-        width: 180px !important;
-      }
-    }
-  `}</style>
-</section>
-</section>
-
+      {/* ── Animations reveal globales ── */}
       <style>{`
         .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
         .reveal.visible { opacity: 1; transform: translateY(0); }
         @media (max-width: 800px) {
-          .why-grid, .how-grid, .keys-grid { grid-template-columns: 1fr !important; }
+          .why-grid, .how-grid { grid-template-columns: 1fr !important; }
         }
       `}</style>
+
     </div>
   );
 }
 
-// FeatureCard inline
+/* ══════════════════════════════════════
+   FeatureCard — Section 1
+══════════════════════════════════════ */
 function FeatureCard({ title, logo }) {
   const [hovered, setHovered] = React.useState(false);
   return (
@@ -366,22 +307,28 @@ function FeatureCard({ title, logo }) {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{
-        background: '#fff', borderRadius: '14px', padding: '12px 14px',
-        display: 'flex', alignItems: 'center', gap: '10px',
+        background: '#fff',
+        borderRadius: '14px',
+        padding: '12px 14px',
+        display: 'flex',
+        alignItems: 'center',
+        gap: '10px',
         boxShadow: hovered ? '0 6px 18px rgba(255,107,0,0.15)' : '0 2px 8px rgba(0,0,0,0.06)',
         transform: hovered ? 'translateY(-2px)' : 'translateY(0)',
-        transition: 'all 0.25s ease', cursor: 'default',
+        transition: 'all 0.25s ease',
+        cursor: 'default',
         border: `1.5px solid ${hovered ? '#ffcca0' : '#ebebeb'}`,
       }}
     >
       <div style={{
         width: '36px', height: '36px', borderRadius: '10px',
-        background: hovered ? '#ff6b00' : '#fff3e8',
+        background: hovered ? '#FF6B00' : '#fff3e8',
         display: 'flex', alignItems: 'center', justifyContent: 'center',
         flexShrink: 0, transition: 'all 0.25s ease',
       }}>
         <img
-          src={logo} alt="icon"
+          src={logo}
+          alt="icon"
           style={{
             width: '22px', height: '22px', objectFit: 'contain',
             filter: hovered ? 'brightness(0) invert(1)' : 'none',
@@ -389,10 +336,10 @@ function FeatureCard({ title, logo }) {
           }}
         />
       </div>
-      <span style={{ fontSize: '12px', fontWeight: '700', color: '#222', lineHeight: '1.3', flex: 1 }}>
+      <span style={{ fontSize: '12px', fontWeight: 700, color: '#222', lineHeight: 1.3, flex: 1 }}>
         {title}
       </span>
-      <div style={{ width: '8px', height: '8px', background: '#ff6b00', borderRadius: '50%', flexShrink: 0 }} />
+      <div style={{ width: '8px', height: '8px', background: '#FF6B00', borderRadius: '50%', flexShrink: 0 }} />
     </div>
   );
 }
