@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function SectionTitle({ label, title, highlight, subtitle, center, light }) {
+export default function SectionTitle({ label, title, highlight, subtitle, center = false , light }) {
   return (
     <div style={{ textAlign: center ? 'center' : 'left', marginBottom: '48px' }}>
       {label && (
