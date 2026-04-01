@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import PricingCard from '../components/PricingCard';
+import PricingCard from '../components/PricingCard.jsx';
 import SectionTitle from '../components/SectionTitle';
 
 const PLANS = [
