@@ -35,7 +35,7 @@ const CLIENTS = [
 
 export default function ClientsSection() {
   return (
-    <section style={{ background: '#F7F8FA', padding: '80px 24px', fontFamily: 'Nunito, sans-serif' }}>
+    <section id='clients' style={{ background: '#F7F8FA', padding: '80px 24px', fontFamily: 'Nunito, sans-serif' }}>
 
       {/* Header */}
       <div style={{ textAlign: 'center', marginBottom: '48px' }}>

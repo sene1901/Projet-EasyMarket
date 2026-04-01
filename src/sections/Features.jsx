@@ -182,7 +182,7 @@ export default function Features() {
       </section>
 
       {/* ─── SECTION 2 : Comment ça marche ─── */}
-      <section style={{ padding: '100px 24px', background: '#fff' }}>
+      <section  id="demo"  style={{ padding: '100px 24px', background: '#fff' }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <h2 className="reveal" style={{ fontSize: '32px', fontWeight: '800', textAlign: 'center', marginBottom: '10px' }}>
             Comment ça marche
