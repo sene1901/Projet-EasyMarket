@@ -90,3 +90,20 @@ ul { list-style: none; }
   opacity: 1;
   transform: translateY(0);
 }
+
+@media (max-width: 820px) {
+  .fk-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+}
+@media (max-width: 480px) {
+  /* Cards en 1 colonne */
+  .fk-grid > div:first-child > div[style*="grid-template-columns: 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+}
+@media (max-width: 820px) {
+  .cta-inner { grid-template-columns: 1fr !important; padding: 44px 32px 0 !important; }
+  .cta-inner img { width: 200px !important; margin: 0 auto; }
+}
+@media (max-width: 480px) {
+  .cta-inner { padding: 32px 20px 0 !important; border-radius: 16px !important; }
+}

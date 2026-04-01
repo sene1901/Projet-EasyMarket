@@ -7,12 +7,12 @@ export default function Hero() {
       id="apropos"
       style={{
         background: 'linear-gradient(100deg, #F97316 0%, #FB8C00 60%, #F57C00 100%)',
-        minHeight: '457px',
+        minHeight: '460px',
         display: 'flex',
         alignItems: 'center',
         position: 'relative',
         overflow: 'hidden',
-        paddingTop: '60px', 
+        paddingTop: '60px',
         marginTop: '60px',
       }}
     >
@@ -47,8 +47,6 @@ export default function Hero() {
 
         {/* ══ COLONNE GAUCHE ══ */}
         <div style={{ animation: 'fadeUp 0.7s ease both' }}>
-
-          {/* Titre */}
           <h1
             style={{
               fontFamily: 'var(--font-display)',
@@ -65,14 +63,11 @@ export default function Hero() {
             <br />commerçants africains
           </h1>
 
-          {/* ── Boutons CTA ── */}
           <div style={{
             display: 'flex', gap: '16px',
             flexWrap: 'wrap', marginBottom: '40px',
             alignItems: 'center',
           }}>
-
-            {/* Demander une démo — fond navy foncé */}
             <a
               href="#demo"
               style={{
@@ -99,7 +94,6 @@ export default function Hero() {
               Demander une démo
             </a>
 
-            {/* Commencer maintenant — outline blanc */}
             <a
               href="#"
               style={{
@@ -126,12 +120,9 @@ export default function Hero() {
               Commencer maintenant
             </a>
           </div>
-
-          {/* Social proof */}
-         
         </div>
 
-        {/* ══ COLONNE DROITE – phone.png ══ */}
+        {/* ══ COLONNE DROITE – téléphone + 2 badges ══ */}
         <div
           className="hero-mockup"
           style={{
@@ -139,30 +130,35 @@ export default function Hero() {
             justifyContent: 'center',
             alignItems: 'flex-end',
             position: 'relative',
-            minHeight: '380px',
+            minHeight: '420px',
+            overflow: 'hidden',   // ← coupe le bas du téléphone
           }}
         >
-          {/* ── Image du téléphone inclinée + flottante ── */}
+
+          {/* ── Image du téléphone – ancrée en bas, légèrement débordante ── */}
           <img
             src={phone}
             alt="EasyMarket app"
             style={{
-              width: '320px',
+              width: '370px',
+                minHeight: '500px', 
               maxWidth: '100%',
-              transform: 'rotate(8deg)',
+              position: 'absolute',
+              bottom: '-30px',          // ← dépasse un peu en bas (effet coupé)
+              left: '50%',
+              transform: 'translateX(-50%) rotate(8deg)',
               filter: 'drop-shadow(0 40px 80px rgba(0,0,0,0.40))',
               animation: 'floatPhone 4s ease-in-out infinite',
-              position: 'relative',
               zIndex: 1,
             }}
           />
 
-          {/* ── Badge Google Play flottant (en haut à droite du phone) ── */}
+          {/* ── Badge Google Play – EN HAUT À DROITE ── */}
           <div
             style={{
               position: 'absolute',
               right: '4%',
-              top: '16%',
+              top: '12%',
               background: '#fff',
               padding: '10px 16px',
               borderRadius: '14px',
@@ -178,7 +174,6 @@ export default function Hero() {
               animation: 'fadeUp 0.9s 0.3s ease both',
             }}
           >
-            {/* Icône Google Play SVG officielle */}
             <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path d="M3.18 23.76A2 2 0 0 0 5 23l10.54-6.08-2.9-2.9L3.18 23.76Z" fill="#EA4335"/>
               <path d="M21.54 10.27 18.46 8.5l-3.27 3 3.27 3 3.1-1.79a1.5 1.5 0 0 0 0-2.44Z" fill="#FBBC04"/>
@@ -187,27 +182,52 @@ export default function Hero() {
             </svg>
             Google Play
           </div>
+
+          {/* ── Badge Google Play – EN BAS À GAUCHE ── */}
+          <div
+            style={{
+              position: 'absolute',
+              left: '4%',
+              bottom: '22%',
+              background: '#fff',
+              padding: '10px 16px',
+              borderRadius: '14px',
+              boxShadow: '0 12px 36px rgba(0,0,0,0.22)',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '9px',
+              fontSize: '13px',
+              fontWeight: '700',
+              color: '#1E2A3B',
+              whiteSpace: 'nowrap',
+              zIndex: 2,
+              animation: 'fadeUp 1.1s 0.5s ease both',
+            }}
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3.18 23.76A2 2 0 0 0 5 23l10.54-6.08-2.9-2.9L3.18 23.76Z" fill="#EA4335"/>
+              <path d="M21.54 10.27 18.46 8.5l-3.27 3 3.27 3 3.1-1.79a1.5 1.5 0 0 0 0-2.44Z" fill="#FBBC04"/>
+              <path d="M3.18.24a2 2 0 0 0-.18.87v21.78c0 .3.06.6.18.87l.1.1 12.2-12.2v-.3L3.28.14l-.1.1Z" fill="#4285F4"/>
+              <path d="M15.54 16.92 5 23a2 2 0 0 0 1.82.24l.15-.08L19.82 16l-4.28.92Z" fill="#34A853"/>
+            </svg>
+            Google Play
+          </div>
+
         </div>
-
-      </div>
-
-      {/* ── Vague blanche en bas ── */}
-      <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, lineHeight: 0, zIndex: 2 }}>
-        
       </div>
 
       {/* ── Animations ── */}
       <style>{`
         @keyframes floatPhone {
-          0%,100% { transform: rotate(8deg) translateY(0px); }
-          50%      { transform: rotate(8deg) translateY(-14px); }
+          0%,100% { transform: translateX(-50%) rotate(8deg) translateY(0px); }
+          50%      { transform: translateX(-50%) rotate(8deg) translateY(-14px); }
         }
         @keyframes fadeUp {
           from { opacity: 0; transform: translateY(22px); }
           to   { opacity: 1; transform: translateY(0); }
         }
         @media (max-width: 900px) {
-          .hero-grid   {
+          .hero-grid {
             grid-template-columns: 1fr !important;
             gap: 32px !important;
             text-align: center;

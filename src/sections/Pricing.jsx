@@ -4,48 +4,47 @@ import SectionTitle from '../components/SectionTitle';
 
 const PLANS = [
   {
-    plan: 'Starter',
-    price: 'Gratuit',
-    period: '',
+    plan: 'Formule Solo',
+    description: 'Pour les commerçants qui veulent démarrer simplement.',
+    price: '5 900',
+    period: 'par utilisateur / mois',
     features: [
-      '1 utilisateur',
-      'Jusqu\'à 50 produits',
-      'Gestion des ventes basique',
-      'Tableau de bord',
-      'Support communautaire',
+      'Un utilisateur',
+      'Gestion des ventes',
+      'Gestion du stock simplifiée',
+      'Suivi des dépenses',
+      'Tableau de bord intuitif',
+      'Factures et tickets',
     ],
-    cta: 'Commencer gratuitement',
+    cta: 'Commencer maintenant',
   },
   {
-    plan: 'Pro',
+    plan: 'Formule Team',
+    description: 'Pour les équipes qui veulent mieux collaborer.',
     price: '15 000',
-    period: ' F CFA/mois',
+    period: 'par utilisateur / mois',
     features: [
-      '3 utilisateurs',
-      'Produits illimités',
-      'Gestion stock avancée',
-      'Factures & tickets de caisse',
-      'Import/export produits',
-      'Tableau de bord complet',
-      'Support prioritaire',
+      'Plusieurs comptes utilisateurs',
+      'Accès adaptés selon les rôles',
+      'Suivi centralisé de l’activité',
+      'Contrôle renforcé',
+      'Tableau de bord partagé',
     ],
-    popular: true,
-    cta: 'Essayer 14 jours gratuits',
+    cta: 'Commencer maintenant',
   },
   {
-    plan: 'Business',
-    price: '35 000',
-    period: ' F CFA/mois',
+    plan: 'Formule Team',
+    description: 'Pour les commerces qui veulent aller plus loin.',
+    price: '25 000',
+    period: 'par utilisateur / mois',
     features: [
-      'Utilisateurs illimités',
-      'Produits illimités',
-      'Site e-commerce inclus',
-      'Multi-boutiques',
-      'Contrôle à distance',
-      'API & intégrations',
-      'Account manager dédié',
+      'Gestion avancée',
+      'Equipe et supervision multi-utilisateurs',
+      'Pilotage plus structuré',
+      'Site e-commerce lié à l’application',
+      'Accompagnement à la mise en place',
     ],
-    cta: 'Contacter les ventes',
+    cta: 'Commencer maintenant',
   },
 ];
 
@@ -64,41 +63,15 @@ export default function Pricing() {
 
   return (
     <section id="pricing" style={{ padding: '100px 24px', background: 'var(--gray-50)' }} ref={ref}>
-      <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-        <div className="reveal" style={{ textAlign: 'center', marginBottom: '16px' }}>
-          <SectionTitle label="Tarification" title="Des prix" highlight="transparents" subtitle="Commencez gratuitement, évoluez selon vos besoins." center />
+      <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+      
+        <div className="reveal" style={{ textAlign: 'center',  }}>
+          <SectionTitle  title="Choisissez la " highlight="Formule" subtitle="qui Vous Convients!" center />
+          <p>Des offres simple pour grandir à votre rythme</p>
         </div>
 
         {/* Toggle */}
-        <div className="reveal" style={{ display: 'flex', justifyContent: 'center', gap: '12px', alignItems: 'center', marginBottom: '48px' }}>
-          <span style={{ fontSize: '14px', fontWeight: annual ? '400' : '600', color: annual ? 'var(--gray-400)' : 'var(--navy)' }}>Mensuel</span>
-          <button
-            onClick={() => setAnnual(!annual)}
-            style={{
-              width: '52px',
-              height: '28px',
-              borderRadius: '100px',
-              background: annual ? 'var(--orange)' : 'var(--gray-200)',
-              position: 'relative',
-              transition: 'background 0.3s',
-            }}
-          >
-            <div style={{
-              position: 'absolute',
-              top: '3px',
-              left: annual ? '26px' : '3px',
-              width: '22px',
-              height: '22px',
-              background: '#fff',
-              borderRadius: '50%',
-              transition: 'left 0.3s',
-              boxShadow: 'var(--shadow-sm)',
-            }} />
-          </button>
-          <span style={{ fontSize: '14px', fontWeight: annual ? '600' : '400', color: annual ? 'var(--navy)' : 'var(--gray-400)' }}>
-            Annuel <span style={{ background: 'var(--orange-50)', color: 'var(--orange)', borderRadius: '100px', padding: '2px 8px', fontSize: '11px', fontWeight: '700', border: '1px solid var(--orange-light)' }}>-20%</span>
-          </span>
-        </div>
+        
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px', alignItems: 'center' }} className="pricing-grid">
           {PLANS.map((plan, i) => (
@@ -109,9 +82,7 @@ export default function Pricing() {
         </div>
 
         {/* Trust line */}
-        <p className="reveal" style={{ textAlign: 'center', marginTop: '48px', fontSize: '14px', color: 'var(--gray-400)' }}>
-          ✅ Sans engagement • ✅ Annulation à tout moment • ✅ Paiement sécurisé • ✅ Support inclus
-        </p>
+       
       </div>
       <style>{`@media (max-width: 900px) { .pricing-grid { grid-template-columns: 1fr !important; } }`}</style>
     </section>

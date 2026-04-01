@@ -1,7 +1,14 @@
 import React, { useState } from 'react';
-import Button from './Button';
 
-export default function PricingCard({ plan, price, period, features, popular, cta }) {
+export default function PricingCard({
+  plan,
+  description,
+  price,
+  period,
+  features,
+  cta,
+  highlight
+}) {
   const [hovered, setHovered] = useState(false);
 
   return (
@@ -9,66 +16,96 @@ export default function PricingCard({ plan, price, period, features, popular, ct
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{
-        position: 'relative',
-        background: popular ? 'linear-gradient(135deg, var(--orange) 0%, var(--orange-dark) 100%)' : 'var(--white)',
-        border: popular ? 'none' : '1.5px solid var(--gray-200)',
-        borderRadius: 'var(--radius-lg)',
-        padding: '36px 32px',
-        transform: popular ? 'scale(1.05)' : hovered ? 'translateY(-6px)' : 'translateY(0)',
-        boxShadow: popular ? 'var(--shadow-orange)' : hovered ? 'var(--shadow-lg)' : 'var(--shadow-sm)',
+        background: '#f9f9f9',
+        borderRadius: '18px',
+        overflow: 'hidden',
+        border: '1px solid #eee',
         transition: 'all 0.3s ease',
-        zIndex: popular ? 2 : 1,
+        transform: hovered ? 'translateY(-6px)' : 'none',
+        boxShadow: hovered ? '0 10px 30px rgba(0,0,0,0.08)' : 'none'
       }}
     >
-      {popular && (
-        <div style={{
-          position: 'absolute',
-          top: '-14px',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          background: 'var(--navy)',
-          color: '#fff',
-          borderRadius: '100px',
-          padding: '5px 16px',
-          fontSize: '12px',
-          fontWeight: '600',
-          letterSpacing: '0.04em',
-          whiteSpace: 'nowrap',
-        }}>⭐ Le plus populaire</div>
-      )}
-      <p style={{
-        fontSize: '13px',
-        fontWeight: '700',
-        textTransform: 'uppercase',
-        letterSpacing: '0.08em',
-        color: popular ? 'rgba(255,255,255,0.8)' : 'var(--orange)',
-        marginBottom: '12px',
-      }}>{plan}</p>
-      <div style={{ display: 'flex', alignItems: 'baseline', gap: '4px', marginBottom: '8px' }}>
-        <span style={{
-          fontFamily: 'var(--font-display)',
-          fontSize: '40px',
+      {/* TOP */}
+      <div style={{ padding: '24px', textAlign: 'center' }}>
+        <h3 style={{
+          fontSize: '18px',
           fontWeight: '700',
-          color: popular ? '#fff' : 'var(--navy)',
-          letterSpacing: '-0.03em',
-        }}>{price}</span>
-        {period && <span style={{ fontSize: '14px', color: popular ? 'rgba(255,255,255,0.7)' : 'var(--gray-400)' }}>{period}</span>}
+          marginBottom: '6px'
+        }}>
+          {plan}
+        </h3>
+
+        <p style={{
+          fontSize: '12px',
+          color: '#777',
+          marginBottom: '14px'
+        }}>
+          {description}
+        </p>
+
+        {/* ligne */}
+        <div style={{
+          height: '1px',
+          width: '60px',
+          background: 'var(--orange)',
+          margin: '0 auto'
+        }} />
       </div>
-      <div style={{ height: '1px', background: popular ? 'rgba(255,255,255,0.2)' : 'var(--gray-200)', margin: '24px 0' }} />
-      <ul style={{ marginBottom: '32px', display: 'flex', flexDirection: 'column', gap: '12px' }}>
-        {features.map((f, i) => (
-          <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '14px', color: popular ? 'rgba(255,255,255,0.9)' : 'var(--gray-600)' }}>
-            <span style={{ color: popular ? '#fff' : 'var(--orange)', flexShrink: 0, fontWeight: '700' }}>✓</span>
-            {f}
-          </li>
-        ))}
-      </ul>
-      <Button
-        variant={popular ? 'ghost' : 'outline'}
-        style={{ width: '100%', justifyContent: 'center', ...(popular ? { border: '2px solid rgba(255,255,255,0.5)' } : {}) }}
-      >
-        {cta || 'Commencer'}
-      </Button>
+
+      {/* PRICE BAR */}
+      <div style={{
+        background: 'linear-gradient(135deg, var(--orange), var(--orange-dark))',
+        color: '#fff',
+        textAlign: 'center',
+        padding: '14px 10px'
+      }}>
+        <div style={{
+          fontSize: '24px',
+          fontWeight: '800'
+        }}>
+          {price} FCFA
+        </div>
+        <div style={{ fontSize: '12px', opacity: 0.9 }}>
+          {period}
+        </div>
+      </div>
+
+      {/* FEATURES */}
+      <div style={{ padding: '24px' }}>
+        <ul style={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '10px',
+          marginBottom: '24px'
+        }}>
+          {features.map((f, i) => (
+            <li key={i} style={{
+              fontSize: '13px',
+              color: '#555',
+              display: 'flex',
+              gap: '8px'
+            }}>
+              <span style={{ color: 'var(--orange)', fontWeight: '700' }}>✓</span>
+              {f}
+            </li>
+          ))}
+        </ul>
+
+        {/* BUTTON */}
+        <button style={{
+          width: '100%',
+          background: 'var(--orange)',
+          color: '#fff',
+          border: 'none',
+          borderRadius: '999px',
+          padding: '10px',
+          fontSize: '13px',
+          cursor: 'pointer',
+          transition: '0.2s'
+        }}>
+          {cta}
+        </button>
+      </div>
     </div>
   );
 }

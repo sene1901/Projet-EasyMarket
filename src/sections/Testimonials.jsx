@@ -1,20 +1,30 @@
 import React, { useEffect, useRef, useState } from 'react';
-import TestimonialCard from '../components/TestimonialCard';
+import CompanyCard from '../components/CompanyCard';
 import SectionTitle from '../components/SectionTitle';
 
 const TESTIMONIALS = [
-  { name: 'Astou Diop',    business: 'Astou Shop – Dakar',   quote: 'EasyMarket a complètement transformé ma façon de gérer ma boutique...' },
-  { name: 'Moussa Diallo', business: 'Grandkabir – Dakar',   quote: 'Avant EasyMarket, je perdais du temps à compter manuellement...' },
-  { name: 'Mariama Sarr',  business: 'Yeksina Home – Dakar', quote: 'L\'application est simple, claire et puissante...' },
-  { name: 'Ibrahim Ka',    business: 'Kazamansa – Dakar',    quote: 'Le suivi des stocks en temps réel m\'a évité plusieurs ruptures...' },
-  { name: 'Fatou Ndiaye',  business: 'All-In-Tech – Dakar',  quote: 'Gérer plusieurs utilisateurs depuis la même interface est un vrai plus...' },
+  {
+    name: 'All-In-Tech',
+    description: 'Une entreprise sénégalaise spécialisée dans la fourniture de solutions technologiques de pointe, mettant l\'accent sur nos services informatiques'
+  },
+  {
+    name: 'All-In-Tech',
+    description: 'Une entreprise sénégalaise spécialisée dans la fourniture de solutions technologiques de pointe, mettant l\'accent sur nos services informatiques'
+  },
+  {
+    name: 'All-In-Tech',
+    description: 'Une entreprise sénégalaise spécialisée dans la fourniture de solutions technologiques de pointe, mettant l\'accent sur nos services informatiques'
+  },
+  {
+    name: 'All-In-Tech',
+    description: 'Une entreprise sénégalaise spécialisée dans la fourniture de solutions technologiques de pointe, mettant l\'accent sur nos services informatiques'
+  },
 ];
 
-const CARD_W  = 200;   // largeur exacte définie dans le design
-const CARD_H  = 337;   // hauteur exacte
+const CARD_W  = 200;   
+const CARD_H  = 337;   
 const GAP     = 20;
-const VISIBLE = 4;     // 4 cards visibles
-
+const VISIBLE = 4;     
 export default function TestimonialsSection() {
   const ref          = useRef(null);
   const trackRef     = useRef(null);
@@ -76,7 +86,7 @@ export default function TestimonialsSection() {
         {/* Titre */}
         <div className="reveal" style={{ textAlign: 'center', marginBottom: '60px' }}>
           <SectionTitle
-            label="Témoignages"
+          
             title="Ils utilisent"
             highlight="EasyMarket"
             subtitle="Des commerçants qui utilisent EasyMarket au quotidien"
@@ -98,7 +108,7 @@ export default function TestimonialsSection() {
               key={globalIndex}
               style={{ width: CARD_W, height: CARD_H }}
             >
-              <TestimonialCard
+              <CompanyCard
                 {...t}
                 active={globalIndex === activeIndex}
                 height={CARD_H}
