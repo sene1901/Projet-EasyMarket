@@ -26,6 +26,15 @@
   --radius-lg: 24px;
   --radius-xl: 32px;
 }
+ /* NAVBAR */
+
+
+
+
+
+
+
+
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -142,4 +151,30 @@ ul { list-style: none; }
 @media (max-width: 480px) {
   .footer-grid { grid-template-columns: 1fr !important; }
   footer { padding: 40px 20px 0 !important; }
+}
+
+/* Responsive CTA */
+@media (max-width: 768px) {
+  .cta-inner {
+    grid-template-columns: 1fr !important;
+    text-align: center;
+  }
+
+  .cta-inner > div:first-child {
+    padding-bottom: 40px !important;
+  }
+
+  .cta-inner img {
+    width: 260px !important;
+  }
+
+  .cta-inner > div:last-child {
+    margin-bottom: -30px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .cta-inner img {
+    display: none;
+  }
 }

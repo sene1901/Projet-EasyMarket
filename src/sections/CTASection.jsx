@@ -2,13 +2,13 @@ import phone from '../assets/phone.png';
 
 export default function CTASection() {
   return (
-    // Wrapper avec padding-bottom:0 pour laisser le phone déborder
+    
     <section style={{ background: '#F7F8FA', paddingBottom: 0 }}>
       <div style={{ background: '#FF6B00', padding: '70px 48px 0' }}>
         <div style={{
           maxWidth: '1100px', margin: '0 auto',
-          display: 'grid', gridTemplateColumns: '1fr 420px',
-          gap: '40px', alignItems: 'flex-end',   // ← clé : aligne par le bas
+          display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+          gap: '40px', alignItems: 'flex-end',   
         }} className="cta-inner">
 
           {/* Gauche — padding bas pour espacer du bord orange */}
