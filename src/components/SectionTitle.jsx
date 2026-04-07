@@ -33,7 +33,7 @@ export default function SectionTitle({ label, title, highlight, subtitle, center
       {subtitle && (
         <p style={{
           fontSize: '16px',
-          color: light ? 'rgba(255,255,255,0.75)' : 'var(--gray-600)',
+          color: light ? 'rgba(34, 26, 26, 0.75)' : 'var(--gray-950)',
           lineHeight: '1.7',
           maxWidth: center ? '560px' : '100%',
           margin: center ? '0 auto' : '0',

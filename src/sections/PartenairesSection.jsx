@@ -17,7 +17,7 @@ const PARTNERS = [
 
 export default function PartenairesSection() {
   return (
-    <section style={{ background: '#fff', padding: '80px 24px',marginTop: '30px' }}>
+    <section style={{ background: '#fff', padding: '80px 24px',marginTop: '50px' }}>
       {/* Header */}
       <div style={{ textAlign: 'center', marginBottom: '56px' }}>
         <h2 style={{ fontSize: '30px', fontWeight: 900, color: '#1a1a1a', marginBottom: '10px' }}>

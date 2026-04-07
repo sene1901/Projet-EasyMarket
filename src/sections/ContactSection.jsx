@@ -27,7 +27,7 @@ export default function ContactSection() {
       {/* Card */}
       <div style={{
         maxWidth: '600px', margin: '0 auto',
-        background: 'linear-gradient(145deg, #FF8C00, #FF6B00)',
+        background: 'linear-gradient(145deg, #105088, #053965)',
         borderRadius: '20px', padding: '40px 40px 44px',
       }}>
 
@@ -101,9 +101,9 @@ export default function ContactSection() {
 
         {/* Bouton */}
         <button
-          style={{ width: '100%', background: '#053965', color: '#fff', border: 'none', borderRadius: '10px', padding: '15px', fontSize: '14px', fontWeight: 800, letterSpacing: '1.5px', textTransform: 'uppercase', cursor: 'pointer', fontFamily: 'inherit', transition: 'background 0.2s' }}
-          onMouseEnter={e => { e.currentTarget.style.background = '#074d8c'; }}
-          onMouseLeave={e => { e.currentTarget.style.background = '#053965'; }}
+          style={{ width: '100%', background: '#FFA800', color: '#fff', border: 'none', borderRadius: '10px', padding: '15px', fontSize: '14px', fontWeight: 800, letterSpacing: '1.5px', textTransform: 'uppercase', cursor: 'pointer', fontFamily: 'inherit', transition: 'background 0.2s' }}
+          onMouseEnter={e => { e.currentTarget.style.background = '#eb8614'; }}
+          onMouseLeave={e => { e.currentTarget.style.background = '#ec9a1f'; }}
           onClick={() => { /* votre logique d'envoi */ }}
         >
           Envoyer

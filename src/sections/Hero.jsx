@@ -54,7 +54,7 @@ export default function Hero() {
         <img
           src={googlePlay}
           alt="Google Play"
-          className="hidden md:block"
+          className="app"
           style={{
             width: "250px",
             position: "absolute",
@@ -83,7 +83,7 @@ export default function Hero() {
         <img
           src={appStore}
           alt="App Store" 
-          className="hidden md:block"
+          className="app"
           style={{
             width: "250px",
             position: "absolute",

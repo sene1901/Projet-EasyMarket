@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import logo from '../assets/test.png'; // ton logo EasyMarket
+import logo from '../assets/test.png'; 
 
 export default function FeatureCard({ title }) {
   const [hovered, setHovered] = useState(false);
@@ -16,6 +16,7 @@ export default function FeatureCard({ title }) {
         display: 'flex',
         alignItems: 'center',
         gap: '10px',
+        position:'relative',
         transition: 'all 0.25s ease',
         transform: hovered ? 'translateY(-2px)' : 'translateY(0)',
         boxShadow: hovered ? 'var(--shadow-orange)' : '0 2px 8px rgba(0,0,0,0.06)',
@@ -69,14 +70,16 @@ export default function FeatureCard({ title }) {
       </span>
 
       {/* Point orange à droite */}
-      <div
+     <div
         style={{
-          width: '8px',
-          height: '8px',
-          background: 'var(--orange, #ff6b00)',
-          borderRadius: '50%',
-          flexShrink: 0,
+          position: 'absolute',
+          left: '-14px', 
+          width: '14px',
+          height: '25px',
+          background: '#FF6B00',
+          borderRadius: '40px 0px 0px 40px',
         }}
+    
       />
     </div>
   );

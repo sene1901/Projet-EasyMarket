@@ -59,7 +59,7 @@ export default function Features() {
         <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
           <div
             className="why-grid"
-            style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px', alignItems: 'center' }}
+            style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px',alignItems: 'stretch' }}
           >
             {/* Phone */}
             <div className="reveal" style={{ display: 'flex', justifyContent: 'center', position: 'relative' }}>
@@ -302,7 +302,7 @@ function FeatureCard({ title, logo }) {
           alt="icon"
           style={{
             width: '22px', height: '22px', objectFit: 'contain',
-            filter: hovered ? 'brightness(0) invert(1)' : 'none',
+            color: '#f19c1c',
             transition: 'filter 0.25s ease',
           }}
         />

@@ -1,65 +1,83 @@
 import React, { useState } from 'react';
 
-export default function CompanyCard({ name, description, active, height }) {
+export default function CompanyCard({ name, description, logo }) {
   const [hovered, setHovered] = useState(false);
-  const highlighted = active || hovered;
 
   return (
     <div
+      className="company-card"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{
-        width: '100%',
-        height: `${height}px`,
+        minWidth: '260px',
+        height: '240px',
         borderRadius: '16px',
-        padding: '28px 22px',
-        boxSizing: 'border-box',
-        background: highlighted
-          ? 'linear-gradient(135deg, var(--orange) 0%, var(--orange-dark) 100%)'
-          : '#f9f9f9',
-        border: highlighted ? 'none' : '1px solid #eee',
+        padding: '20px',
+        background: '#f9f9f9',
+        border: '1px solid #eee',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
         transition: 'all 0.3s ease',
-        cursor: 'pointer'
+        cursor: 'pointer',
+        transform: hovered ? 'translateY(-4px)' : 'translateY(0)',
+        boxShadow: hovered
+          ? '0 10px 25px rgba(0,0,0,0.08)'
+          : '0 2px 8px rgba(0,0,0,0.04)'
       }}
     >
       {/* TOP */}
       <div>
-        <h3 style={{
-          fontSize: '18px',
-          fontWeight: '700',
-          color: highlighted ? '#fff' : '#111',
-          marginBottom: '10px'
-        }}>
-          {name}
-        </h3>
+        {/* LOGO */}
+        <img
+          src={logo}
+          alt={name}
+          style={{
+            height: '58px',
+            objectFit: 'contain',
+            width: '110px',
+
+            opacity: 1,
+
+            marginBottom: '12px',
+          }}
+        />
 
         {/* Ligne */}
-        <div style={{
-          width: '40px',
-          height: '2px',
-          background: highlighted ? '#fff' : 'var(--orange)',
-          marginBottom: '14px'
-        }} />
+        <div
+          style={{
+            width: '100%',
+            height: '1px',
+            background: '#E47000',
+            marginBottom: '12px'
+          }}
+        />
 
-        <p style={{
-          fontSize: '13px',
-          lineHeight: '1.6',
-          color: highlighted ? 'rgba(255,255,255,0.9)' : '#666'
-        }}>
+        {/* TEXTE */}
+        <p
+          style={{
+            fontSize: '13px',
+          
+            color: '#000000',
+            fontFamily: 'Montserrat',
+          fontWeight: 500,
+           lineHeight: '18px',
+            letterSpacing:'0%',
+
+          }}
+        >
           {description}
         </p>
       </div>
 
       {/* LINK */}
-      <p style={{
-        fontSize: '13px',
-        fontWeight: '500',
-        color: highlighted ? '#fff' : 'var(--orange)',
-        marginTop: '20px'
-      }}>
+      <p
+        style={{
+          fontSize: '13px',
+          fontWeight: '600',
+          color: '#E47000'
+        }}
+      >
         Visiter le site
       </p>
     </div>

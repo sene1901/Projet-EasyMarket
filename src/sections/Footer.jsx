@@ -1,26 +1,27 @@
-import logoFooter from '../assets/logoFooter.png';
+import React from 'react';
 
 const NAV_LINKS = ['Pricing', 'Démo', 'A-propos', 'Clients', 'Contact'];
 
 const SOCIALS = [
   {
     label: 'Facebook',
-    icon: (
-      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-    ),
+    icon: <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />,
+    fill: true,
   },
   {
     label: 'Instagram',
+    fill: false,
     icon: (
       <>
         <rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="#fff" strokeWidth="2" />
         <circle cx="12" cy="12" r="4" fill="none" stroke="#fff" strokeWidth="2" />
-        <circle cx="17.5" cy="6.5" r="1.2" fill="#fff" />
+        <circle cx="17.5" cy="6.5" r="1" fill="#fff" />
       </>
     ),
   },
   {
     label: 'LinkedIn',
+    fill: true,
     icon: (
       <>
         <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z" />
@@ -31,71 +32,48 @@ const SOCIALS = [
   },
   {
     label: 'TikTok',
-    icon: (
-      <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.77 0 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 12.67 0V8.69a8.16 8.16 0 0 0 4.77 1.52V6.76a4.85 4.85 0 0 1-1-.07z" />
-    ),
+    fill: true,
+    icon: <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.77 0 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 12.67 0V8.69a8.16 8.16 0 0 0 4.77 1.52V6.76a4.85 4.85 0 0 1-1-.07z" />,
   },
 ];
 
 export default function Footer() {
   return (
-    <footer
-      style={{
-        fontFamily: 'Nunito, sans-serif',
-        background: 'linear-gradient(135deg, #FF8C00 0%, #FF6B00 60%, #e55a00 100%)',
-        padding: '60px 48px 0',
-      }}
-    >
-      <div
-        style={{
-          maxWidth: '1100px',
-          margin: '0 auto',
-          display: 'grid',
-          gridTemplateColumns: '1.4fr 1fr 1fr',
-          gap: '40px',
-          paddingBottom: '48px',
-        }}
-      >
+    <footer style={{
+      fontFamily: 'Nunito, sans-serif',
+      background: 'linear-gradient(135deg, #FF8C00 0%, #E47000 60%, #e55a00 100%)',
+      padding: '48px 48px 0',
+    }}>
+      <div style={{
+        maxWidth: '1100px',
+        margin: '0 auto',
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+        gap: '40px',
+        paddingBottom: '40px',
+        alignItems: 'start',
+      }}>
         {/* Logo + description */}
         <div>
-          <img
-            src={logoFooter}
-            alt="EasyMarket"
-            style={{
-              height: '48px',
-              mixBlendMode: 'screen',
-              marginBottom: '16px',
-            }}
-          />
-          <p
-            style={{
-              fontSize: '14px',
-              color: 'rgba(255,255,255,0.88)',
-              lineHeight: 1.7,
-              maxWidth: '220px',
-            }}
-          >
-            Obtenez un outil de gestion et/ou site e-commerce en un temps record !
+          <div style={{ display: 'flex', alignItems: 'center', gap: '4px', marginBottom: '14px' }}>
+            <span style={{ fontSize: '20px', fontWeight: '400', color: '#fff' }}>Easy</span>
+            <span style={{ fontSize: '20px', fontWeight: '800', fontStyle: 'italic', color: '#fff' }}>Market</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="18" height="18" style={{ marginLeft: '2px' }}>
+              <circle cx="9" cy="21" r="1" /><circle cx="20" cy="21" r="1" />
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+            </svg>
+          </div>
+          <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.9)', lineHeight: 1.7, maxWidth: '230px', margin: 0 }}>
+            L'outil d'aide à la décision des commerçants africains
           </p>
         </div>
 
         {/* Navigation */}
         <nav>
-          <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+          <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
             {NAV_LINKS.map((link) => (
               <li key={link}>
-                <a
-                  href="#"
-                  style={{
-                    fontSize: '15px',
-                    fontWeight: 500,
-                    color: 'rgba(255,255,255,0.92)',
-                    textDecoration: 'none',
-                    transition: 'color 0.2s',
-                  }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.92)')}
-                >
+                <a href="#" style={{ fontSize: '15px', color: 'rgba(255,255,255,0.92)', textDecoration: 'none' }}>
                   {link}
                 </a>
               </li>
@@ -105,43 +83,17 @@ export default function Footer() {
 
         {/* Réseaux sociaux */}
         <div>
-          <p
-            style={{
-              fontSize: '15px',
-              fontWeight: 800,
-              color: '#fff',
-              marginBottom: '20px',
-            }}
-          >
+          <p style={{ fontSize: '15px', fontWeight: '800', color: '#fff', marginBottom: '16px', marginTop: 0 }}>
             Rejoignez nous
           </p>
-
-          <div style={{ display: 'flex', gap: '12px' }}>
+          <div style={{ display: 'flex', gap: '10px' }}>
             {SOCIALS.map((s) => (
-              <a
-                key={s.label}
-                href="#"
-                aria-label={s.label}
-                style={{
-                  width: '40px',
-                  height: '40px',
-                  borderRadius: '50%',
-                  background: 'rgba(255,255,255,0.2)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  transition: 'all 0.2s',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.background = 'rgba(255,255,255,0.35)';
-                  e.currentTarget.style.transform = 'scale(1.08)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.background = 'rgba(255,255,255,0.2)';
-                  e.currentTarget.style.transform = 'scale(1)';
-                }}
-              >
-                <svg viewBox="0 0 24 24" fill="#fff" width="18" height="18">
+              <a key={s.label} href="#" aria-label={s.label} style={{
+                width: '38px', height: '38px', borderRadius: '50%',
+                background: 'rgba(255,255,255,0.22)',
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+              }}>
+                <svg viewBox="0 0 24 24" fill={s.fill ? '#fff' : 'none'} width="17" height="17">
                   {s.icon}
                 </svg>
               </a>
@@ -151,16 +103,12 @@ export default function Footer() {
       </div>
 
       {/* Copyright */}
-      <div
-        style={{
-          maxWidth: '1100px',
-          margin: '0 auto',
-          borderTop: '1px solid rgba(255,255,255,0.25)',
-          padding: '20px 0',
-          textAlign: 'center',
-        }}
-      >
-        <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.8)' }}>
+      <div style={{
+        maxWidth: '1100px', margin: '0 auto',
+        borderTop: '1px solid rgba(255,255,255,0.25)',
+        padding: '18px 0', textAlign: 'center',
+      }}>
+        <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.85)', margin: 0, fontWeight: '600' }}>
           © 2026 EasyMarket. Tous droits réservés.
         </p>
       </div>
