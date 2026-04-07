@@ -1,17 +1,16 @@
 // Features.jsx — version complète corrigée
 
 import React, { useEffect, useRef } from 'react';
-import phone from '../assets/phone.png';
+import phone from '../assets/phone3.png';
 import logo from '../assets/test.png';
 
 const WHY_FEATURES = [
   { title: "Suivez vos ventes en temps réel" },
-  { title: "Sachez ce qu'il vous reste en stock" },
-  { title: "Identifiez vos produits les plus rentables" },
-  { title: "Contrôlez votre activité même à distance" },
-  { title: "Gardez un œil sur vos dépenses" },
-  { title: "Décidez plus vite grâce à des chiffres clairs" },
-];
+  { title: "Évitez les ruptures et les pertes de stock" },
+  { title: "Identifiez vos produits rentables" },
+  { title: "Maîtrisez vos dépenses" },
+  { title: "Prenez de meilleures décisions" },
+];;
 
 const HOW_STEPS = [
   "Ajoutez vos produits et organisez votre catalogue",
@@ -60,6 +59,7 @@ function useReveal() {
 
 export default function Features() {
   const ref = useReveal();
+  const [hovered, setHovered] = React.useState(false);
 
   return (
     <div ref={ref}>
@@ -95,19 +95,39 @@ export default function Features() {
               />
             </div>
 
+            
             {/* Texte + Cards */}
             <div className="reveal">
               <div style={{ fontSize: '32px', fontWeight: 700, marginBottom: '14px' }}>
                 <span style={{ color: '#1a1919' }}>Pourquoi </span>
                 <span style={{ color: '#FF6B00' }}>EasyMarket ?</span>
               </div>
-              <h2 style={{ fontSize: '20px', fontWeight: 400, marginBottom: '24px', lineHeight: 1.25 }}>
-                Prenez de meilleures décisions pour votre boutique
-              </h2>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
+             <p style={{ 
+  color: '#555', 
+  marginBottom: '30px', 
+  fontSize: '16px',
+  lineHeight: 1.5
+}}>
+  Voyez clairement ce qui vous rapporte... et ce qui vous fait perdre
+</p>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
                 {WHY_FEATURES.map((f, i) => (
                   <FeatureCard key={i} title={f.title} logo={logo} />
                 ))}
+                <div style={{ marginTop: '30px' }}>
+  <button style={{
+    background: '#E47000',
+    color: '#fff',
+    border: 'none',
+    padding: '10px 56px',
+    borderRadius: '30px',
+    fontSize: '14px',
+    cursor: 'pointer',
+    boxShadow: '0 6px 20px rgba(255,107,0,0.3)'
+  }}>
+    Réserver un démo
+  </button>
+</div>
               </div>
             </div>
           </div>
@@ -146,9 +166,9 @@ export default function Features() {
               <div
                 key={i}
                 style={{
-                  background: 'linear-gradient(135deg, #E47000, #FFA800)',
+                  background: 'linear-gradient(135deg, #053965, #1061a8)',
                   borderRadius: '20px',
-                  padding: '30px 24px',
+                  padding: '30px 15px',
                   color: '#fff',
                   fontSize: '15px',
                   fontWeight: 700,
@@ -161,7 +181,7 @@ export default function Features() {
                 }}
                 onMouseEnter={e => {
                   e.currentTarget.style.transform = 'translateY(-4px)';
-                  e.currentTarget.style.boxShadow = '0 14px 32px rgba(255,107,0,0.3)';
+                  e.currentTarget.style.boxShadow = '0 14px 32px rgba(94, 116, 161, 0.3)';
                 }}
                 onMouseLeave={e => {
                   e.currentTarget.style.transform = 'translateY(0)';
