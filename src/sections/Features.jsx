@@ -206,7 +206,7 @@ export default function Features() {
                 <span style={{ color: '#FF6B00' }}>Fonctionnalités</span>{' '}
                 <span style={{ color: '#1a1a1a' }}>clés</span>
               </h2>
-              <p style={{ fontSize: '14px', fontWeight: 400, color: '#aaa', marginBottom: '28px', lineHeight: 1.6 }}>
+              <p style={{ fontSize: '14px', fontWeight: 400, color: '#1a1a1a', marginBottom: '28px', lineHeight: 1.6 }}>
                 Tout ce qu'il vous faut pour gérer et développer votre commerce
               </p>
 

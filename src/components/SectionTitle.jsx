@@ -20,7 +20,7 @@ export default function SectionTitle({ label, title, highlight, subtitle, center
       )}
       <h2 style={{
         fontFamily: 'var(--font-display)',
-        fontSize: 'clamp(28px, 4vw, 44px)',
+        fontSize: 'clamp(28px, 4vw, 32px)',
         fontWeight: '700',
         color: light ? '#fff' : 'var(--navy)',
         lineHeight: '1.15',
