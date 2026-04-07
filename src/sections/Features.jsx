@@ -1,7 +1,8 @@
-// Features.jsx — version complète corrigée
+// Features.jsx — version finale corrigée
 
 import React, { useEffect, useRef } from 'react';
 import phone from '../assets/phone3.png';
+import phone4 from '../assets/PHONE4.png';
 import logo from '../assets/test.png';
 
 const WHY_FEATURES = [
@@ -10,36 +11,24 @@ const WHY_FEATURES = [
   { title: "Identifiez vos produits rentables" },
   { title: "Maîtrisez vos dépenses" },
   { title: "Prenez de meilleures décisions" },
-];;
+];
 
 const HOW_STEPS = [
-  "Ajoutez vos produits et organisez votre catalogue",
-  "Suivez vos chiffres en temps réel",
-  "Enregistrez ventes, dépenses et mouvements de stock",
-  "Analysez vos performances et prenez de meilleures décisions",
+  "Ajoutez vos produits en quelques minutes",
+  "Suivez votre activité en temps réel",
+  "Enregistrez vos ventes et dépenses facilement",
+  "Pilotez votre business avec des chiffres clairs",
 ];
 
 const KEY_FEATURES = [
-  'Gestion des ventes et dépenses',
-  'Import / export de produits',
+  'Suivi des ventes et dépenses',
+  'Gestion du stock',
   'Factures et tickets de caisse',
-  'Multi-utilisateurs · Contrôle à distance',
-  'Gestion du stock en temps réel',
-  "Site e-commerce lié à l'application",
-  'Tableau de bord de performance',
-  'Suivi des encaissements et décaissements',
-  'Suivi des meilleurs produits',
+  'Tableau de bord',
+  "Gestion d'équipe",
+  'Import de produits',
+  'Votre boutique en ligne en 2 semaines',
 ];
-
-const dotStyle = {
-  width: '14px',
-  height: '14px',
-  background: '#FF6B00',
-  borderRadius: '50% 50% 50% 0',
-  transform: 'rotate(-45deg)',
-  flexShrink: 0,
-  marginTop: '2px',
-};
 
 function useReveal() {
   const ref = useRef(null);
@@ -59,7 +48,6 @@ function useReveal() {
 
 export default function Features() {
   const ref = useReveal();
-  const [hovered, setHovered] = React.useState(false);
 
   return (
     <div ref={ref}>
@@ -83,7 +71,7 @@ export default function Features() {
               }} />
               <img
                 src={phone}
-                alt="EasyMarket app"
+                alt="EasyMarket app"  className="phone-img"
                 style={{
                   width: '370px', minHeight: '500px', maxWidth: '100%',
                   transform: 'rotate(-12deg)',
@@ -95,39 +83,47 @@ export default function Features() {
               />
             </div>
 
-            
             {/* Texte + Cards */}
             <div className="reveal">
               <div style={{ fontSize: '32px', fontWeight: 700, marginBottom: '14px' }}>
                 <span style={{ color: '#1a1919' }}>Pourquoi </span>
                 <span style={{ color: '#FF6B00' }}>EasyMarket ?</span>
               </div>
-             <p style={{ 
-  color: '#555', 
-  marginBottom: '30px', 
-  fontSize: '16px',
-  lineHeight: 1.5
-}}>
-  Voyez clairement ce qui vous rapporte... et ce qui vous fait perdre
-</p>
+              <p style={{ color: '#555', marginBottom: '30px', fontSize: '16px', lineHeight: 1.5 }}>
+                Voyez clairement ce qui vous rapporte... et ce qui vous fait perdre
+              </p>
+
+              {/* 4 premières cards en grille 2×2 */}
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
-                {WHY_FEATURES.map((f, i) => (
+                {WHY_FEATURES.slice(0, 4).map((f, i) => (
                   <FeatureCard key={i} title={f.title} logo={logo} />
                 ))}
-                <div style={{ marginTop: '30px' }}>
-  <button style={{
-    background: '#E47000',
-    color: '#fff',
-    border: 'none',
-    padding: '10px 56px',
-    borderRadius: '30px',
-    fontSize: '14px',
-    cursor: 'pointer',
-    boxShadow: '0 6px 20px rgba(255,107,0,0.3)'
-  }}>
-    Réserver un démo
-  </button>
-</div>
+              </div>
+
+              {/* 5e card + bouton côte à côte */}
+              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginTop: '15px', flexWrap: 'wrap' }}>
+                <div style={{ flex: 1, minWidth: '180px' }}>
+                  <FeatureCard title={WHY_FEATURES[4].title} logo={logo} />
+                </div>
+                <button
+                  style={{
+                    background: '#E47000',
+                    color: '#fff',
+                    border: 'none',
+                    padding: '13px 32px',
+                    borderRadius: '30px',
+                    fontSize: '14px',
+                    fontWeight: 700,
+                    cursor: 'pointer',
+                    boxShadow: '0 6px 20px rgba(255,107,0,0.3)',
+                    whiteSpace: 'nowrap',
+                    transition: 'background 0.2s',
+                  }}
+                  onMouseEnter={e => { e.currentTarget.style.background = '#c95e00'; }}
+                  onMouseLeave={e => { e.currentTarget.style.background = '#E47000'; }}
+                >
+                  Réserver un démo
+                </button>
               </div>
             </div>
           </div>
@@ -141,7 +137,6 @@ export default function Features() {
           @media (max-width: 600px) {
             #fonctionnalites { padding: 60px 16px !important; }
             .why-grid img { width: 220px !important; }
-            .why-grid > div:last-child > div:last-child { grid-template-columns: 1fr !important; gap: 12px !important; }
           }
           @media (max-width: 400px) {
             .why-grid img { width: 180px !important; }
@@ -154,41 +149,42 @@ export default function Features() {
       ══════════════════════════════════════ */}
       <section id="demo" style={{ padding: '100px 24px', background: '#fff' }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
-          <h2 className="reveal" style={{ fontSize: '32px', fontWeight: 800, textAlign: 'center', marginBottom: '10px' }}>
+          <h2 className="reveal" style={{ fontSize: '32px', fontWeight: 800, textAlign: 'center', marginBottom: '48px' }}>
             Comment ça marche
           </h2>
-          <p className="reveal" style={{ textAlign: 'center', color: '#888', fontSize: '15px', marginBottom: '48px' }}>
-            Une gestion simple.<br />Des décisions plus intelligentes.
-          </p>
 
           <div className="reveal how-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
             {HOW_STEPS.map((step, i) => (
               <div
                 key={i}
                 style={{
-                  background: 'linear-gradient(135deg, #053965, #1061a8)',
+                  background: '#053965',
                   borderRadius: '20px',
-                  padding: '30px 15px',
+                  padding: '30px 24px',
                   color: '#fff',
-                  fontSize: '15px',
-                  fontWeight: 700,
                   lineHeight: 1.5,
-                  minHeight: '100px',
+                  minHeight: '120px',
                   display: 'flex',
-                  alignItems: 'flex-end',
+                  alignItems: 'center',
+                  gap: '20px',
                   transition: 'transform 0.2s, box-shadow 0.2s',
                   cursor: 'default',
                 }}
                 onMouseEnter={e => {
                   e.currentTarget.style.transform = 'translateY(-4px)';
-                  e.currentTarget.style.boxShadow = '0 14px 32px rgba(94, 116, 161, 0.3)';
+                  e.currentTarget.style.boxShadow = '0 14px 32px rgba(94,116,161,0.3)';
                 }}
                 onMouseLeave={e => {
                   e.currentTarget.style.transform = 'translateY(0)';
                   e.currentTarget.style.boxShadow = 'none';
                 }}
               >
-                {step}
+                <span style={{ fontSize: '54px', fontWeight: 900, color: '#fff', lineHeight: 1, flexShrink: 0 }}>
+                  {i + 1}
+                </span>
+                <span style={{ fontSize: '15px', fontWeight: 600 }}>
+                  {step}
+                </span>
               </div>
             ))}
           </div>
@@ -202,12 +198,7 @@ export default function Features() {
         <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
           <div
             className="fk-grid"
-            style={{
-              display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
-              gap: '64px',
-              alignItems: 'center',
-            }}
+            style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '64px', alignItems: 'center',justifyContent:'center' }}
           >
             {/* Gauche — titre + cards + bouton */}
             <div className="reveal">
@@ -219,66 +210,45 @@ export default function Features() {
                 Tout ce qu'il vous faut pour gérer et développer votre commerce
               </p>
 
-              {/* Cards 2 colonnes */}
+              {/* Grille 2 colonnes */}
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginBottom: '36px' }}>
-                {KEY_FEATURES.map((feat, i) => (
-                  <div
-                    key={i}
-                    style={{
-                      background: '#fff',
-                      borderRadius: '12px',
-                      padding: '13px 15px',
-                      display: 'flex',
-                      alignItems: 'flex-start',
-                      gap: '10px',
-                      boxShadow: '0 2px 8px rgba(0,0,0,0.05)',
-                      border: '1px solid #f0f0f0',
-                      transition: 'box-shadow 0.2s, transform 0.2s',
-                      cursor: 'default',
-                    }}
-                    onMouseEnter={e => {
-                      e.currentTarget.style.boxShadow = '0 6px 20px rgba(0,0,0,0.09)';
-                      e.currentTarget.style.transform = 'translateY(-2px)';
-                    }}
-                    onMouseLeave={e => {
-                      e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.05)';
-                      e.currentTarget.style.transform = 'translateY(0)';
-                    }}
-                  >
-                    <div style={dotStyle} />
-                    <span style={{ fontSize: '13px', fontWeight: 600, color: '#1a1a1a', lineHeight: 1.4 }}>
-                      {feat}
-                    </span>
-                  </div>
+                {KEY_FEATURES.slice(0, 6).map((feat, i) => (
+                  <KeyFeatureCard key={i} title={feat} />
                 ))}
-              
-               <button
+                {/* Dernière feature sur toute la largeur */}
+                <div style={{ gridColumn: '1 / -1' }}>
+                  <KeyFeatureCard title={KEY_FEATURES[6]} />
+                </div>
+              </div>
+
+              <button
                 style={{
-                  background: '#053965', color: '#fff', border: 'none',
-                  padding: '13px 24px', borderRadius: '30px',
-                  fontSize: '14px', fontWeight: 700, cursor: 'pointer',
-                  fontFamily: 'inherit', transition: 'background 0.2s, transform 0.2s',
+                  background: '#E47000',
+                  color: '#fff',
+                  border: 'none',
+                  padding: '14px 48px',
+                  borderRadius: '30px',
+                  fontSize: '15px',
+                  fontWeight: 700,
+                  cursor: 'pointer',
+                  fontFamily: 'inherit',
+                  transition: 'background 0.2s, transform 0.2s',
+                  width: '100%',
                 }}
-                onMouseEnter={e => { e.currentTarget.style.background = '#074d8c'; e.currentTarget.style.transform = 'translateY(-1px)'; }}
-                onMouseLeave={e => { e.currentTarget.style.background = '#053965'; e.currentTarget.style.transform = 'translateY(0)'; }}
+                onMouseEnter={e => { e.currentTarget.style.background = '#c95e00'; e.currentTarget.style.transform = 'translateY(-1px)'; }}
+                onMouseLeave={e => { e.currentTarget.style.background = '#E47000'; e.currentTarget.style.transform = 'translateY(0)'; }}
               >
                 Demander une démo
               </button>
-                </div>
-
-
-
-
-             
             </div>
 
-            {/* Droite — Phone droit */}
+            {/* Droite — Phone */}
             <div className="reveal" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
               <img
-                src={phone}
-                alt="App EasyMarket"
+                src={phone4}
+                alt="App EasyMarket"  className="phone-img"
                 style={{
-                  width: '320px',
+                  width: '370px', minHeight: '500px',
                   maxWidth: '100%',
                   filter: 'drop-shadow(0 24px 48px rgba(0,0,0,0.18))',
                   transition: 'transform 0.4s ease',
@@ -290,35 +260,16 @@ export default function Features() {
           </div>
         </div>
 
-        <style>{`
-          @media (max-width: 900px) {
-            .fk-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
-            .fk-grid img { width: 260px !important; }
-          }
-          @media (max-width: 600px) {
-            .fk-grid img { width: 220px !important; }
-          }
-          @media (max-width: 400px) {
-            .fk-grid img { width: 180px !important; }
-          }
-        `}</style>
+       
       </section>
 
-      {/* ── Animations reveal globales ── */}
-      <style>{`
-        .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
-        .reveal.visible { opacity: 1; transform: translateY(0); }
-        @media (max-width: 800px) {
-          .why-grid, .how-grid { grid-template-columns: 1fr !important; }
-        }
-      `}</style>
 
     </div>
   );
 }
 
 /* ══════════════════════════════════════
-   FeatureCard — Section 1
+   FeatureCard — Section 1 (Pourquoi EasyMarket)
 ══════════════════════════════════════ */
 function FeatureCard({ title, logo }) {
   const [hovered, setHovered] = React.useState(false);
@@ -360,6 +311,64 @@ function FeatureCard({ title, logo }) {
         {title}
       </span>
       <div style={{ width: '8px', height: '8px', background: '#FF6B00', borderRadius: '50%', flexShrink: 0 }} />
+    </div>
+  );
+}
+
+/* ══════════════════════════════════════
+   KeyFeatureCard — Section 3 (Fonctionnalités)
+  
+══════════════════════════════════════ */
+function KeyFeatureCard({ title }) {
+  const [hovered, setHovered] = React.useState(false);
+
+  return (
+    <div
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      style={{
+        position: 'relative', 
+        background: '#fff',
+        borderRadius: '8px',
+        paddingTop: '14px',
+        paddingBottom: '14px',
+        paddingRight: '18px',
+        paddingLeft: '20px', 
+        marginLeft:'20px',
+        display: 'flex',
+        alignItems: 'center',
+        gap: '15px',
+        boxShadow: hovered
+          ? '0 6px 20px rgba(0,0,0,0.09)'
+          : '0 2px 8px rgba(0,0,0,0.05)',
+        border: '1px solid #f0f0f0',
+        transform: hovered ? 'translateY(-2px)' : 'translateY(0)',
+        transition: 'box-shadow 0.2s, transform 0.2s',
+        cursor: 'default',
+      }}
+    >
+      {/* Demi-cercle à moitié en dehors */}
+      <div
+        style={{
+          position: 'absolute',
+          left: '-14px', // fait sortir le cercle
+          width: '14px',
+          height: '25px',
+          background: '#FF6B00',
+          borderRadius: '40px 0px 0px 40px',
+        }}
+      />
+
+      <span
+        style={{
+          fontSize: '13px',
+          fontWeight: 600,
+          color: '#1a1a1a',
+          lineHeight: 1.4,
+        }}
+      >
+        {title}
+      </span>
     </div>
   );
 }

@@ -7,7 +7,7 @@ export default function Hero() {
   return (
     <section
       className="relative bg-[#053965] flex flex-col items-center justify-start overflow-hidden"
-      style={{ paddingTop: "60px" }}
+      style={{ paddingTop: "119px" }}
     >
       {/* Glow */}
       <div className="absolute w-[900px] h-[900px] top-[80px] left-1/2 -translate-x-1/2 rounded-full 
@@ -59,7 +59,7 @@ export default function Hero() {
             width: "250px",
             position: "absolute",
             left: "0",
-            top: "120px",
+            top: "100px",
           
             boxShadow: "0 4px 20px rgba(0,0,0,0.2)",
           }}
@@ -68,11 +68,11 @@ export default function Hero() {
         {/* PHONE — centré, dépasse en bas */}
         <img
           src={phone}
-          alt="phone"
+          alt="phone" className="phone-img "
           style={{
             width: "250px",
             display: "block",
-            marginBottom: "-120px",  /* coupe le bas du téléphone */
+            marginBottom: "-188px",  /* coupe le bas du téléphone */
             filter: "drop-shadow(0 30px 60px rgba(0,0,0,0.5))",
             position: "relative",
             zIndex: 2,
@@ -82,13 +82,13 @@ export default function Hero() {
         {/* APP STORE */}
         <img
           src={appStore}
-          alt="App Store"
+          alt="App Store" 
           className="hidden md:block"
           style={{
-            width: "220px",
+            width: "250px",
             position: "absolute",
             right: "0",
-            top: "120px",
+            top: "100px",
           
             boxShadow: "0 4px 20px rgba(0,0,0,0.2)",
           }}
