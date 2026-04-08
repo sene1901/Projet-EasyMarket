@@ -70,17 +70,7 @@ export default function FeatureCard({ title }) {
       </span>
 
       {/* Point orange à droite */}
-     <div
-        style={{
-          position: 'absolute',
-          left: '-14px', 
-          width: '14px',
-          height: '25px',
-          background: '#FF6B00',
-          borderRadius: '40px 0px 0px 40px',
-        }}
-    
-      />
+     
     </div>
   );
 }

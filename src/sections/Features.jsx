@@ -59,7 +59,7 @@ export default function Features() {
         <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
           <div
             className="why-grid"
-            style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px',alignItems: 'stretch' }}
+            style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px', alignItems: 'center' }}
           >
             {/* Phone */}
             <div className="reveal" style={{ display: 'flex', justifyContent: 'center', position: 'relative' }}>
@@ -71,7 +71,8 @@ export default function Features() {
               }} />
               <img
                 src={phone}
-                alt="EasyMarket app"  className="phone-img"
+                alt="EasyMarket app"
+                className="phone-img"
                 style={{
                   width: '370px', minHeight: '500px', maxWidth: '100%',
                   transform: 'rotate(-12deg)',
@@ -93,35 +94,49 @@ export default function Features() {
                 Voyez clairement ce qui vous rapporte... et ce qui vous fait perdre
               </p>
 
-              {/* 4 premières cards en grille 2×2 */}
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
+              {/* 4 cards en grille 2×2 */}
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '22px' }}>
                 {WHY_FEATURES.slice(0, 4).map((f, i) => (
                   <FeatureCard key={i} title={f.title} logo={logo} />
                 ))}
               </div>
 
-              {/* 5e card + bouton côte à côte */}
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginTop: '15px', flexWrap: 'wrap' }}>
-                <div style={{ flex: 1, minWidth: '180px' }}>
-                  <FeatureCard title={WHY_FEATURES[4].title} logo={logo} />
-                </div>
+              
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: '1fr 1fr',
+                gap: '12px',
+                marginTop: '12px',
+                alignItems: 'stretch',
+              }}>
+                
+                <FeatureCard title={WHY_FEATURES[4].title} logo={logo} />
+
+                {/* Bouton Réserver */}
                 <button
                   style={{
                     background: '#E47000',
                     color: '#fff',
                     border: 'none',
-                    padding: '13px 32px',
-                    borderRadius: '30px',
+                    borderRadius: '20px',
                     fontSize: '14px',
                     fontWeight: 700,
                     cursor: 'pointer',
-                    boxShadow: '0 6px 20px rgba(255,107,0,0.3)',
-                    whiteSpace: 'nowrap',
+                    boxShadow: '0 6px 20px rgba(255,107,0,0.25)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '10px',
+                    marginTop:'10px',
                     transition: 'background 0.2s',
+                    width: '260px',
+                    height: '40px',
                   }}
                   onMouseEnter={e => { e.currentTarget.style.background = '#c95e00'; }}
                   onMouseLeave={e => { e.currentTarget.style.background = '#E47000'; }}
                 >
+                  {/* Icône carré blanc à gauche */}
+                  
                   Réserver un démo
                 </button>
               </div>
@@ -278,9 +293,10 @@ function FeatureCard({ title, logo }) {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{
+      position:'relative',
         background: '#fff',
         borderRadius: '14px',
-        padding: '12px 14px',
+        padding: '14px 14px',
         display: 'flex',
         alignItems: 'center',
         gap: '10px',
@@ -310,7 +326,16 @@ function FeatureCard({ title, logo }) {
       <span style={{ fontSize: '12px', fontWeight: 700, color: '#222', lineHeight: 1.3, flex: 1 }}>
         {title}
       </span>
-      <div style={{ width: '8px', height: '8px', background: '#FF6B00', borderRadius: '50%', flexShrink: 0 }} />
+      <div
+        style={{
+          position: 'absolute',
+          left: '-14px', 
+          width: '14px',
+          height: '25px',
+          background: '#FF6B00',
+          borderRadius: '40px 0px 0px 40px',
+        }}
+      />
     </div>
   );
 }

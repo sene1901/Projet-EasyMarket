@@ -17,7 +17,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="faq" style={{ background: '#F7F8FA', padding: '80px 24px', fontFamily: 'Nunito, sans-serif' }}>
+    <section  style={{ background: '#F7F8FA', padding: '80px 24px', fontFamily: 'Nunito, sans-serif' }}>
       {/* Header */}
       <div style={{ textAlign: 'center', marginBottom: '40px' }}>
         <h2 style={{ fontSize: '32px', fontWeight: 900, color: '#1a1a1a', marginBottom: '8px' }}>Contactez-nous</h2>

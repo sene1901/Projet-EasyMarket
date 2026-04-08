@@ -11,6 +11,7 @@ import ContactSection from '../sections/ContactSection';
 import Footer from '../sections/Footer';
 import Matériel from '../sections/Materiel';
 import TestimonialsVideo from'../sections/TestimonialsVideo';
+import Frequence from'../sections/Frequence';
 export default function LandingPage() {
   return (
     <>
@@ -24,6 +25,7 @@ export default function LandingPage() {
         <PartenairesSection/>
         <Matériel/>
         <TestimonialsVideo/>
+        <Frequence/>
         <ContactSection/>
          <Footer/>
       </main>

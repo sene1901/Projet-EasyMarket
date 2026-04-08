@@ -37,7 +37,7 @@ export default function TestimonialsVideo() {
 
   return (
     <section id="temoignages" style={{ padding: "48px 16px" }}>
-      <h2 style={{ fontSize: "24px", fontWeight: "800", textAlign: "center", color: "#111827", marginBottom: "32px" }}>
+      <h2 style={{ fontSize: "24px", fontWeight: "800", textAlign: "center", color: "#111827", marginBottom: "32px",margin: "20px" }}>
         Témoignages
       </h2>
 

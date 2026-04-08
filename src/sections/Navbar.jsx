@@ -135,9 +135,9 @@ export default function Navbar() {
             className="demo-btn"
             style={{ marginTop: '10px' }}
           >
-            <span className="demo-logo-circle">
-              <img src={logo} alt="" style={{ pointerEvents: 'none' }} />
-            </span>
+            // <span className="demo-logo-circle">
+            //   <img src={logo} alt="" style={{ pointerEvents: 'none' }} />
+            // </span>
             <span className="demo-text" style={{ pointerEvents: 'none' }}>
               Demo gratuite
             </span>
@@ -154,7 +154,7 @@ export default function Navbar() {
           background: #FFA800;
           border-radius: 50px;
           text-decoration: none;
-          padding: 4px 22px 4px 4px;
+          padding: 5px 14px 5px 5px;
           gap: 10px;
           transition: background 0.2s, transform 0.15s;
           cursor: pointer;
@@ -167,36 +167,36 @@ export default function Navbar() {
         }
 
         
-        .demo-logo-circle {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 34px;
-          height: 34px;
-          min-width: 34px;
-          border-radius: 50%;
-          background: white;
-          overflow: hidden;
-          flex-shrink: 0;
-          pointer-events: none;
-        }
+//         .demo-logo-circle {
+//           display: flex;
+//           align-items: center;
+//           justify-content: center;
+//           width: 34px;
+//           height: 34px;
+//           min-width: 34px;
+//           border-radius: 50%;
+//           background: white;
+//           overflow: hidden;
+//           flex-shrink: 0;
+//           pointer-events: none;
+//         }
 
 
-        .demo-logo-circle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 34px;
-  height: 34px;
-  min-width: 34px;
-  border-radius: 50%;
-  background: white;
-  overflow: hidden;
-  flex-shrink: 0;
-  pointer-events: none;
+//         .demo-logo-circle {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   width: 34px;
+//   height: 34px;
+//   min-width: 34px;
+//   border-radius: 50%;
+//   background: white;
+//   overflow: hidden;
+//   flex-shrink: 0;
+//   pointer-events: none;
 
-  transform: rotate(-15deg); 
-}
+//   transform: rotate(-15deg); 
+// }
 
 
 demo-logo-circle {
