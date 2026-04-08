@@ -38,8 +38,8 @@ export default function TestimonialsSection() {
   };
 
   return (
-    <section style={{ padding: '50px 24px', background: '#f7f8fa' }}>
-      <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
+    <section style={{ padding: '48px 24px', background: '#f7f8fa' }}>
+      <div style={{ maxWidth: '1100px', margin: '20px auto' }}>
 
         {/* TITLE */}
         <div style={{ textAlign: 'center', marginBottom: '60px' }}>

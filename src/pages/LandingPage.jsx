@@ -9,6 +9,8 @@ import CTASection from '../sections/CTASection';
 import PartenairesSection from '../sections/PartenairesSection';
 import ContactSection from '../sections/ContactSection';
 import Footer from '../sections/Footer';
+import Matériel from '../sections/Materiel';
+import TestimonialsVideo from'../sections/TestimonialsVideo';
 export default function LandingPage() {
   return (
     <>
@@ -17,10 +19,11 @@ export default function LandingPage() {
         <Hero />
         <Features/>
         <Testimonials/>
-      
         <Pricing/>
         <CTASection/>
         <PartenairesSection/>
+        <Matériel/>
+        <TestimonialsVideo/>
         <ContactSection/>
          <Footer/>
       </main>
