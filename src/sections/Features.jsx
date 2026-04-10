@@ -55,7 +55,7 @@ export default function Features() {
       {/* ══════════════════════════════════════
           SECTION 1 — Pourquoi EasyMarket
       ══════════════════════════════════════ */}
-      <section id="fonctionnalites" style={{ padding: '100px 24px', background: '#f0f2f5' }}>
+      <section id="fonctionnalites" style={{ padding: '100px 24px', background: '#F5F5F5' }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
           <div
             className="why-grid"
@@ -71,17 +71,29 @@ export default function Features() {
               }} />
               <img
                 src={phone}
-                alt="EasyMarket app"
-                className="phone-img"
-                style={{
-                  width: '370px', minHeight: '500px', maxWidth: '100%',
-                  transform: 'rotate(-12deg)',
-                  filter: 'drop-shadow(0 40px 80px rgba(0,0,0,0.35))',
-                  position: 'relative', zIndex: 2, transition: '0.4s',
-                }}
-                onMouseEnter={e => { e.currentTarget.style.transform = 'rotate(-7deg) scale(1.04)'; }}
-                onMouseLeave={e => { e.currentTarget.style.transform = 'rotate(-12deg)'; }}
-              />
+              
+  alt="EasyMarket app"
+  className="phone-img"
+  style={{
+    width: '370px',
+    minHeight: '500px',
+    maxWidth: '100%',
+    transform: 'rotate(-39deg) translateX(-80px) translateY(40px)',
+    filter: 'drop-shadow(0 40px 80px rgba(0,0,0,0.35))',
+    position: 'relative',
+    zIndex: 5,
+    transition: '0.4s',
+  }}
+  onMouseEnter={e => {
+    e.currentTarget.style.transform =
+      'rotate(-15deg) translateX(-60px) translateY(30px) scale(1.04)';
+  }}
+  onMouseLeave={e => {
+    e.currentTarget.style.transform =
+      'rotate(-25deg) translateX(-80px) translateY(40px)';
+  }}
+/>
+              
             </div>
 
             {/* Texte + Cards */}

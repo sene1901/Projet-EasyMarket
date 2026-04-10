@@ -21,7 +21,7 @@ export default function CTASection() {
           {/* Gauche */}
           <div style={{ paddingBottom: '70px' }}>
 
-            {/* Titre avec "business" en orange */}
+          
             <h2 style={{
               fontSize: '40px',
               fontWeight: 900,
@@ -30,7 +30,7 @@ export default function CTASection() {
               marginBottom: '36px',
             }}>
               Reprenez le contrôle de<br />
-              votre <span style={{ color: '#FF6B00' }}>business</span> dès<br />
+              votre <span style={{ color: '#FFA800' }}>business</span> dès<br />
               aujourd'hui
             </h2>
 

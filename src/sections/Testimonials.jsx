@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import CompanyCard from '../components/CompanyCard';
 import SectionTitle from '../components/SectionTitle';
-
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import logo1 from '../assets/ALL.png';
 import logo2 from '../assets/kalite.png';
 import logo3 from '../assets/inayah.png';
@@ -61,6 +61,7 @@ export default function TestimonialsSection() {
 
           <div
             ref={scrollRef}
+             className="scroll-container"
             style={{
               display: 'flex',
               gap: '20px',
@@ -75,15 +76,49 @@ export default function TestimonialsSection() {
           </div>
 
           {/* BUTTONS */}
-          <div style={{
-            display: 'flex',
-            justifyContent: 'flex-end',
-            gap: '10px',
-            marginTop: '20px'
-          }}>
-            <button onClick={() => scroll('left')} className="nav-btn ">←</button>
-            <button onClick={() => scroll('right')} className="nav-btn active">→</button>
-          </div>
+          {/* BUTTONS */}
+<div style={{
+  display: 'flex',
+  justifyContent: 'flex-end',
+  gap: '10px',
+  marginTop: '20px',
+}}>
+  <button
+    onClick={() => scroll('left')}
+    style={{
+      width: '40px',
+      height: '30px',
+      borderRadius: '6px',
+      border: 'none',
+      background: 'transparent',
+      color: '#e87722',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      cursor: 'pointer',
+    }}
+  >
+    <ArrowLeft size={18} />
+  </button>
+
+  <button
+    onClick={() => scroll('right')}
+    style={{
+      width: '40px',
+      height: '30px',
+  
+      border: 'none',
+      background: '#e87722',        
+      color: '#fff',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      cursor: 'pointer',
+    }}
+  >
+    <ArrowRight size={18} />
+  </button>
+</div>
 
         </div>
       </div>

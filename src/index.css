@@ -27,7 +27,9 @@
 }
  /* NAVBAR */
 
-
+h1,h2,p,span{
+  fontFamily: "Montserrat, sans-serif"
+}
 
 
 
@@ -317,4 +319,14 @@ color: #E2E8F0;
 }
 .nav-btn {
   color: #F97316;
+  
+}
+/* cacher scrollbar */
+.scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-container {
+  -ms-overflow-style: none;  /* IE & Edge */
+  scrollbar-width: none;     /* Firefox */
 }

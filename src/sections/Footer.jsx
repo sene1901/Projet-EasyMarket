@@ -1,6 +1,9 @@
 import React from 'react';
+import logo from '../assets/logo.png';
+const NAV_LINKS = ['Fonctionnalités', 'Tarifs', 'Equipements', 'Témoignages','FAQ','Clients', 'Contact'];
 
-const NAV_LINKS = ['Pricing', 'Démo', 'A-propos', 'Clients', 'Contact'];
+
+
 
 const SOCIALS = [
   {
@@ -54,19 +57,17 @@ export default function Footer() {
         alignItems: 'start',
       }}>
         {/* Logo + description */}
-        <div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '4px', marginBottom: '14px' }}>
-            <span style={{ fontSize: '20px', fontWeight: '400', color: '#fff' }}>Easy</span>
-            <span style={{ fontSize: '20px', fontWeight: '800', fontStyle: 'italic', color: '#fff' }}>Market</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="18" height="18" style={{ marginLeft: '2px' }}>
-              <circle cx="9" cy="21" r="1" /><circle cx="20" cy="21" r="1" />
-              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
-            </svg>
-          </div>
-          <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.9)', lineHeight: 1.7, maxWidth: '230px', margin: 0 }}>
-            L'outil d'aide à la décision des commerçants africains
-          </p>
-        </div>
+       {/* Logo + description */}
+<div>
+  <img
+    src={logo}
+    alt="EasyMarket"
+    style={{ height: '48px', marginBottom: '14px', objectFit: 'contain' }}
+  />
+  <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.9)', lineHeight: 1.7, maxWidth: '230px', margin: 0 }}>
+    L'outil d'aide à la décision des commerçants africains
+  </p>
+</div>
 
         {/* Navigation */}
         <nav>

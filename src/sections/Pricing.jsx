@@ -1,7 +1,7 @@
 
 import Pricingcard from '../components/Pricingcard.jsx';
 import SectionTitle from '../components/SectionTitle.jsx';
-import { FaShieldAlt } from "react-icons/fa";
+import { Lightbulb } from "lucide-react";
 
 
 const PLANS = [
@@ -23,7 +23,10 @@ const PLANS = [
     price: '25 000',
     period: '/ mois',
     features: [
-      'Boutique en ligne connectée à votre application de gestion',
+       <>
+        Boutique en ligne connectée <br />
+        à votre application de gestion
+      </>,
       '1 compte principal (admin)',
       '4 comptes vendeurs (accès limités)',
       'Suivi des ventes et performances',
@@ -53,7 +56,7 @@ export default function Pricing() {
           background: '#fff', borderRadius: '999px', border: '1.5px solid #e87722',
           padding: '12px 24px', display: 'flex', alignItems: 'center', gap: '12px'
         }}>
-         <FaShieldAlt style={{ fontSize: '20px', color: '#000' }} />
+         <Lightbulb size={24} color="#e87722" fill="#e87722" strokeWidth={1} style={{ fontSize: '20px', color: '#ee9a2c', }} />
           <p style={{ fontSize: '12.5px', color: '#333', margin: 0, textAlign: 'left' }}>
             <strong>Contrôlez</strong> votre business à distance dès <strong>2 comptes</strong> : 1 admin + 1 vendeur (accès limité) = <strong>11 800 FCFA/mois</strong>
           </p>
