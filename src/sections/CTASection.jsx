@@ -23,7 +23,7 @@ export default function CTASection() {
 
           
             <h2 style={{
-              fontSize: '40px',
+              fontSize: '38px',
               fontWeight: 900,
               color: '#fff',
               lineHeight: 1.2,

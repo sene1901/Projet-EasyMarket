@@ -20,7 +20,7 @@ export default function ContactSection() {
     <section  style={{ background: '#F7F8FA', padding: '80px 24px', fontFamily: 'Nunito, sans-serif' }}>
       {/* Header */}
       <div style={{ textAlign: 'center', marginBottom: '40px' }}>
-        <h2 style={{ fontSize: '32px', fontWeight: 900, color: '#1a1a1a', marginBottom: '8px' }}>Contactez-nous</h2>
+        <h2 style={{ fontSize: '38px', fontWeight: 900, color: '#1a1a1a', marginBottom: '8px' }}>Contactez-nous</h2>
         <p style={{ fontSize: '15px', color: '#888', fontWeight: 400 }}>Notre équipe est là pour vous aider</p>
       </div>
 

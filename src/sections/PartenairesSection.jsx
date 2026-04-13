@@ -21,10 +21,10 @@ export default function PartenairesSection() {
 
       {/* Header */}
       <div className="text-center mb-14">
-        <h2 className="text-[30px] font-black text-[#1a1a1a] mb-[10px]">
+        <h2 className="text-[38px] font-black text-[#1a1a1a] mb-[10px]">
           Nos Partenaires Institutionnels
         </h2>
-        <p className="text-[15px] font-normal text-[#1a1a1a] leading-[1.6]">
+        <p className="text-[16px] font-normal text-black leading-[1.6]">
           Ils nous accompagnent dans notre mission de digitalisation du commerce
         </p>
       </div>

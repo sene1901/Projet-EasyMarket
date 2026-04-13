@@ -1,43 +1,23 @@
 import React from 'react';
 
-export default function SectionTitle({ label, title, highlight, subtitle, center = false , light }) {
+export default function SectionTitle({ label, title, highlight, subtitle, center = false, light }) {
   return (
-    <div style={{ textAlign: center ? 'center' : 'left', marginBottom: '48px' }}>
+    <div className={`mb-12 ${center ? 'text-center' : 'text-left'}`}>
       {label && (
-        <span style={{
-          display: 'inline-block',
-          background: 'var(--orange-50)',
-          color: 'var(--orange)',
-          border: '1px solid var(--orange-light)',
-          borderRadius: '100px',
-          padding: '4px 14px',
-          fontSize: '12px',
-          fontWeight: '600',
-          letterSpacing: '0.06em',
-          textTransform: 'uppercase',
-          marginBottom: '16px',
-        }}>{label}</span>
+        <span className="inline-block bg-orange-50 text-orange-500 border border-orange-200 rounded-full px-3.5 py-1 text-xs font-semibold tracking-widest uppercase mb-4">
+          {label}
+        </span>
       )}
-      <h2 style={{
-        fontFamily: 'var(--font-display)',
-        fontSize: 'clamp(28px, 4vw, 32px)',
-        fontWeight: '700',
-        color: light ? '#fff' : 'var(--navy)',
-        lineHeight: '1.15',
-        letterSpacing: '-0.02em',
-        marginBottom: '16px',
-      }}>
+      <h2 className={`font-montserrat text-[38px] font-bold leading-[1.15] tracking-[-0.02em] mb-4 ${light ? 'text-white' : 'text-[var(--navy)]'}`}>
         {title}{' '}
-        {highlight && <span style={{ color: 'var(--orange)' }}>{highlight}</span>}
+        {highlight && (
+          <span className="text-[#E47000]">{highlight}</span>
+        )}
       </h2>
       {subtitle && (
-        <p style={{
-          fontSize: '16px',
-          color: light ? 'rgba(34, 26, 26, 0.75)' : 'var(--gray-950)',
-          lineHeight: '1.7',
-          maxWidth: center ? '560px' : '100%',
-          margin: center ? '0 auto' : '0',
-        }}>{subtitle}</p>
+        <p className={`font-montserrat text-[18px] font-medium leading-[35px] tracking-[0] ${light ? 'text-white/75' : 'text-black'} ${center ? 'max-w-lg mx-auto' : 'max-w-none'}`}>
+          {subtitle}
+        </p>
       )}
     </div>
   );

@@ -37,31 +37,28 @@ const PLANS = [
 
 export default function Pricing() {
   return (
-    <section id="pricing" style={{ padding: '80px 24px', background: '#FFFFFF' }}>
-      <div style={{ maxWidth: '700px', margin: '0 auto', textAlign: 'center' }}>
-        <h2 style={{ fontSize: '26px', fontWeight: '800', color: '#1a1a2e', marginBottom: '12px' }}>
-          Un petit investissement pour éviter de grosses pertes.
-        </h2>
-        <p style={{ fontSize: '14px', color: '#1a1a2e', marginBottom: '48px', lineHeight: '1.7' }}>
-          Payez uniquement par utilisateur.<br />
-          Ajoutez des options selon vos besoins.
-        </p>
+   <section id="pricing" className="py-20 px-6 bg-white">
+  <div className="max-w-[780px] mx-auto ">
+    <h2 className="font-montserrat text-[38px] font-bold leading-[50px] tracking-[-0.07em] text-center text-[#1a1a2e] mb-3">
+      Un petit investissement pour éviter de grosses pertes .
+    </h2>
+    <p className="font-montserrat text-[16px] font-medium leading-[35px] tracking-[0] text-center text-[#1a1a2e] mb-12">
+      Payez uniquement par utilisateur.<br />
+      Ajoutez des options selon vos besoins.
+    </p>
 
-        <div style={{ display: 'flex', gap: '24px', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '32px' }}>
-          {PLANS.map((plan, i) => <Pricingcard key={i} {...plan} />)}
-        </div>
+    <div className="flex gap-6 justify-center flex-wrap mb-8">
+      {PLANS.map((plan, i) => <Pricingcard key={i} {...plan} />)}
+    </div>
 
-        {/* Trust bar */}
-        <div style={{
-          background: '#fff', borderRadius: '999px', border: '1.5px solid #e87722',
-          padding: '12px 24px', display: 'flex', alignItems: 'center', gap: '12px'
-        }}>
-         <Lightbulb size={24} color="#e87722" fill="#e87722" strokeWidth={1} style={{ fontSize: '20px', color: '#ee9a2c', }} />
-          <p style={{ fontSize: '12.5px', color: '#333', margin: 0, textAlign: 'left' }}>
-            <strong>Contrôlez</strong> votre business à distance dès <strong>2 comptes</strong> : 1 admin + 1 vendeur (accès limité) = <strong>11 800 FCFA/mois</strong>
-          </p>
-        </div>
-      </div>
-    </section>
+    {/* Trust bar */}
+    <div className="bg-white rounded-full border border-[#e87722] px-6 py-3 flex items-center gap-3">
+      <Lightbulb size={24} color="#e87722" fill="#e87722" strokeWidth={1} className="text-[#ee9a2c]" />
+      <p className="text-[12.5px] text-[#333] m-0 text-left">
+        <strong>Contrôlez</strong> votre business à distance dès <strong>2 comptes</strong> : 1 admin + 1 vendeur (accès limité) = <strong>11 800 FCFA/mois</strong>
+      </p>
+    </div>
+  </div>
+</section>
   );
 }

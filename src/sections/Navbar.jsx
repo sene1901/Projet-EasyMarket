@@ -25,21 +25,35 @@ export default function Navbar() {
           </a>
 
           {/* Menu desktop */}
-          <ul className="hidden md:flex gap-1 items-center flex-1 justify-center list-none m-0 p-0">
-            {NAV_LINKS.map(link => (
-              <li key={link.href}>
-                
-                <a  href={link.href}
-                  className="px-[14px] py-[6px] rounded-md text-[14px] font-medium text-white no-underline transition-all whitespace-nowrap hover:text-[#053965] hover:bg-white"
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
-          </ul>
+         <ul className="hidden md:flex gap-2 items-center flex-1 justify-center list-none m-0 p-0">
+  {NAV_LINKS.map(link => (
+    <li key={link.href}>
+      <a
+        href={link.href}
+        className="
+          px-[16px] py-[6px]
+          rounded-md
+          text-[18px]
+        
+          leading-[65px]
+          text-white
+          text-center
+          no-underline
+          transition-all
+          whitespace-nowrap
+          font-[Montserrat]
+          hover:text-[#053965]
+          hover:bg-white
+        "
+      >
+        {link.label}
+      </a>
+    </li>
+  ))}
+</ul>
 
           {/* Right */}
-          <div className="flex items-center gap-4 shrink-0">
+          <div className="flex items-center gap-6 shrink-0">
 
             {/* Cart */}
             <div className="hidden md:block relative cursor-pointer">
@@ -54,15 +68,9 @@ export default function Navbar() {
              <a href="https://easymarket.sn"
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden md:flex items-center gap-2 bg-[#FFA800] rounded-full pl-[4px] pr-[16px] py-[4px] hover:bg-[#e69600] hover:scale-105 transition-all duration-200 no-underline"
+              className="hidden md:flex items-center gap-2 bg-[#FFA800] rounded-full pl-[30px] pr-[16px] py-[6px] hover:bg-[#e69600] hover:scale-105 transition-all duration-200 no-underline"
             >
-              <span className="flex items-center justify-center w-[34px] h-[34px] min-w-[34px] rounded-full bg-white overflow-hidden">
-                <img
-                  src={logo}
-                  alt=""
-                  className="w-[22px] h-[22px] object-contain"
-                />
-              </span>
+             
               <span className="text-white text-[14px] font-bold whitespace-nowrap">
                 Demo gratuite
               </span>

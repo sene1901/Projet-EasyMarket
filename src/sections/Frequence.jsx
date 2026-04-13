@@ -102,7 +102,7 @@ function FAQItem({ item, isOpen, onToggle }) {
       >
         <span
           style={{
-            fontSize: "14px",
+            fontSize: "18px",
             fontWeight: "600",
             color: "#111827",
             lineHeight: "1.4",
@@ -124,7 +124,7 @@ function FAQItem({ item, isOpen, onToggle }) {
         <p
           style={{
             padding: "12px 20px 20px",
-            fontSize: "14px",
+            fontSize: "16px",
             color: "#6b7280",
             lineHeight: "1.7",
             borderTop: "1px solid #f3f4f6",
@@ -154,7 +154,7 @@ export default function Frequence() {
     >
       <h2
         style={{
-          fontSize: "24px",
+          fontSize: "33px",
           fontWeight: "700",
           textAlign: "center",
           color: "#111827",

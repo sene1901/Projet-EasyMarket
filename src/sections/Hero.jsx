@@ -18,24 +18,31 @@ export default function Hero() {
       <div className="absolute w-[900px] h-[900px] top-[80px] left-1/2 -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.25)_0%,rgba(5,57,101,0)_70%)]" />
 
       {/* Titre */}
-      <h1 className="text-center z-10 px-4 text-white font-extrabold mt-[30px] leading-[1.2] tracking-[-0.5px] text-[clamp(22px,4.5vw,35px)] font-[Montserrat,sans-serif]">
+      <h1 className="text-center z-10 px-4 text-white font-extrabold mt-[30px] leading-[1.2] tracking-[-0.5px] text-[clamp(38px,4.5vw,28px)] font-[Montserrat,sans-serif]">
         Votre commerce,{" "}
         <span className="text-[#F59E0B]">sous contrôle</span>{" "}
         24h/24.
       </h1>
 
       {/* Sous-titre */}
-      <p className="text-center z-10 px-4 text-white/90 font-normal mt-4 leading-[1.6] max-w-[600px] text-[clamp(16px,2vw,20px)] font-[Montserrat,sans-serif]">
-        Stock, caisse, ventes, tout en temps réel depuis votre téléphone.
-      </p>
+      <p className="text-center z-10 px-4 text-white/90 mt-4 leading-[1.6] max-w-[600px] text-[clamp(16px,2vw,20px)] font-semibold font-[Montserrat]">
+  Stock, caisse, ventes, tout en temps réel depuis votre téléphone.
+</p>
 
       {/* PHONE + BADGES */}
-      <div className="relative z-10 mt-[69px] w-full max-w-[860px] flex justify-center items-start">
+      <div className="relative z-10 mt-[78px] w-full max-w-[860px] flex justify-center items-start">
 
         {/* GOOGLE PLAY */}
         <div
-          className="flex items-center gap-[10px] bg-white border-[1.5px] border-[#e0e0e0] rounded-lg px-7 py-[10px] cursor-pointer min-w-[150px] absolute top-[100px] left-[80px] shadow-[0_4px_20px_rgba(0,0,0,0.2)] transition-all duration-200"
-          onMouseEnter={hoverOn}
+          className="hidden sm:flex
+        items-center gap-[10px]
+        bg-white border-[1.5px] border-[#e0e0e0]
+        rounded-lg px-5 md:px-7 py-[8px] md:py-[10px]
+        cursor-pointer min-w-[130px] md:min-w-[150px]
+        absolute top-[20px] md:top-[100px]
+        left-[10px] md:left-[80px]
+        shadow-[0_4px_20px_rgba(0,0,0,0.2)]
+        transition-all duration-20"
           onMouseLeave={hoverOff}
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -59,7 +66,15 @@ export default function Hero() {
 
         {/* APP STORE */}
         <div
-          className="flex items-center gap-[10px] bg-white border-[1.5px] border-[#e0e0e0] rounded-lg px-7 py-[10px] cursor-pointer min-w-[150px] absolute top-[100px] right-[100px] shadow-[0_4px_20px_rgba(0,0,0,0.2)] transition-all duration-200"
+          className="  hidden sm:flex
+        items-center gap-[10px]
+        bg-white border-[1.5px] border-[#e0e0e0]
+        rounded-lg px-5 md:px-7 py-[8px] md:py-[10px]
+        cursor-pointer min-w-[130px] md:min-w-[150px]
+        absolute top-[20px] md:top-[100px]
+        right-[10px] md:right-[100px]
+        shadow-[0_4px_20px_rgba(0,0,0,0.2)]
+        transition-all duration-200"
           onMouseEnter={hoverOn}
           onMouseLeave={hoverOff}
         >

@@ -24,7 +24,7 @@ export default function Materiel() {
 
       {/* Title */}
       <h2 style={{
-        fontSize: "28px",
+        fontSize: "38px",
         fontWeight: "800",
         textAlign: "center",
         color: "#111827",

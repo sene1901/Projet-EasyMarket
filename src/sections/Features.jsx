@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import phone from '../assets/phone3.png';
 import phone4 from '../assets/PHONE4.png';
 import logo from '../assets/test.png';
-
+import FeatureCard from '../components/FeatureCard';
 const WHY_FEATURES = [
   { title: "Suivez vos ventes en temps réel" },
   { title: "Évitez les ruptures et les pertes de stock" },
@@ -53,37 +53,34 @@ export default function Features() {
       {/* SECTION 1 — Pourquoi EasyMarket */}
       <section id="fonctionnalites" className="py-[100px] px-6 bg-[#F5F5F5]">
         <div className="max-w-[1100px] mx-auto">
-          <div className="why-grid grid grid-cols-2 gap-[60px] items-center">
+          <div className="why-grid grid grid-cols-2 gap-['20px] items-center">
 
             {/* Phone */}
             <div className="hidden md:flex justify-center relative">
               <div className="absolute w-[300px] h-[300px] bg-[#e2e6ea] rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[1]" />
-           <img
-          src={phone}
-          alt="EasyMarket app"
-          className="phone-img relative z-[5] transition-all duration-[400ms] drop-shadow-[0_40px_80px_rgba(0,0,0,0.35)] w-[280px] lg:w-[370px]"
-          style={{
-           
-            transform: 'rotate(-12deg) translateX(-20px)',
-          }}
-          onMouseEnter={e => {
-            e.currentTarget.style.transform = 'rotate(-6deg) translateX(-10px) scale(1.04)';
-          }}
-          onMouseLeave={e => {
-            e.currentTarget.style.transform = 'rotate(-12deg) translateX(-20px)';
-          }}
-        />
+ <img
+  src={phone}
+  alt="EasyMarket app"
+  className="
+    relative z-[5]
+    w-[280px] md:w-[320px] lg:w-[380px] h-[500px]
+    drop-shadow-[0_50px_80px_rgba(255, 255, 255, 1)]
+  "
+  style={{
+    transform: 'rotate(-40deg) translateX(16px) translateY(10px)',
+  }}
+/>
             </div>
 
             {/* Texte + Cards */}
             <div className="reveal">
-              <div className="text-[26px] md:text-[32px] font-bold mb-3 md:mb-[14px] text-center md:text-left]">
+              <div className="text-[clamp(38px,4.5vw,28px)]  font-bold mb-3 md:mb-[14px] text-center md:text-left]">
                 <span className="text-[#1a1919]">Pourquoi </span>
                 <span className="text-[#FF6B00]">EasyMarket ?</span>
               </div>
-              <p className="text-[#555] mb-[30px] text-[16px] leading-[1.5]">
-                Voyez clairement ce qui vous rapporte... et ce qui vous fait perdre
-              </p>
+             <p className="text-[#000000] mb-[30px] text-[16px] md:text-[14px] leading-[28px] md:leading-[35px] font-medium font-[Montserrat]">
+  Voyez clairement ce qui vous rapporte... et ce qui vous fait perdre
+</p>
 
               {/* 4 cards en grille 2×2 */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-[22px]">
@@ -95,10 +92,23 @@ export default function Features() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-3 items-center">
                 <FeatureCard title={WHY_FEATURES[4].title} logo={logo} />
                 <button
-                  className="bg-[#E47000] text-white border-none rounded-[20px] text-[14px] font-bold cursor-pointer flex items-center justify-center gap-[10px] mt-[10px] w-[260px] h-[40px] sm:mt-[10px] w-full sm:w-[220px]  transition-colors duration-200 hover:bg-[#c95e00]"
-                >
-                  Réserver un démo
-                </button>
+  className="
+    bg-[#E47000]
+    text-white
+    rounded-[20px]
+    text-[14px]
+    font-bold
+    cursor-pointer
+    flex items-center justify-center gap-[10px]
+    mt-[10px]
+    w-full
+    h-[40px]
+    transition-colors duration-200
+    hover:bg-[#c95e00]
+  "
+>
+  Réserver un démo
+</button>
               </div>
             </div>
           </div>
@@ -108,7 +118,7 @@ export default function Features() {
       {/* SECTION 2 — Comment ça marche */}
       <section id="demo" className="py-[100px] px-6 bg-white">
         <div className="max-w-[900px] mx-auto">
-          <h2 className="reveal text-[32px] font-extrabold text-center mb-12">
+          <h2 className="reveal text-[clamp(49px,4.5vw,28px)] font-extrabold text-center mb-12 font-[Montserrat]">
             Comment ça marche
           </h2>
 
@@ -121,7 +131,7 @@ export default function Features() {
                 <span className="text-[54px] font-black text-white leading-none shrink-0">
                   {i + 1}
                 </span>
-                <span className="text-[15px] font-semibold">
+                <span className="text-[16px] font-semibold">
                   {step}
                 </span>
               </div>
@@ -137,11 +147,11 @@ export default function Features() {
 
             {/* Gauche */}
             <div className="reveal">
-              <h2 className="text-[32px] font-black mb-[10px] leading-[1.2]">
+              <h2 className="text-[clamp(38px,4.5vw,28px)] font-black mb-[10px] leading-[1.2]">
                 <span className="text-[#FF6B00]">Fonctionnalités</span>{' '}
                 <span className="text-[#1a1a1a]">clés</span>
               </h2>
-              <p className="text-[14px] font-normal text-[#1a1a1a] mb-7 leading-[1.6]">
+              <p className="text-[#000000] mb-[30px] text-[16px] md:text-[14px] leading-[28px] md:leading-[35px] font-medium font-[Montserrat]">
                 Tout ce qu'il vous faut pour gérer et développer votre commerce
               </p>
 
@@ -178,26 +188,7 @@ export default function Features() {
 }
 
 /* FeatureCard */
-function FeatureCard({ title, logo }) {
-  const [hovered, setHovered] = React.useState(false);
-  return (
-    <div
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      className={`relative bg-white rounded-[14px] p-[14px] flex items-center gap-[10px] transition-all duration-[250ms] cursor-default
-        ${hovered ? 'shadow-[0_6px_18px_rgba(255,107,0,0.15)] -translate-y-[2px] border-[1.5px] border-[#ffcca0]' : 'shadow-[0_2px_8px_rgba(0,0,0,0.06)] border-[1.5px] border-[#ebebeb]'}
-      `}
-    >
-      <div className={`w-9 h-9 rounded-[10px] flex items-center justify-center shrink-0 transition-all duration-[250ms] ${hovered ? 'bg-[#FF6B00]' : 'bg-[#fff3e8]'}`}>
-        <img src={logo} alt="icon" className="w-[22px] h-[22px] object-contain" />
-      </div>
-      <span className="text-[12px] font-bold text-[#222] leading-[1.3] flex-1">
-        {title}
-      </span>
-      <div className="absolute left-[-14px] w-[14px] h-[25px] bg-[#FF6B00] rounded-[40px_0px_0px_40px]" />
-    </div>
-  );
-}
+
 
 /* KeyFeatureCard */
 function KeyFeatureCard({ title }) {

@@ -1,9 +1,7 @@
 import React from 'react';
 import logo from '../assets/logo.png';
-const NAV_LINKS = ['Fonctionnalités', 'Tarifs', 'Equipements', 'Témoignages','FAQ','Clients', 'Contact'];
 
-
-
+const NAV_LINKS = ['Fonctionnalités', 'Tarifs', 'Equipements', 'Témoignages', 'FAQ', 'Clients', 'Contact'];
 
 const SOCIALS = [
   {
@@ -42,40 +40,23 @@ const SOCIALS = [
 
 export default function Footer() {
   return (
-    <footer style={{
-      fontFamily: 'Nunito, sans-serif',
-      background: 'linear-gradient(135deg, #e55a00     0%, #E47000 60%, #FF8C00 100%)',
-      padding: '48px 48px 0',
-    }}>
-      <div style={{
-        maxWidth: '1100px',
-        margin: '0 auto',
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-        gap: '40px',
-        paddingBottom: '40px',
-        alignItems: 'start',
-        justifyContent:'center',
-      }}>
-        {/* Logo + description */}
-       {/* Logo + description */}
-<div>
-  <img
-    src={logo}
-    alt="EasyMarket"
-    style={{ height: '48px', marginBottom: '14px', objectFit: 'contain' }}
-  />
-  <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.9)', lineHeight: 1.7, maxWidth: '230px', margin: 0,fontWeight:700 }}>
-    L'outil d'aide à la  décision des commerçants africains
-  </p>
-</div>
+    <footer className="font-nunito bg-gradient-to-br from-[#e55a00] via-[#E47000] to-[#FF8C00] px-12 pt-12">
+      <div className="max-w-[1100px] mx-auto grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-10 pb-10 items-start justify-center">
+
+        {/* Logo + Tagline */}
+        <div>
+          <img src={logo} alt="EasyMarket" className="h-[46px] mb-3.5 object-contain" />
+          <p className="font-montserrat text-[20px] font-semibold leading-[32px] tracking-[0] text-white/90 max-w-[230px] m-0">
+            L'outil d'aide à la <br /> décision des commerçants africains
+          </p>
+        </div>
 
         {/* Navigation */}
         <nav>
-          <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
+          <ul className="list-none m-0 p-0 flex flex-col gap-2.5">
             {NAV_LINKS.map((link) => (
               <li key={link}>
-                <a href="#" style={{ fontSize: '15px', color: 'rgba(255,255,255,0.92)', textDecoration: 'none' }}>
+                <a href="#" className="text-base text-white/90 no-underline hover:text-white transition-colors">
                   {link}
                 </a>
               </li>
@@ -85,16 +66,13 @@ export default function Footer() {
 
         {/* Réseaux sociaux */}
         <div>
-          <p style={{ fontSize: '15px', fontWeight: '800', color: '#fff', marginBottom: '16px', marginTop: 0 }}>
+          <p className="text-base font-extrabold text-white mb-4 mt-0">
             Rejoignez nous
           </p>
-          <div style={{ display: 'flex', gap: '10px' }}>
+          <div className="flex gap-2.5">
             {SOCIALS.map((s) => (
-              <a key={s.label} href="#" aria-label={s.label} style={{
-                width: '38px', height: '38px', borderRadius: '50%',
-                background: 'rgba(255,255,255,0.22)',
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
-              }}>
+              <a key={s.label} href="#" aria-label={s.label}
+                className="w-[38px] h-[38px] rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition-colors">
                 <svg viewBox="0 0 24 24" fill={s.fill ? '#fff' : 'none'} width="17" height="17">
                   {s.icon}
                 </svg>
@@ -105,12 +83,8 @@ export default function Footer() {
       </div>
 
       {/* Copyright */}
-      <div style={{
-        maxWidth: '1100px', margin: '0 auto',
-        borderTop: '1px solid rgba(255,255,255,0.25)',
-        padding: '18px 0', textAlign: 'center',
-      }}>
-        <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.85)', margin: 0, fontWeight: '600' }}>
+      <div className="max-w-[1100px] mx-auto border-t border-white/25 py-[18px] text-center">
+        <p className="text-[13px] text-white/85 m-0 font-semibold">
           © 2026 EasyMarket. Tous droits réservés.
         </p>
       </div>
