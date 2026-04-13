@@ -1,5 +1,3 @@
-// Features.jsx — version finale corrigée
-
 import React, { useEffect, useRef } from 'react';
 import phone from '../assets/phone3.png';
 import phone4 from '../assets/PHONE4.png';
@@ -52,164 +50,78 @@ export default function Features() {
   return (
     <div ref={ref}>
 
-      {/* ══════════════════════════════════════
-          SECTION 1 — Pourquoi EasyMarket
-      ══════════════════════════════════════ */}
-      <section id="fonctionnalites" style={{ padding: '100px 24px', background: '#F5F5F5' }}>
-        <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
-          <div
-            className="why-grid"
-            style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px', alignItems: 'center' }}
-          >
+      {/* SECTION 1 — Pourquoi EasyMarket */}
+      <section id="fonctionnalites" className="py-[100px] px-6 bg-[#F5F5F5]">
+        <div className="max-w-[1100px] mx-auto">
+          <div className="why-grid grid grid-cols-2 gap-[60px] items-center">
+
             {/* Phone */}
-            <div className="reveal" style={{ display: 'flex', justifyContent: 'center', position: 'relative' }}>
-              <div style={{
-                position: 'absolute', width: '300px', height: '300px',
-                background: '#e2e6ea', borderRadius: '50%',
-                top: '50%', left: '50%',
-                transform: 'translate(-50%, -50%)', zIndex: 1,
-              }} />
-              <img
-                src={phone}
-              
-  alt="EasyMarket app"
-  className="phone-img"
-  style={{
-    width: '370px',
-    minHeight: '500px',
-    maxWidth: '100%',
-    transform: 'rotate(-39deg) translateX(-80px) translateY(40px)',
-    filter: 'drop-shadow(0 40px 80px rgba(0,0,0,0.35))',
-    position: 'relative',
-    zIndex: 5,
-    transition: '0.4s',
-  }}
-  onMouseEnter={e => {
-    e.currentTarget.style.transform =
-      'rotate(-15deg) translateX(-60px) translateY(30px) scale(1.04)';
-  }}
-  onMouseLeave={e => {
-    e.currentTarget.style.transform =
-      'rotate(-25deg) translateX(-80px) translateY(40px)';
-  }}
-/>
-              
+            <div className="hidden md:flex justify-center relative">
+              <div className="absolute w-[300px] h-[300px] bg-[#e2e6ea] rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[1]" />
+           <img
+          src={phone}
+          alt="EasyMarket app"
+          className="phone-img relative z-[5] transition-all duration-[400ms] drop-shadow-[0_40px_80px_rgba(0,0,0,0.35)] w-[280px] lg:w-[370px]"
+          style={{
+           
+            transform: 'rotate(-12deg) translateX(-20px)',
+          }}
+          onMouseEnter={e => {
+            e.currentTarget.style.transform = 'rotate(-6deg) translateX(-10px) scale(1.04)';
+          }}
+          onMouseLeave={e => {
+            e.currentTarget.style.transform = 'rotate(-12deg) translateX(-20px)';
+          }}
+        />
             </div>
 
             {/* Texte + Cards */}
             <div className="reveal">
-              <div style={{ fontSize: '32px', fontWeight: 700, marginBottom: '14px' }}>
-                <span style={{ color: '#1a1919' }}>Pourquoi </span>
-                <span style={{ color: '#FF6B00' }}>EasyMarket ?</span>
+              <div className="text-[26px] md:text-[32px] font-bold mb-3 md:mb-[14px] text-center md:text-left]">
+                <span className="text-[#1a1919]">Pourquoi </span>
+                <span className="text-[#FF6B00]">EasyMarket ?</span>
               </div>
-              <p style={{ color: '#555', marginBottom: '30px', fontSize: '16px', lineHeight: 1.5 }}>
+              <p className="text-[#555] mb-[30px] text-[16px] leading-[1.5]">
                 Voyez clairement ce qui vous rapporte... et ce qui vous fait perdre
               </p>
 
               {/* 4 cards en grille 2×2 */}
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '22px' }}>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-[22px]">
                 {WHY_FEATURES.slice(0, 4).map((f, i) => (
                   <FeatureCard key={i} title={f.title} logo={logo} />
                 ))}
               </div>
 
-              
-              <div style={{
-                display: 'grid',
-                gridTemplateColumns: '1fr 1fr',
-                gap: '12px',
-                marginTop: '12px',
-                alignItems: 'stretch',
-              }}>
-                
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-3 items-center">
                 <FeatureCard title={WHY_FEATURES[4].title} logo={logo} />
-
-                {/* Bouton Réserver */}
                 <button
-                  style={{
-                    background: '#E47000',
-                    color: '#fff',
-                    border: 'none',
-                    borderRadius: '20px',
-                    fontSize: '14px',
-                    fontWeight: 700,
-                    cursor: 'pointer',
-                    boxShadow: '0 6px 20px rgba(255,107,0,0.25)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: '10px',
-                    marginTop:'10px',
-                    transition: 'background 0.2s',
-                    width: '260px',
-                    height: '40px',
-                  }}
-                  onMouseEnter={e => { e.currentTarget.style.background = '#c95e00'; }}
-                  onMouseLeave={e => { e.currentTarget.style.background = '#E47000'; }}
+                  className="bg-[#E47000] text-white border-none rounded-[20px] text-[14px] font-bold cursor-pointer flex items-center justify-center gap-[10px] mt-[10px] w-[260px] h-[40px] sm:mt-[10px] w-full sm:w-[220px]  transition-colors duration-200 hover:bg-[#c95e00]"
                 >
-                  {/* Icône carré blanc à gauche */}
-                  
                   Réserver un démo
                 </button>
               </div>
             </div>
           </div>
         </div>
-
-        <style>{`
-          @media (max-width: 900px) {
-            .why-grid { grid-template-columns: 1fr !important; gap: 40px !important; text-align: center; }
-            .why-grid img { width: 260px !important; min-height: auto !important; }
-          }
-          @media (max-width: 600px) {
-            #fonctionnalites { padding: 60px 16px !important; }
-            .why-grid img { width: 220px !important; }
-          }
-          @media (max-width: 400px) {
-            .why-grid img { width: 180px !important; }
-          }
-        `}</style>
       </section>
 
-      {/* ══════════════════════════════════════
-          SECTION 2 — Comment ça marche
-      ══════════════════════════════════════ */}
-      <section id="demo" style={{ padding: '100px 24px', background: '#fff' }}>
-        <div style={{ maxWidth: '900px', margin: '0 auto' }}>
-          <h2 className="reveal" style={{ fontSize: '32px', fontWeight: 800, textAlign: 'center', marginBottom: '48px' }}>
+      {/* SECTION 2 — Comment ça marche */}
+      <section id="demo" className="py-[100px] px-6 bg-white">
+        <div className="max-w-[900px] mx-auto">
+          <h2 className="reveal text-[32px] font-extrabold text-center mb-12">
             Comment ça marche
           </h2>
 
-          <div className="reveal how-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+          <div className="reveal how-grid grid grid-cols-2 gap-4">
             {HOW_STEPS.map((step, i) => (
               <div
                 key={i}
-                style={{
-                  background: '#053965',
-                  borderRadius: '20px',
-                  padding: '30px 24px',
-                  color: '#fff',
-                  lineHeight: 1.5,
-                  minHeight: '120px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '20px',
-                  transition: 'transform 0.2s, box-shadow 0.2s',
-                  cursor: 'default',
-                }}
-                onMouseEnter={e => {
-                  e.currentTarget.style.transform = 'translateY(-4px)';
-                  e.currentTarget.style.boxShadow = '0 14px 32px rgba(94,116,161,0.3)';
-                }}
-                onMouseLeave={e => {
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = 'none';
-                }}
+                className="bg-[#053965] rounded-[20px] p-[30px_24px] text-white leading-[1.5] min-h-[120px] flex items-center gap-5 transition-all duration-200 cursor-default hover:-translate-y-1 hover:shadow-[0_14px_32px_rgba(94,116,161,0.3)]"
               >
-                <span style={{ fontSize: '54px', fontWeight: 900, color: '#fff', lineHeight: 1, flexShrink: 0 }}>
+                <span className="text-[54px] font-black text-white leading-none shrink-0">
                   {i + 1}
                 </span>
-                <span style={{ fontSize: '15px', fontWeight: 600 }}>
+                <span className="text-[15px] font-semibold">
                   {step}
                 </span>
               </div>
@@ -218,192 +130,88 @@ export default function Features() {
         </div>
       </section>
 
-      {/* ══════════════════════════════════════
-          SECTION 3 — Fonctionnalités clés
-      ══════════════════════════════════════ */}
-      <section style={{ padding: '90px 24px', background: '#F7F8FA' }}>
-        <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
-          <div
-            className="fk-grid"
-            style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '64px', alignItems: 'center',justifyContent:'center' }}
-          >
-            {/* Gauche — titre + cards + bouton */}
+      {/* SECTION 3 — Fonctionnalités clés */}
+      <section className="py-[90px] px-6 bg-[#F7F8FA]">
+        <div className="max-w-[1100px] mx-auto">
+          <div className="fk-grid grid grid-cols-2 gap-[64px] items-center justify-center">
+
+            {/* Gauche */}
             <div className="reveal">
-              <h2 style={{ fontSize: '32px', fontWeight: 900, marginBottom: '10px', lineHeight: 1.2 }}>
-                <span style={{ color: '#FF6B00' }}>Fonctionnalités</span>{' '}
-                <span style={{ color: '#1a1a1a' }}>clés</span>
+              <h2 className="text-[32px] font-black mb-[10px] leading-[1.2]">
+                <span className="text-[#FF6B00]">Fonctionnalités</span>{' '}
+                <span className="text-[#1a1a1a]">clés</span>
               </h2>
-              <p style={{ fontSize: '14px', fontWeight: 400, color: '#1a1a1a', marginBottom: '28px', lineHeight: 1.6 }}>
+              <p className="text-[14px] font-normal text-[#1a1a1a] mb-7 leading-[1.6]">
                 Tout ce qu'il vous faut pour gérer et développer votre commerce
               </p>
 
-              {/* Grille 2 colonnes */}
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginBottom: '36px' }}>
+              <div className="grid grid-cols-2 gap-3 mb-9">
                 {KEY_FEATURES.slice(0, 6).map((feat, i) => (
                   <KeyFeatureCard key={i} title={feat} />
                 ))}
-                {/* Dernière feature sur toute la largeur */}
-                <div style={{ gridColumn: '1 / -1' }}>
+                <div className="col-span-2">
                   <KeyFeatureCard title={KEY_FEATURES[6]} />
                 </div>
               </div>
 
               <button
-                style={{
-                  background: '#E47000',
-                  color: '#fff',
-                  border: 'none',
-                  padding: '14px 48px',
-                  borderRadius: '30px',
-                  fontSize: '15px',
-                  fontWeight: 700,
-                  cursor: 'pointer',
-                  fontFamily: 'inherit',
-                  transition: 'background 0.2s, transform 0.2s',
-                  width: '100%',
-                }}
-                onMouseEnter={e => { e.currentTarget.style.background = '#c95e00'; e.currentTarget.style.transform = 'translateY(-1px)'; }}
-                onMouseLeave={e => { e.currentTarget.style.background = '#E47000'; e.currentTarget.style.transform = 'translateY(0)'; }}
+                className="bg-[#E47000] text-white border-none py-[14px] px-[48px] rounded-[30px] text-[15px] font-bold cursor-pointer w-full transition-all duration-200 hover:bg-[#c95e00] hover:-translate-y-px"
               >
                 Demander une démo
               </button>
             </div>
 
             {/* Droite — Phone */}
-            <div className="reveal" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+            <div className="reveal flex justify-center items-center">
               <img
                 src={phone4}
-                alt="App EasyMarket"  className="phone-img"
-                style={{
-                  width: '370px', minHeight: '500px',
-                  maxWidth: '100%',
-                  filter: 'drop-shadow(0 24px 48px rgba(0,0,0,0.18))',
-                  transition: 'transform 0.4s ease',
-                }}
-                onMouseEnter={e => { e.currentTarget.style.transform = 'scale(1.03)'; }}
-                onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)'; }}
+                alt="App EasyMarket"
+                className="phone-img w-[370px] min-h-[500px] max-w-full drop-shadow-[0_24px_48px_rgba(0,0,0,0.18)] transition-transform duration-[400ms] hover:scale-[1.03]"
               />
             </div>
           </div>
         </div>
-
-       
       </section>
-
 
     </div>
   );
 }
 
-/* ══════════════════════════════════════
-   FeatureCard — Section 1 (Pourquoi EasyMarket)
-══════════════════════════════════════ */
+/* FeatureCard */
 function FeatureCard({ title, logo }) {
   const [hovered, setHovered] = React.useState(false);
   return (
     <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      style={{
-      position:'relative',
-        background: '#fff',
-        borderRadius: '14px',
-        padding: '14px 14px',
-        display: 'flex',
-        alignItems: 'center',
-        gap: '10px',
-        boxShadow: hovered ? '0 6px 18px rgba(255,107,0,0.15)' : '0 2px 8px rgba(0,0,0,0.06)',
-        transform: hovered ? 'translateY(-2px)' : 'translateY(0)',
-        transition: 'all 0.25s ease',
-        cursor: 'default',
-        border: `1.5px solid ${hovered ? '#ffcca0' : '#ebebeb'}`,
-      }}
+      className={`relative bg-white rounded-[14px] p-[14px] flex items-center gap-[10px] transition-all duration-[250ms] cursor-default
+        ${hovered ? 'shadow-[0_6px_18px_rgba(255,107,0,0.15)] -translate-y-[2px] border-[1.5px] border-[#ffcca0]' : 'shadow-[0_2px_8px_rgba(0,0,0,0.06)] border-[1.5px] border-[#ebebeb]'}
+      `}
     >
-      <div style={{
-        width: '36px', height: '36px', borderRadius: '10px',
-        background: hovered ? '#FF6B00' : '#fff3e8',
-        display: 'flex', alignItems: 'center', justifyContent: 'center',
-        flexShrink: 0, transition: 'all 0.25s ease',
-      }}>
-        <img
-          src={logo}
-          alt="icon"
-          style={{
-            width: '22px', height: '22px', objectFit: 'contain',
-            color: '#f19c1c',
-            transition: 'filter 0.25s ease',
-          }}
-        />
+      <div className={`w-9 h-9 rounded-[10px] flex items-center justify-center shrink-0 transition-all duration-[250ms] ${hovered ? 'bg-[#FF6B00]' : 'bg-[#fff3e8]'}`}>
+        <img src={logo} alt="icon" className="w-[22px] h-[22px] object-contain" />
       </div>
-      <span style={{ fontSize: '12px', fontWeight: 700, color: '#222', lineHeight: 1.3, flex: 1 }}>
+      <span className="text-[12px] font-bold text-[#222] leading-[1.3] flex-1">
         {title}
       </span>
-      <div
-        style={{
-          position: 'absolute',
-          left: '-14px', 
-          width: '14px',
-          height: '25px',
-          background: '#FF6B00',
-          borderRadius: '40px 0px 0px 40px',
-        }}
-      />
+      <div className="absolute left-[-14px] w-[14px] h-[25px] bg-[#FF6B00] rounded-[40px_0px_0px_40px]" />
     </div>
   );
 }
 
-/* ══════════════════════════════════════
-   KeyFeatureCard — Section 3 (Fonctionnalités)
-  
-══════════════════════════════════════ */
+/* KeyFeatureCard */
 function KeyFeatureCard({ title }) {
   const [hovered, setHovered] = React.useState(false);
-
   return (
     <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      style={{
-        position: 'relative', 
-        background: '#fff',
-        borderRadius: '8px',
-        paddingTop: '14px',
-        paddingBottom: '14px',
-        paddingRight: '18px',
-        paddingLeft: '20px', 
-        marginLeft:'20px',
-        display: 'flex',
-        alignItems: 'center',
-        gap: '15px',
-        boxShadow: hovered
-          ? '0 6px 20px rgba(0,0,0,0.09)'
-          : '0 2px 8px rgba(0,0,0,0.05)',
-        border: '1px solid #f0f0f0',
-        transform: hovered ? 'translateY(-2px)' : 'translateY(0)',
-        transition: 'box-shadow 0.2s, transform 0.2s',
-        cursor: 'default',
-      }}
+      className={`relative bg-white rounded-lg py-[14px] pr-[18px] pl-5 ml-5 flex items-center gap-[15px] border border-[#f0f0f0] transition-all duration-200 cursor-default
+        ${hovered ? 'shadow-[0_6px_20px_rgba(0,0,0,0.09)] -translate-y-[2px]' : 'shadow-[0_2px_8px_rgba(0,0,0,0.05)]'}
+      `}
     >
-      {/* Demi-cercle à moitié en dehors */}
-      <div
-        style={{
-          position: 'absolute',
-          left: '-14px', // fait sortir le cercle
-          width: '14px',
-          height: '25px',
-          background: '#FF6B00',
-          borderRadius: '40px 0px 0px 40px',
-        }}
-      />
-
-      <span
-        style={{
-          fontSize: '13px',
-          fontWeight: 600,
-          color: '#1a1a1a',
-          lineHeight: 1.4,
-        }}
-      >
+      <div className="absolute left-[-14px] w-[14px] h-[25px] bg-[#FF6B00] rounded-[40px_0px_0px_40px]" />
+      <span className="text-[13px] font-semibold text-[#1a1a1a] leading-[1.4]">
         {title}
       </span>
     </div>

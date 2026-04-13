@@ -44,7 +44,7 @@ export default function Footer() {
   return (
     <footer style={{
       fontFamily: 'Nunito, sans-serif',
-      background: 'linear-gradient(135deg, #FF8C00 0%, #E47000 60%, #e55a00 100%)',
+      background: 'linear-gradient(135deg, #e55a00     0%, #E47000 60%, #FF8C00 100%)',
       padding: '48px 48px 0',
     }}>
       <div style={{
@@ -64,8 +64,8 @@ export default function Footer() {
     alt="EasyMarket"
     style={{ height: '48px', marginBottom: '14px', objectFit: 'contain' }}
   />
-  <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.9)', lineHeight: 1.7, maxWidth: '230px', margin: 0 }}>
-    L'outil d'aide à la décision des commerçants africains
+  <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.9)', lineHeight: 1.7, maxWidth: '230px', margin: 0,fontWeight:700 }}>
+    L'outil d'aide à la  décision des commerçants africains
   </p>
 </div>
 

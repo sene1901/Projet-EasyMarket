@@ -1,83 +1,50 @@
-// imports des logos
 import logoOFII       from '../assets/OFII.png';
 import logoVolkeno    from '../assets/volkeno.png';
 import logoMVP        from '../assets/mvp.png';
 import logoKPC        from '../assets/kpc.png';
 import logoImpactHub  from '../assets/hub.png';
 import logoPitchPalabre from '../assets/pp.png';
-
+import logoOrange from '../assets/Orange.png';
 const PARTNERS = [
-  { src: logoOFII,         alt: 'OFII',             height: '60px' },
-  { src: logoVolkeno,      alt: 'Volkeno',           height: '60px' },
-  { src: logoMVP,          alt: 'MVP Lab 221',       height: '44px', dark: true },
-  { src: logoKPC,          alt: 'KPC Consortium',    height: '56px' },
-  { src: logoImpactHub,    alt: 'Impact HUB Dakar',  height: '44px' },
-  { src: logoPitchPalabre, alt: 'Pitch Palabre',     height: '60px' },
+  { src: logoOFII,         alt: 'OFII',              },
+  { src: logoVolkeno,      alt: 'Volkeno',            },
+  { src: logoMVP,          alt: 'MVP Lab 221',       },
+  { src: logoKPC,          alt: 'KPC Consortium',    },
+  { src: logoImpactHub,    alt: 'Impact HUB Dakar',   },
+  { src: logoPitchPalabre, alt: 'Pitch Palabre',      },
+    { src: logoOrange, alt: 'orange',     },
 ];
 
 export default function PartenairesSection() {
   return (
-    <section style={{ background: '#fff', padding: '80px 24px',marginTop: '50px' }}>
+    <section className="bg-white py-[85px] px-6 mt-[60px]">
+
       {/* Header */}
-      <div style={{ textAlign: 'center', marginBottom: '56px' }}>
-        <h2 style={{ fontSize: '30px', fontWeight: 900, color: '#1a1a1a', marginBottom: '10px' }}>
+      <div className="text-center mb-14">
+        <h2 className="text-[30px] font-black text-[#1a1a1a] mb-[10px]">
           Nos Partenaires Institutionnels
         </h2>
-        <p style={{ fontSize: '15px', fontWeight: 400, color: '#999', lineHeight: 1.6 }}>
+        <p className="text-[15px] font-normal text-[#1a1a1a] leading-[1.6]">
           Ils nous accompagnent dans notre mission de digitalisation du commerce
         </p>
       </div>
 
       {/* Logos */}
-      <div style={{
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        gap: '48px',
-        flexWrap: 'wrap',
-        maxWidth: '1100px',
-        margin: '0 auto',
-      }}>
+      <div className="flex items-center justify-center gap-8 flex-wrap max-w-[1100px] mx-auto">
         {PARTNERS.map((p, i) => (
           <div
             key={i}
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              opacity: 0.85,
-              transition: 'opacity 0.2s, transform 0.2s',
-              cursor: 'pointer',
-              // fond noir pour MVP Lab qui a un logo sur fond sombre
-              ...(p.dark && {
-                background: '#000',
-                borderRadius: '8px',
-                padding: '8px 12px',
-              }),
-            }}
-            onMouseEnter={e => {
-              e.currentTarget.style.opacity = '1';
-              e.currentTarget.style.transform = 'scale(1.06)';
-            }}
-            onMouseLeave={e => {
-              e.currentTarget.style.opacity = '0.85';
-              e.currentTarget.style.transform = 'scale(1)';
-            }}
+            className="flex items-center justify-center opacity-85 transition-all duration-200 cursor-pointer bg-white rounded-lg px-3 py-2 shadow-[0_4px_16px_rgba(0,0,0,0.08)] hover:opacity-100 hover:scale-105 hover:shadow-[0_8px_24px_rgba(0,0,0,0.14)]"
           >
-            <img
-              src={p.src}
-              alt={p.alt}
-              style={{
-                height: p.height,
-                width: 'auto',
-                maxWidth: '140px',
-                objectFit: 'contain',
-                display: 'block',
-              }}
-            />
+           <img
+  src={p.src}
+  alt={p.alt}
+  className="w-[100px] h-[60px] object-contain block"
+/>
           </div>
         ))}
       </div>
+
     </section>
   );
 }
