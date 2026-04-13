@@ -55,6 +55,7 @@ export default function Footer() {
         gap: '40px',
         paddingBottom: '40px',
         alignItems: 'start',
+        justifyContent:'center',
       }}>
         {/* Logo + description */}
        {/* Logo + description */}
