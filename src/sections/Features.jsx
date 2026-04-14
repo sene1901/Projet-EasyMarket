@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import phone3 from '../assets/phone3.png';
 import phone4 from '../assets/PHONE4.png';
 import logo from '../assets/test.png';
-import FeatureCard from '../components/FeatureCard';
+import FeatureCard from '../components/Featurecard';
 const WHY_FEATURES = [
   { title: "Suivez vos ventes en temps réel" },
   { title: "Évitez les ruptures et les pertes de stock" },
