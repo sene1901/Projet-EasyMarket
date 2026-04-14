@@ -31,7 +31,7 @@ export default function FeatureCard({ title }) {
       </div>
 
       {/* Title */}
-   <span className="font-[Montserrat] font-semibold text-[14px] leading-[22px] text-[#222] flex-1">
+   <span className="font-[Montserrat]  text-[16px] leading-[22px] text-[#222] flex-1">
   {title}
 </span>
       <div className="absolute left-[-14px] w-[14px] h-[25px] bg-[#E47000] rounded-[40px_0px_0px_40px]" /> 
