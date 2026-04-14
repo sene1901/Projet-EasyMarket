@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import phone from '../assets/phone3.png';
+import phone3 from '../assets/phone3.png';
 import phone4 from '../assets/PHONE4.png';
 import logo from '../assets/test.png';
 import FeatureCard from '../components/FeatureCard';
@@ -59,7 +59,7 @@ export default function Features() {
             <div className="hidden md:flex justify-center relative">
               <div className="absolute w-[300px] h-[300px] bg-[#e2e6ea] rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[1]" />
  <img
-  src={phone}
+  src={phone3}
   alt="EasyMarket app"
   className="
     relative z-[5]
@@ -187,7 +187,6 @@ export default function Features() {
   );
 }
 
-/* FeatureCard */
 
 
 /* KeyFeatureCard */
