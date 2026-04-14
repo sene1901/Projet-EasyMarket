@@ -9,55 +9,83 @@ const faqs = [
   {
     question: "Puis-je ajouter plusieurs vendeurs ?",
     answer:
-      "Oui, vous pouvez ajouter plusieurs vendeurs et gérer leurs accès depuis votre tableau de bord.",
+      "Oui. Vous pouvez créer plusieurs comptes utilisateurs selon votre organisation. Chaque vendeur peut avoir un accès limité (enregistrement des ventes, dépenses…), tandis que le compte principal garde une vue complète sur toute l'activité.",
   },
   {
     question: "Puis-je suivre mon activité à distance ?",
     answer:
-      "Absolument. EasyMarket est accessible depuis n'importe quel appareil connecté à internet.",
+      "Oui. EasyMarket vous permet de suivre votre activité en temps réel, où que vous soyez. Vous pouvez consulter vos ventes, votre stock, vos dépenses et vos performances. Cela vous permet de garder le contrôle même en étant absent de votre boutique.",
   },
   {
     question: "EasyMarket fonctionne-t-il avec des imprimantes ?",
     answer:
-      "Oui, EasyMarket est compatible avec la plupart des imprimantes thermiques et classiques.",
+      "Oui. EasyMarket est compatible avec plusieurs types d'imprimantes professionnelles : Imprimantes Bluetooth (idéales pour une utilisation simple et mobile) et imprimantes connectées par câble (USB ou réseau Ethernet). Par exemple, EasyMarket fonctionne avec des imprimantes de type Epson TM‑T82III. Vous pouvez facilement imprimer des tickets de caisse et des factures.",
   },
   {
     question: "Puis-je avoir un site e-commerce avec EasyMarket ?",
     answer:
-      "Oui, EasyMarket propose une option pour créer votre boutique en ligne facilement.",
+      "Oui. EasyMarket vous permet d'avoir un site e-commerce connecté directement à votre application. Vos produits, votre stock et vos commandes sont synchronisés automatiquement, ce qui vous permet de gérer votre activité en ligne et en magasin depuis un seul outil.",
   },
   {
     question: "Combien de temps faut-il pour démarrer ?",
     answer:
-      "La configuration initiale prend moins de 30 minutes. Notre équipe vous accompagne à chaque étape.",
+      "Quelques minutes suffisent pour commencer. Vous pouvez créer votre compte, ajouter vos produits et commencer à enregistrer vos ventes. L'outil est conçu pour être simple, rapide et accessible.",
   },
   {
     question: "Puis-je changer de formule plus tard ?",
     answer:
-      "Oui, vous pouvez changer de formule à tout moment depuis votre espace client.",
+      "Oui. Vous pouvez changer de formule à tout moment en fonction de l'évolution de votre activité. EasyMarket s'adapte à votre croissance.",
   },
   {
     question: "Est-ce que mes données sont sécurisées ?",
     answer:
-      "Vos données sont chiffrées et hébergées sur des serveurs sécurisés. Nous appliquons les meilleures pratiques en matière de sécurité.",
+      "Oui. Vos données sont sécurisées et stockées de manière fiable. Nous mettons en place des bonnes pratiques techniques pour garantir la confidentialité et la protection de vos informations.",
   },
+
+ {
+    question: "Est-ce que je peux tester avant de payer ?",
+    answer:
+      "Oui. Une période d’essai est proposée pour vous permettre de découvrir EasyMarket et voir comment l’outil peut vous aider dans votre activité."
+  },
+
+  {
+    question: "EasyMarket nécessite-t-il des compétences techniques ?",
+    answer:
+      "Non. EasyMarket est conçu pour être simple à utiliser, même sans compétences techniques.L’interface est intuitive et vous permet de prendre en main l’outil rapidement."
+  },
+
+
+   {
+    question: "EasyMarket nécessite-t-il des compétences techniques ?",
+    answer:
+      "Oui. EasyMarket s’adapte à différents types de produits produits à taille unique produits avec tailles et prix variables produits avec couleurs ou variantes produits avec ou sans gestion de stock"
+
+  },
+
+
+    {
+    question: "Puis-je suivre mes encaissements et mes dépenses ? ",
+    answer:
+      "Oui. EasyMarket vous permet de suivre précisément : vos entrées d’argent (ventes) vos sorties d’argent (dépenses) Vous avez ainsi une vision claire de votre activité financière."
+
+  },
+
+
+
+
+
+
+
 ];
 
 function PlusMinusIcon({ open }) {
   return (
     <span
-      style={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        width: "24px",
-        height: "24px",
-        borderRadius: "50%",
-        border: `2px solid ${open ? "#fb923c" : "#f1a431"}`,
-        color: open ? "#fb923c" : "#f5a42a",
-        flexShrink: 0,
-        transition: "border-color 0.2s, color 0.2s",
-      }}
+      className={`flex items-center justify-center w-6 h-6 rounded-full border-2 flex-shrink-0 transition-colors duration-200 ${
+        open
+          ? "border-orange-400 text-orange-400"
+          : "border-amber-400 text-amber-400"
+      }`}
     >
       {open ? (
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
@@ -74,65 +102,25 @@ function PlusMinusIcon({ open }) {
 
 function FAQItem({ item, isOpen, onToggle }) {
   return (
-    <div
-      style={{
-        border: "1px solid #e5e7eb",
-        borderRadius: "20px",
-        overflow: "hidden",
-        marginBottom: "12px",
-        backgroundColor: "#ffffff",
-      }}
-    >
+    <div className="mb-3">
       <button
         onClick={onToggle}
-        style={{
-          width: "100%",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          padding: "14px 20px",
-          textAlign: "left",
-          gap: "16px",
-          background: "none",
-          border: "none",
-          cursor: "pointer",
-          backgroundColor: isOpen ? "#fbfaf9" : "transparent",
-          transition: "background-color 0.15s",
-        }}
+        className="w-full flex items-center justify-between px-6 py-4 text-left gap-4 rounded-full bg-white hover:bg-[#EDEEF0] transition-all duration-200"
       >
-        <span
-          style={{
-            fontSize: "18px",
-            fontWeight: "600",
-            color: "#111827",
-            lineHeight: "1.4",
-          }}
-        >
+        <span className="text-[15px] font-medium text-gray-900 leading-snug">
           {item.question}
         </span>
         <PlusMinusIcon open={isOpen} />
       </button>
 
       <div
-        style={{
-          overflow: "hidden",
-          maxHeight: isOpen ? "400px" : "0px",
-          opacity: isOpen ? 1 : 0,
-          transition: "max-height 0.3s ease-in-out, opacity 0.3s ease-in-out",
-        }}
+        className={`overflow-hidden transition-all duration-300 ease-in-out ${
+          isOpen ? "max-h-[500px] opacity-100 mt-2" : "max-h-0 opacity-0"
+        }`}
       >
-        <p
-          style={{
-            padding: "12px 20px 20px",
-            fontSize: "16px",
-            color: "#6b7280",
-            lineHeight: "1.7",
-            borderTop: "1px solid #f3f4f6",
-            margin: 0,
-          }}
-        >
-          {item.answer}
-        </p>
+        <div className="px-6 pb-4">
+          <p className="text-sm text-gray-900 leading-[1.7]">{item.answer}</p>
+        </div>
       </div>
     </div>
   );
@@ -144,35 +132,21 @@ export default function Frequence() {
   const toggle = (i) => setOpenIndex(openIndex === i ? null : i);
 
   return (
-    <section
-      id="faq"
-      style={{
-        maxWidth: "576px",
-        margin: "20px auto",
-        padding: "48px 16px",
-      }}
-    >
-      <h2
-        style={{
-          fontSize: "33px",
-          fontWeight: "700",
-          textAlign: "center",
-          color: "#111827",
-          marginBottom: "32px",
-        }}
-      >
-        Questions fréquemment posées
-      </h2>
-
-      <div>
-        {faqs.map((item, i) => (
-          <FAQItem
-            key={i}
-            item={item}
-            isOpen={openIndex === i}
-            onToggle={() => toggle(i)}
-          />
-        ))}
+    <section id="faq" className="bg-[#F5F5F5B2]">
+      <div className="px-4 py-12 max-w-2xl mx-auto my-5">
+        <h2 className="text-[33px] font-bold text-center text-black mb-8">
+          Questions fréquemment posées
+        </h2>
+        <div>
+          {faqs.map((item, i) => (
+            <FAQItem
+              key={i}
+              item={item}
+              isOpen={openIndex === i}
+              onToggle={() => toggle(i)}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

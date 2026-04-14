@@ -1,12 +1,40 @@
 import { useState, useRef, useEffect } from "react";
 import VideoCard from "../components/VideoCard";
 
+import imgBassirou  from "../assets/Bassirou.jpg";
+import imgFatimata  from "../assets/fatoumata.jpg";
+import imgSoukeyna  from "../assets/Soukeyna.jpg";
+import imgFatou     from "../assets/Fatou.png";
+
 const testimonials = [
-  { name: "Bassirou", role: "Fondateur de", company: "SIRA YIITÉ", videoId: "dQw4w9WgXcQ" },
-  { name: "Fatimata", role: "Fondatrice de", company: "ATYDI AFRO HAIR", videoId: "ScMzIvxBSi4" },
-  { name: "Soukeyna", role: "Assistante", company: "KEUR DIALAW", videoId: "3JZ_D3ELwOQ" },
-  { name: "Fatou", role: "Fondatrice de", company: "COSAAN", videoId: "L_jWHffIx5E" },
-  { name: "Mariama", role: "Directrice de", company: "DAKAR STYLE", videoId: "fJ9rUzIMcZQ" },
+  {
+    name: "Bassirou",
+    role: "Fondateur de",
+    company: "SIRA YIITÉ",
+    videoId: "ss0SpWhBOD0",
+    thumbnail: imgBassirou,
+  },
+  {
+    name: "Fatimata",
+    role: "Fondatrice de",
+    company: "ATYDI AFRO HAIR",
+    videoId: "yNCO3vhNhx8",
+    thumbnail: imgFatimata,
+  },
+  {
+    name: "Soukeyna",
+    role: "Assistante",
+    company: "KEUR DIALAW",
+    videoId: "SDYvyoZyi4E",
+    thumbnail: imgSoukeyna,
+  },
+  {
+    name: "Fatou",
+    role: "Fondatrice de",
+    company: "COSAAN GROUPE",
+    videoId: "F5pLX991gE8",
+    thumbnail: imgFatou,
+  },
 ];
 
 export default function TestimonialsVideo() {

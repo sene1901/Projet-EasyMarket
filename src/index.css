@@ -1,15 +1,10 @@
 @import "tailwindcss";
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
 
-
-h1,h2,p,span {
-  fontFamily: "Montserrat, sans-serif";
+* {
+  font-family: 'Montserrat', sans-serif;
 }
-
-
-
-
-
 
 
 *, *::before, *::after {
@@ -109,14 +104,6 @@ body {
   }
 }
 
-
-
-
-
-
-
-
-
  /* section Features */
 
          @media (max-width: 900px) {
@@ -155,23 +142,12 @@ body {
   .app{
     display: none;
   }
-}
-        
-      
+}      
         .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
         .reveal.visible { opacity: 1; transform: translateY(0); }
         @media (max-width: 800px) {
           .why-grid, .how-grid { grid-template-columns: 1fr !important; }
-        }
-      
-
-
-
-
-
-
-
-   
+        }  
 
 .nav-btn :hover{
 background-color: #F97316;
