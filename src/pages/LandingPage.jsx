@@ -9,7 +9,7 @@ import CTASection from '../sections/CTASection';
 import PartenairesSection from '../sections/PartenairesSection';
 import ContactSection from '../sections/ContactSection';
 import Footer from '../sections/Footer';
-import Matériel from '../sections/Materiel';
+import Materiel from '../sections/Materiel';
 import TestimonialsVideo from'../sections/TestimonialsVideo';
 import Frequence from'../sections/Frequence';
 export default function LandingPage() {
@@ -23,7 +23,7 @@ export default function LandingPage() {
         <Pricing/>
         <CTASection/>
         <PartenairesSection/>
-        <Matériel/>
+        <Materiel/>
         <TestimonialsVideo/>
         <Frequence/>
         <ContactSection/>
