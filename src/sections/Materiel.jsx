@@ -3,7 +3,7 @@ import printer1 from "../assets/ticket.png";
 import printer2 from "../assets/equipe1.png";
 import MaterielCard from "../components/MaterielCard";
 
-export default function Materiel() {
+export default function Matériel() {
   const products = [
     {
       id: 1,
