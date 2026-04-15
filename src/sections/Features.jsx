@@ -53,19 +53,19 @@ export default function Features() {
       {/* SECTION 1 — Pourquoi EasyMarket */}
       <section id="fonctionnalites" className="py-[100px] px-6 bg-[#F5F5F5]">
         <div className="max-w-[1100px] mx-auto">
-          <div className="why-grid grid grid-cols-2 gap-['20px] items-center">
+          <div className="why-grid grid grid-cols-2 gap-['20px] items-center justify-center ">
 
             {/* Phone */}
-            <div className="hidden md:flex justify-center relative">
+            <div className="hidden md:flex   relative mt-[100px]">
              
  <img
   src={phone3}
   alt="EasyMarket app"
   className="
     relative z-[5]
-   w-[370px] min-h-[500px] max-w-full drop-shadow-[0_24px_48px_rgba(0,0,0,0.18)]]
+   w-[670px] min-h-[600px] max-w-full drop-shadow-[0_24px_48px_rgba(0,0,0,0.18)]]
     drop-shadow-[0_50px_80px_rgba(255, 255, 255, 1)]
-    translate-x-[30px]
+    translate-x-[20px] 
   " 
 />
             </div>
