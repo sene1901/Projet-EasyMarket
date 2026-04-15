@@ -51,21 +51,21 @@ export default function Features() {
     <div ref={ref}>
 
       {/* SECTION 1 — Pourquoi EasyMarket */}
-      <section id="fonctionnalites" className="py-[100px] px-6 bg-[#F5F5F5]">
+<section id="fonctionnalites" className="py-[100px] px-6 bg-[#F5F5F5]">
         <div className="max-w-[1100px] mx-auto">
-          <div className="why-grid grid grid-cols-2 gap-['20px] items-center justify-center ">
+          <div className="why-grid grid grid-cols-2 gap-['20px] items-center">
 
             {/* Phone */}
-            <div className="hidden md:flex   relative mt-[100px]">
+            <div className="hidden md:flex justify-center relative">
              
  <img
   src={phone3}
   alt="EasyMarket app"
   className="
     relative z-[5]
-   w-[670px] min-h-[600px] max-w-full drop-shadow-[0_24px_48px_rgba(0,0,0,0.18)]]
+   w-[370px] min-h-[500px] max-w-full drop-shadow-[0_24px_48px_rgba(0,0,0,0.18)]]
     drop-shadow-[0_50px_80px_rgba(255, 255, 255, 1)]
-    translate-x-[20px] 
+    translate-x-[30px]
   " 
 />
             </div>
@@ -115,7 +115,7 @@ export default function Features() {
 
       {/* SECTION 2 — Comment ça marche */}
       <section id="demo" className="py-[100px] px-6 bg-white">
-        <div className="max-w-[900px] mx-auto">
+        <div className="max-w-[1100px] mx-auto">
           <h2 className="reveal text-[clamp(49px,4.5vw,28px)] font-extrabold text-center mb-12 font-[Montserrat]">
             Comment ça marche
           </h2>
