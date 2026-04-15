@@ -109,10 +109,11 @@ export default function CTASection() {
               alt="EasyMarket App"
               style={{
                 width: '400px', maxWidth: '100%', display: 'block',
-                filter: 'drop-shadow(0 32px 48px rgba(0,0,0,0.3))',
+                filter: 'drop-shadow(0 32px 48px rgba(240, 229, 229, 0.3))',
                 transform: 'rotate(6deg) translateY(-10px)',
                 transition: 'transform 0.4s ease',
                 transformOrigin: 'bottom center',
+                
               }}
               onMouseEnter={e => e.currentTarget.style.transform = 'rotate(4deg) translateY(-18px)'}
               onMouseLeave={e => e.currentTarget.style.transform = 'rotate(6deg) translateY(-10px)'}

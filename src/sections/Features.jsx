@@ -57,18 +57,16 @@ export default function Features() {
 
             {/* Phone */}
             <div className="hidden md:flex justify-center relative">
-              <div className="absolute w-[300px] h-[300px] bg-[#e2e6ea] rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[1]" />
+             
  <img
   src={phone3}
   alt="EasyMarket app"
   className="
     relative z-[5]
-    w-[280px] md:w-[320px] lg:w-[380px] h-[500px]
+   w-[370px] min-h-[500px] max-w-full drop-shadow-[0_24px_48px_rgba(0,0,0,0.18)]]
     drop-shadow-[0_50px_80px_rgba(255, 255, 255, 1)]
-  "
-  style={{
-    transform: 'rotate(-40deg) translateX(16px) translateY(10px)',
-  }}
+    translate-x-[30px]
+  " 
 />
             </div>
 
