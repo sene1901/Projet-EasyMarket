@@ -52,7 +52,7 @@ export default function Features() {
 
       {/* SECTION 1 — Pourquoi EasyMarket */}
 <section id="fonctionnalites" className="py-[100px] px-6 bg-[#F5F5F5]">
-        <div className="max-w-[1100px] mx-auto">
+        <div className="max-w-[1150px] mx-auto">
           <div className="why-grid grid grid-cols-2 gap-['20px] items-center">
 
             {/* Phone */}
@@ -66,9 +66,9 @@ export default function Features() {
     w-[280px] md:w-[320px] lg:w-[380px] h-[500px]
     drop-shadow-[0_50px_80px_rgba(255, 255, 255, 1)]
   "
-  // style={{
-  //   transform: 'rotate(-40deg) translateX(16px) translateY(10px)',
-  // }}
+  style={{
+    transform: 'rotate(-10deg) translateX(16px) translateY(10px)',
+  }}
 />
             </div>
 
@@ -96,7 +96,7 @@ export default function Features() {
     bg-[#E47000]
     text-white
     rounded-[20px]
-    text-[14px]
+    text-[16px]
     font-bold
     cursor-pointer
     flex items-center justify-center gap-[10px]
