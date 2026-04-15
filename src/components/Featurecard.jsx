@@ -5,7 +5,7 @@ export default function FeatureCard({ title }) {
   return (
     <div
       className="
-        bg-white border rounded-[14px] px-[14px] py-[12px]
+        bg-white border rounded-[14px] px-[18px] py-[12px]
         flex items-center gap-[10px] relative
         transition-all duration-200
         hover:-translate-y-[2px]
