@@ -71,7 +71,7 @@ export default function Footer() {
                 key={s.label}
                 href="#"
                 aria-label={s.label}
-                className="w-[38px] h-[38px] rounded-full border border-white/60 flex items-center justify-center hover:bg-white/10 transition-colors"
+                className="w-[38px] h-[38px]  iconsocial rounded-full border border-white/60 flex items-center justify-center hover:bg-white/10 transition-colors"
               >
                 <svg viewBox="0 0 24 24" fill="none" width="17" height="17">
                   {s.icon}

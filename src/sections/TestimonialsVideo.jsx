@@ -64,36 +64,27 @@ export default function TestimonialsVideo() {
   };
 
   return (
-    <section id="temoignages" style={{ padding: "48px 16px" }}>
-      <h2 style={{ fontSize: "38px", fontWeight: "800", textAlign: "center", color: "#111827", marginBottom: "32px",margin: "20px" }}>
+    <section id="temoignages" className="py-12 px-4">
+
+      <h2 className="text-[38px] font-extrabold text-center text-[#111827] my-5">
         Témoignages
       </h2>
 
-      <div style={{ position: "relative", maxWidth: "900px", margin: "0 auto" }}>
+      <div className="relative max-w-[900px] mx-auto">
 
         {/* Flèche gauche */}
         <button
           onClick={() => goTo(current - 1)}
           disabled={current === 0}
           aria-label="Précédent"
-          style={{
-            position: "absolute",
-            left: "-20px",
-            top: "50%",
-            transform: "translateY(-50%)",
-            zIndex: 10,
-            width: "36px",
-            height: "36px",
-            backgroundColor: "#ffffff",
-            border: "1px solid #e5e7eb",
-            borderRadius: "50%",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            cursor: current === 0 ? "not-allowed" : "pointer",
-            opacity: current === 0 ? 0.3 : 1,
-            boxShadow: "0 1px 3px rgba(0,0,0,0.08)",
-          }}
+          className={`
+            absolute -left-5 top-1/2 -translate-y-1/2 z-10
+            w-9 h-9 bg-white border border-gray-200 rounded-full
+            flex items-center justify-center
+            shadow-[0_1px_3px_rgba(0,0,0,0.08)]
+            transition-opacity duration-200
+            ${current === 0 ? "opacity-30 cursor-not-allowed" : "opacity-100 cursor-pointer"}
+          `}
         >
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
             <path d="M9 2L4 7l5 5" stroke="#374151" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -101,15 +92,11 @@ export default function TestimonialsVideo() {
         </button>
 
         {/* Track */}
-        <div style={{ overflow: "hidden" }}>
+        <div className="overflow-hidden">
           <div
             ref={trackRef}
-            style={{
-              display: "flex",
-              gap: "16px",
-              transition: "transform 0.5s ease-in-out",
-              transform: `translateX(-${current * CARD_WIDTH}px)`,
-            }}
+            className="flex gap-4 transition-transform duration-500 ease-in-out"
+            style={{ transform: `translateX(-${current * CARD_WIDTH}px)` }}
           >
             {testimonials.map((t, i) => (
               <VideoCard key={i} testimonial={t} />
@@ -122,51 +109,38 @@ export default function TestimonialsVideo() {
           onClick={() => goTo(current + 1)}
           disabled={current >= maxIndex}
           aria-label="Suivant"
-          style={{
-            position: "absolute",
-            right: "-20px",
-            top: "50%",
-            transform: "translateY(-50%)",
-            zIndex: 10,
-            width: "36px",
-            height: "36px",
-            backgroundColor: "#ffffff",
-            border: "1px solid #e5e7eb",
-            borderRadius: "50%",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            cursor: current >= maxIndex ? "not-allowed" : "pointer",
-            opacity: current >= maxIndex ? 0.3 : 1,
-            boxShadow: "0 1px 3px rgba(0,0,0,0.08)",
-          }}
+          className={`
+            absolute -right-5 top-1/2 -translate-y-1/2 z-10
+            w-9 h-9 bg-white border border-gray-200 rounded-full
+            flex items-center justify-center
+            shadow-[0_1px_3px_rgba(0,0,0,0.08)]
+            transition-opacity duration-200
+            ${current >= maxIndex ? "opacity-30 cursor-not-allowed" : "opacity-100 cursor-pointer"}
+          `}
         >
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
             <path d="M5 2l5 5-5 5" stroke="#374151" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </button>
+
       </div>
 
       {/* Dots */}
-      <div style={{ display: "flex", justifyContent: "center", gap: "8px", marginTop: "24px" }}>
+      <div className="flex justify-center gap-2 mt-6">
         {Array.from({ length: maxIndex + 1 }).map((_, i) => (
           <button
             key={i}
             onClick={() => goTo(i)}
             aria-label={`Page ${i + 1}`}
-            style={{
-              width: "8px",
-              height: "8px",
-              borderRadius: "50%",
-              border: "none",
-              cursor: "pointer",
-              padding: 0,
-              backgroundColor: i === current ? "#f08b07" : "#d1d5db",
-              transition: "background-color 0.2s",
-            }}
+            className={`
+              w-2 h-2 rounded-full border-none p-0 cursor-pointer
+              transition-colors duration-200
+              ${i === current ? "bg-[#f08b07]" : "bg-gray-300"}
+            `}
           />
         ))}
       </div>
+
     </section>
   );
 }

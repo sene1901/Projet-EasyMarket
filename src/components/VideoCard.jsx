@@ -6,27 +6,11 @@ export default function VideoCard({ testimonial }) {
   const embedUrl = `https://www.youtube.com/embed/${testimonial.videoId}?autoplay=1&rel=0`;
 
   return (
-    <div
-      style={{
-        flexShrink: 0,
-        width: "256px",
-        backgroundColor: "#ffffff",
-        borderRadius: "16px",
-        border: "1px solid #f3f4f6",
-        overflow: "hidden",
-        boxShadow: "0 1px 3px rgba(0,0,0,0.07)",
-      }}
-    >
+    <div className="flex-shrink-0 w-64 bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-[0_1px_3px_rgba(0,0,0,0.07)]">
+
       {/* Zone vidéo */}
       <div
-        style={{
-          position: "relative",
-          width: "280px",
-          height: "200px",
-          aspectRatio: "9/16",
-          backgroundColor: "#e4e1e1",
-          cursor: "pointer",
-        }}
+        className="relative w-[280px] h-[200px] bg-[#e4e1e1] cursor-pointer"
         onClick={() => setPlaying(true)}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
@@ -37,56 +21,28 @@ export default function VideoCard({ testimonial }) {
             title={testimonial.name}
             allow="autoplay; encrypted-media"
             allowFullScreen
-            style={{
-              position: "absolute",
-              inset: 0,
-              width: "100%",
-              height: "100%",
-              border: "none",
-            }}
+            className="absolute inset-0 w-full h-full border-none"
           />
         ) : (
           <>
             <img
               src={testimonial.thumbnail}
               alt={testimonial.name}
-              style={{
-                position: "absolute",
-                inset: 0,
-                width: "280px",
-                height: "200px",
-                objectFit: "cover",
-                backgroundPosition:'center',
-              }}
+              className="absolute inset-0 w-[280px] h-[200px] object-cover object-center"
             />
+
             {/* Overlay */}
             <div
-              style={{
-                position: "absolute",
-                inset: 0,
-                backgroundColor: hovered ? "rgba(0,0,0,0.25)" : "rgba(0,0,0,0.1)",
-                transition: "background-color 0.2s",
-              }}
+              className={`absolute inset-0 transition-colors duration-200 ${
+                hovered ? "bg-black/25" : "bg-black/10"
+              }`}
             />
+
             {/* Bouton Play YouTube */}
             <button
               onClick={(e) => { e.stopPropagation(); setPlaying(true); }}
               aria-label={`Regarder ${testimonial.name}`}
-              style={{
-                position: "absolute",
-                top: "50%",
-                left: "50%",
-                transform: "translate(-50%, -50%)",
-                width: "48px",
-                height: "34px",
-                backgroundColor: "#D31F1F",
-                borderRadius: "8px",
-                border: "none",
-                cursor: "pointer",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-[34px] bg-[#D31F1F] rounded-lg border-none cursor-pointer flex items-center justify-center"
             >
               <svg width="18" height="20" viewBox="0 0 16 18" fill="white">
                 <path d="M1 1l14 8L1 17V1z" />
@@ -97,49 +53,27 @@ export default function VideoCard({ testimonial }) {
       </div>
 
       {/* Infos */}
-      <div
-        style={{
-          display: "flex",
-          alignItems: "flex-end",
-          justifyContent: "space-between",
-          padding: "12px 16px",
-        }}
-      >
+      <div className="flex items-end justify-between px-4 py-3">
         <div>
-          <p style={{ fontSize: "14px", fontWeight: "600", color: "#000000", margin: 0 }}>
+          <p className="text-[16px] font-semibold text-black m-0">
             {testimonial.name}
           </p>
-          <p style={{ fontSize: "12px", color: "#000000", margin: "2px 0 0" }}>
+          <p className="text-[12px]  text-black mt-0.5 mb-0">
             {testimonial.role}
           </p>
-          <p
-            style={{
-              fontSize: "12px",
-              fontWeight: "700",
-              color: "#000000",
-              letterSpacing: "0.05em",
-              margin: "2px 0 0",
-            }}
-          >
+          <p className="text-[12px]  text-black tracking-[0.05em]  mb-0">
             {testimonial.company}
           </p>
         </div>
+
         <button
           onClick={() => setPlaying(true)}
-          style={{
-            backgroundColor: "#E47000",
-            color: "#ffffff",
-            fontSize: "12px",
-            padding: "6px 12px",
-            borderRadius: "6px",
-            border: "none",
-            cursor: "pointer",
-            whiteSpace: "nowrap",
-          }}
+          className="bg-[#E47000] text-white text-[12px] px-3 py-1.5 rounded-md border-none cursor-pointer whitespace-nowrap"
         >
           Regarder
         </button>
       </div>
+
     </div>
   );
 }

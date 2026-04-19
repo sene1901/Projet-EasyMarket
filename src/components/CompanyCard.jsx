@@ -5,26 +5,14 @@ export default function CompanyCard({ name, description, logo }) {
 
   return (
     <div
-      className="company-card"
+      className={`
+        min-w-[270px] h-[270px] rounded-2xl p-5 bg-white border border-[#eee]
+        flex flex-col justify-between cursor-pointer
+        transition-all duration-300 ease-in-out
+        ${hovered ? '-translate-y-1 shadow-[0_10px_25px_rgba(0,0,0,0.08)]' : 'translate-y-0 shadow-[0_2px_8px_rgba(0,0,0,0.04)]'}
+      `}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      style={{
-        minWidth: '260px',
-        height: '240px',
-        borderRadius: '16px',
-        padding: '20px',
-        background: '#f9f9f9',
-        border: '1px solid #eee',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'space-between',
-        transition: 'all 0.3s ease',
-        cursor: 'pointer',
-        transform: hovered ? 'translateY(-4px)' : 'translateY(0)',
-        boxShadow: hovered
-          ? '0 10px 25px rgba(0,0,0,0.08)'
-          : '0 2px 8px rgba(0,0,0,0.04)'
-      }}
     >
       {/* TOP */}
       <div>
@@ -32,52 +20,20 @@ export default function CompanyCard({ name, description, logo }) {
         <img
           src={logo}
           alt={name}
-          style={{
-            height: '58px',
-            objectFit: 'contain',
-            width: '110px',
-
-            opacity: 1,
-
-            marginBottom: '12px',
-          }}
+          className="h-[70px] w-[150px] object-contain opacity-100 mb-3"
         />
 
         {/* Ligne */}
-        <div
-          style={{
-            width: '100%',
-            height: '1px',
-            background: '#E47000',
-            marginBottom: '12px'
-          }}
-        />
+        <div className="w-full h-px bg-[#E47000] mb-3" />
 
         {/* TEXTE */}
-        <p
-          style={{
-            fontSize: '13px',
-          
-            color: '#000000',
-            fontFamily: 'Montserrat',
-          fontWeight: 500,
-           lineHeight: '18px',
-            letterSpacing:'0%',
-
-          }}
-        >
+        <p className="text-[13px] text-black font-['Montserrat'] font-medium leading-[18px] tracking-normal">
           {description}
         </p>
       </div>
 
       {/* LINK */}
-      <p
-        style={{
-          fontSize: '13px',
-          fontWeight: '600',
-          color: '#E47000'
-        }}
-      >
+      <p className="text-[13px] font-semibold text-[#E47000]">
         Visiter le site
       </p>
     </div>

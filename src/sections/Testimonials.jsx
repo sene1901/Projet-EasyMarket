@@ -8,21 +8,18 @@ import logo3 from '../assets/inayah.png';
 import logo4 from '../assets/Eline.jpg';
 import logo5 from '../assets/lekk.png';
 import logo6 from '../assets/sira.jpg';
-import logo7 from '../assets/testlem.png';
-import logo8 from '../assets/atyd.jpg';
-import logo9 from '../assets/islam.png';
-import logo10 from '../assets/sen.jpg';
+import logo7 from '../assets/atyd.jpg';
+import logo8 from '../assets/sen.jpg';
+
 const TESTIMONIALS = [
-  { name: 'All-In-Tech', logo: logo1, description: 'Des soins cosmétiques naturels, fabriqués au Sénégal, pensés pour purifier, réparer et sublimer votre peau et vos cheveux au quotidien. ' },
-  { name: 'Karitédema', logo: logo2, description: 'Produits cosmétiques naturels...' },
-  { name: 'Inayah', logo: logo3, description: 'Recettes traditionnelles...' },
-  { name: 'Eline Biot', logo: logo4, description: 'Soins cosmétiques naturels...' },
-  { name: 'Tech Pro', logo: logo5, description: 'Solutions digitales...' },
-  { name: 'Market Plus', logo: logo6, description: 'Gestion commerciale...' },
-  { name: 'StoreX', logo: logo7, description: 'Plateforme e-commerce...' },
-  { name: 'BizPro', logo: logo8, description: 'Outils business...' },
-  { name: 'Dakar Shop', logo: logo9, description: 'Commerce local...' },
-  { name: 'AfriTech', logo: logo10, description: 'Innovation tech...' },
+  { name: 'All-In-Tech', logo: logo1, description: 'All-In-Tech est une entreprise sénégalaise spécialisée dans la fourniture de solutions technologiques de pointe. ' },
+  { name: 'Karitédema', logo: logo2, description: 'Karitédiema est une marque de produits cosmétiques naturels et équitables, spécialisée dans les soins à base de beurre de karité biologique. ' },
+  { name: 'Inayah', logo: logo3, description: 'Inayah réinvente les soins beauté en mêlant recettes traditionnelles authentiques, ingrédients naturels et savoir-faire transmis de génération en génération.' },
+  { name: 'Eline Biot', logo: logo4, description: 'Des soins cosmétiques naturels, fabriqués au Sénégal, pensés pour purifier, réparer et sublimer votre peau et vos cheveux au quotidien. ' },
+  { name: 'Tech Pro', logo: logo5, description: 'Lekku Mbed est une expérience culinaire moderne ancrée dans les saveurs locales. un concept revisite la street food sénégalaise avec créativité, exigence et générosité.' },
+  { name: 'Market Plus', logo: logo6, description: 'Sira yiité est Magasin de chaussures sandales stylées, du cuir 100% local, un savoir-faire artisanal qui fait la différence…' },
+  { name: 'BizPro', logo: logo7, description: 'ATydi Afro Hair est une marque de soins capillaires naturels dédiée aux cheveux texturés, crépus, bouclés et frisés spécialement pensée pour les enfants..' },
+  { name: 'AfriTech', logo: logo8, description: 'Vente de crochets , perruques , postiches , faux locs et mèches de tout genre en ligne.' },
 ];
 
 export default function TestimonialsSection() {
@@ -38,37 +35,29 @@ export default function TestimonialsSection() {
   };
 
   return (
-    <section style={{ padding: '48px 24px', background: '#f7f8fa' }}>
-      <div style={{ maxWidth: '1100px', margin: '20px auto' }}>
+    <section className="py-12 px-6 bg-[#f7f8fa]">
+      <div className="max-w-[1100px] mx-auto mt-5">
 
         {/* TITLE */}
-        <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+        <div className="text-center mb-[60px]">
           <SectionTitle
             title="Ils utilisent"
             highlight="EasyMarket"
-           subtitle={
-      <>
-        Plus de <span style={{ fontWeight: '800' }}>100 commerçants</span> nous font confiance !
-      </>
-    }
+            subtitle={
+              <>
+                Plus de <span className="font-extrabold">100 commerçants</span> nous font confiance !
+              </>
+            }
             center
           />
-          
         </div>
 
         {/* CAROUSEL */}
-        <div style={{ position: 'relative' }}>
+        <div className="relative">
 
           <div
             ref={scrollRef}
-             className="scroll-container"
-            style={{
-              display: 'flex',
-              gap: '20px',
-              overflowX: 'auto',
-              scrollBehavior: 'smooth',
-              paddingBottom: '10px'
-            }}
+            className="scroll-container flex gap-5 overflow-x-auto scroll-smooth pb-[10px]"
           >
             {TESTIMONIALS.map((item, i) => (
               <CompanyCard key={i} {...item} />
@@ -76,50 +65,23 @@ export default function TestimonialsSection() {
           </div>
 
           {/* BUTTONS */}
-          {/* BUTTONS */}
-<div style={{
-  display: 'flex',
-  justifyContent: 'flex-end',
-  gap: '10px',
-  marginTop: '20px',
-}}>
-  <button
-    onClick={() => scroll('left')}
-    style={{
-      width: '40px',
-      height: '30px',
-      borderRadius: '6px',
-      border: 'none',
-      background: 'transparent',
-      color: '#e87722',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      cursor: 'pointer',
-    }}
-  >
-    <ArrowLeft size={18} />
-  </button>
+          <div className="flex justify-end gap-[10px] mt-5">
 
-  <button
-    onClick={() => scroll('right')}
-    style={{
-      width: '40px',
-      height: '30px',
-  
-      border: 'none',
-      background: '#e87722',        
-      color: '#fff',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      cursor: 'pointer',
-    }}
-  >
-    <ArrowRight size={18} />
-  </button>
-</div>
+            <button
+              onClick={() => scroll('left')}
+              className="w-10 h-[30px] rounded-md border-none bg-transparent text-[#e87722] flex items-center justify-center cursor-pointer"
+            >
+              <ArrowLeft size={18} />
+            </button>
 
+            <button
+              onClick={() => scroll('right')}
+              className="w-10 h-[30px] border-none bg-[#e87722] text-white flex items-center justify-center cursor-pointer"
+            >
+              <ArrowRight size={18} />
+            </button>
+
+          </div>
         </div>
       </div>
     </section>

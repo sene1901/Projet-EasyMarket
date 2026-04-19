@@ -130,6 +130,10 @@ body {
   .phone-img { 
     width: 220px !important; 
   }
+  .iconsocial{
+    width: 30px;
+    height: 30px;
+  }
 }
 
 @media (max-width: 400px) {
