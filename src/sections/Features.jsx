@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import phone3 from '../assets/phone3.png';
 import phone4 from '../assets/PHONE4.png';
-import logo from '../assets/test.png';
 import FeatureCard from '../components/Featurecard';
+
 const WHY_FEATURES = [
   { title: "Suivez vos ventes en temps réel" },
   { title: "Évitez les ruptures et les pertes de stock" },
@@ -51,143 +51,172 @@ export default function Features() {
     <div ref={ref}>
 
       {/* SECTION 1 — Pourquoi EasyMarket */}
-<section id="fonctionnalites" className="py-[100px] px-6 bg-[#F5F5F5]">
-        <div className="max-w-[1150px] mx-auto">
-          <div className="why-grid grid grid-cols-2 gap-['20px] items-center">
+<section id="fonctionnalites" className="py-[100px] bg-[#F5F5F5]">
+  <div className="max-w-[1150px] mx-auto px-6">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-5 items-center">
 
-            {/* Phone */}
-            <div className="hidden md:flex justify-center relative">
-             
- <img
-  src={phone3}
-  alt="EasyMarket app"
-  className="
-    relative z-[5]
-    w-[280px] md:w-[320px] lg:w-[380px] h-[500px]
-    drop-shadow-[0_50px_80px_rgba(255, 255, 255, 1)]
-  "
-  style={{
-    transform: 'rotate(-10deg) translateX(16px) translateY(10px)',
-  }}
-/>
-            </div>
+      {/* IMAGE desktop uniquement */}
+      <div className="hidden md:flex justify-center">
+        <img
+          src={phone3}
+          alt="EasyMarket app"
+          className="relative z-[5] w-[290px] h-[450px] drop-shadow-[0_50px_80px_rgba(0,0,0,0.15)]"
+          style={{ transform: 'rotate(-10deg) translateX(16px) translateY(10px)' }}
+        />
+      </div>
 
-            {/* Texte + Cards */}
-            <div className="reveal">
-              <div className="text-[clamp(38px,4.5vw,28px)]  font-bold mb-3 md:mb-[14px] text-center md:text-left]">
-                <span className="text-[#1a1919]">Pourquoi </span>
-                <span className="text-[#FF6B00]">EasyMarket ?</span>
-              </div>
-             <p className="text-[#000000] mb-[30px] text-[16px] md:text-[14px] leading-[28px] md:leading-[35px] font-medium font-[Montserrat]">
-  Voyez clairement ce qui vous rapporte... et ce qui vous fait perdre
-</p>
+      {/* CONTENU */}
+      <div className="flex flex-col">
 
-              {/* 4 cards en grille 2×2 */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-[22px]">
-                {WHY_FEATURES.slice(0, 4).map((f, i) => (
-                  <FeatureCard key={i} title={f.title} logo={logo} />
-                ))}
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-3 items-center">
-                <FeatureCard title={WHY_FEATURES[4].title} logo={logo} />
-                <button
-  className="
-    bg-[#E47000]
-    text-white
-    rounded-[20px]
-    text-[16px]
-    font-bold
-    cursor-pointer
-    flex items-center justify-center gap-[10px]
-    mt-[10px]
-    w-full
-    h-[40px]
-    transition-colors duration-200
-    hover:bg-[#c95e00]
-  "
->
-  Réserver un démo
-</button>
-              </div>
-            </div>
-          </div>
+        {/* Titre */}
+        <div className="text-[clamp(24px,5vw,38px)] font-bold mb-3 text-center md:text-left">
+          <span className="text-[#1a1919]">Pourquoi </span>
+          <span className="text-[#FF6B00]">EasyMarket ?</span>
         </div>
-      </section>
+
+        {/* Paragraphe */}
+        <p className="text-[#000000] mb-5 text-[15px] leading-[28px] font-medium font-[Montserrat] text-center md:text-left">
+          Voyez clairement ce qui vous rapporte... et ce qui vous fait perdre
+        </p>
+
+        {/* IMAGE mobile */}
+        <div className="flex md:hidden justify-center mb-6">
+          <img
+            src={phone3}
+            alt="EasyMarket app"
+            className="w-[200px] h-[310px] drop-shadow-[0_20px_40px_rgba(0,0,0,0.15)]"
+            style={{ transform: 'rotate(-4deg)' }}
+          />
+        </div>
+
+        {/* MOBILE : cards 1 colonne — largeur limitée + centrée */}
+        <div className="flex md:hidden flex-col gap-3 mb-4 pl-[14px] max-w-[320px] mx-auto w-full">
+          {WHY_FEATURES.map((f, i) => (
+            <FeatureCard key={i} title={f.title} index={i} />
+          ))}
+        </div>
+
+        {/* DESKTOP : 4 cards 2×2 */}
+        <div className="hidden md:grid grid-cols-2 gap-[22px] mb-3 pl-[14px]">
+          {WHY_FEATURES.slice(0, 4).map((f, i) => (
+            <FeatureCard key={i} title={f.title} index={i} />
+          ))}
+        </div>
+
+        {/* DESKTOP : 5e card + bouton */}
+        <div className="hidden md:grid grid-cols-2 gap-3 items-center pl-[14px]">
+          <FeatureCard title={WHY_FEATURES[4].title} index={4} />
+          <button className="bg-[#E47000] hover:bg-[#c95e00] text-white rounded-[20px] text-[15px] font-bold cursor-pointer flex items-center justify-center min-h-[50px] w-full transition-colors duration-200">
+            Réserver un démo
+          </button>
+        </div>
+
+        {/* MOBILE : bouton pleine largeur */}
+        <button className="md:hidden bg-[#E47000] hover:bg-[#c95e00] text-white rounded-[20px] text-[15px] font-bold cursor-pointer flex items-center justify-center min-h-[52px] w-full transition-colors duration-200 mt-2">
+          Réserver un démo
+        </button>
+
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* SECTION 2 — Comment ça marche */}
-      <section id="demo" className="py-[100px] px-6 bg-white">
-        <div className="max-w-[1100px] mx-auto">
-          <h2 className="reveal text-[clamp(49px,4.5vw,28px)] font-extrabold text-center mb-12 font-[Montserrat]">
-            Comment ça marche
-          </h2>
+     <section id="demo" className="py-[100px] bg-white">
+  <div className="max-w-[1100px] mx-auto px-6">
+    <h2 className="reveal text-[clamp(24px,5vw,38px)] font-extrabold text-center mb-12">
+      Comment ça marche
+    </h2>
 
-          <div className="reveal how-grid grid grid-cols-2 gap-4">
-            {HOW_STEPS.map((step, i) => (
-              <div
-                key={i}
-                className="bg-[#053965] rounded-[20px] p-[30px_24px] text-white leading-[1.5] min-h-[120px] flex items-center gap-5 transition-all duration-200 cursor-default hover:-translate-y-1 hover:shadow-[0_14px_32px_rgba(94,116,161,0.3)]"
-              >
-                <span className="text-[54px] font-black text-white leading-none shrink-0">
-                  {i + 1}
-                </span>
-                <span className="text-[16px] font-semibold">
-                  {step}
-                </span>
-              </div>
-            ))}
-          </div>
+    <div className="reveal grid grid-cols-1 md:grid-cols-2 gap-4 max-w-[500px] md:max-w-full mx-auto">
+      {HOW_STEPS.map((step, i) => (
+        <div
+          key={i}
+          className="bg-[#053965] rounded-[20px] px-6 py-7 text-white leading-[1.5] min-h-[90px] flex items-center gap-5 transition-all duration-200 cursor-default hover:-translate-y-1 hover:shadow-[0_14px_32px_rgba(94,116,161,0.3)]"
+        >
+          <span className="text-[48px] font-black text-white leading-none shrink-0">
+            {i + 1}
+          </span>
+          <span className="text-[15px] font-semibold">
+            {step}
+          </span>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* SECTION 3 — Fonctionnalités clés */}
-      <section className="py-[90px] px-6 bg-[#F7F8FA]">
-        <div className="max-w-[1100px] mx-auto">
-          <div className="fk-grid grid grid-cols-2 gap-[64px] items-center justify-center">
+    <section className="py-[90px]  bg-[#F7F8FA]">
+  <div className="max-w-[1100px] mx-auto">
+    <div className="fk-grid grid grid-cols-1 md:grid-cols-2 gap-[64px] items-center justify-center">
 
-            {/* Gauche */}
-            <div className="reveal">
-              <h2 className="text-[clamp(38px,4.5vw,28px)] font-black mb-[10px] leading-[1.2]">
-                <span className="text-[#FF6B00]">Fonctionnalités</span>{' '}
-                <span className="text-[#1a1a1a]">clés</span>
-              </h2>
-              <p className="text-[#000000] mb-[30px] text-[16px] md:text-[14px] leading-[28px] md:leading-[35px] font-medium font-[Montserrat]">
-                Tout ce qu'il vous faut pour gérer et développer votre commerce
-              </p>
+      {/* Gauche */}
+      <div className="reveal">
 
-              <div className="grid grid-cols-2 gap-3 mb-9">
-                {KEY_FEATURES.slice(0, 6).map((feat, i) => (
-                  <KeyFeatureCard key={i} title={feat} />
-                ))}
-                <div className="col-span-2">
-                  <KeyFeatureCard title={KEY_FEATURES[6]} />
-                </div>
-              </div>
+        {/* Titre */}
+        <h2 className="text-[clamp(28px,2.5vw,38px)] font-black mb-[10px] leading-[1.2] text-center md:text-left">
+          <span className="text-[#FF6B00]">Fonctionnalités</span>{' '}
+          <span className="text-[#1a1a1a]">clés</span>
+        </h2>
 
-              <button
-                className="bg-[#E47000] text-white border-none py-[14px] px-[48px] rounded-[30px] text-[15px] font-bold cursor-pointer w-full transition-all duration-200 hover:bg-[#c95e00] hover:-translate-y-px"
-              >
-                Demander une démo
-              </button>
-            </div>
+        {/* Paragraphe */}
+        <p className="text-[#000000] mb-5 text-[15px] leading-[28px] font-medium font-[Montserrat] text-center md:text-left">
+          Tout ce qu'il vous faut pour gérer et développer votre commerce
+        </p>
 
-            {/* Droite — Phone */}
-            <div className="reveal flex justify-center items-center">
-              <img
-                src={phone4}
-                alt="App EasyMarket"
-                className="phone-img w-[370px] min-h-[500px] max-w-full drop-shadow-[0_24px_48px_rgba(0,0,0,0.18)] transition-transform duration-[400ms] hover:scale-[1.03]"
-              />
+        {/* IMAGE mobile — après texte, avant les cards */}
+        <div className="flex md:hidden justify-center mb-6">
+          <img
+            src={phone4}
+            alt="App EasyMarket"
+            className="w-[160px] h-[250px] drop-shadow-[0_24px_48px_rgba(0,0,0,0.18)]"
+          />
+        </div>
+
+        {/* MOBILE : cards en 1 colonne */}
+        {/* MOBILE : cards 1 colonne */}
+<div className="flex md:hidden flex-col gap-3 mb-4 max-w-[375px]">
+  {WHY_FEATURES.map((f, i) => (
+    <KeyFeatureCard key={i} title={f.title} index={i} />
+  ))}
+</div>
+
+        {/* DESKTOP : cards 2×2 + dernière pleine largeur */}
+        <div className="hidden md:block">
+          <div className="grid grid-cols-2 gap-3 mb-9  ">
+            {KEY_FEATURES.slice(0, 6).map((feat, i) => (
+              <KeyFeatureCard key={i} title={feat} />
+            ))}
+            <div className="col-span-2">
+              <KeyFeatureCard title={KEY_FEATURES[6]} />
             </div>
           </div>
         </div>
-      </section>
+
+        {/* Bouton pleine largeur */}
+        <button className="bg-[#E47000] text-white border-none py-[14px] px-[48px] rounded-[30px] text-[15px] font-bold cursor-pointer w-full h-[65px] transition-all duration-200 hover:bg-[#c95e00] hover:-translate-y-px">
+          Demander une démo
+        </button>
+
+      </div>
+
+      {/* Droite — Phone desktop uniquement */}
+      <div className="reveal hidden md:flex justify-center items-center">
+        <img
+          src={phone4}
+          alt="App EasyMarket"
+          className="phone-img w-[300px] h-[450px] max-w-full drop-shadow-[0_24px_48px_rgba(0,0,0,0.18)] transition-transform duration-[400ms] hover:scale-[1.03]"
+        />
+      </div>
+
+    </div>
+  </div>
+</section>
 
     </div>
   );
 }
-
-
 
 /* KeyFeatureCard */
 function KeyFeatureCard({ title }) {

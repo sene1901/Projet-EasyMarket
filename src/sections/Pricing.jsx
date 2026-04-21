@@ -39,7 +39,7 @@ export default function Pricing() {
   return (
    <section id="pricing" className="py-20 px-6 bg-white">
   <div className="max-w-[780px] mx-auto ">
-    <h2 className="font-montserrat text-[38px] font-bold leading-[50px] tracking-[-0.07em] text-center text-[#1a1a2e] mb-3">
+    <h2 className="font-montserrat text-[clamp(24px,5vw,38px)] font-bold leading-[50px] tracking-[-0.07em] text-center text-[#1a1a2e] mb-3">
       Un petit investissement pour éviter de grosses pertes .
     </h2>
     <p className="font-montserrat text-[16px] font-medium leading-[35px] tracking-[0] text-center text-[#1a1a2e] mb-12">
@@ -52,12 +52,34 @@ export default function Pricing() {
     </div>
 
     {/* Trust bar */}
-    <div className="bg-white rounded-full border border-[#e87722] px-6 py-3 flex items-center gap-3">
-      <Lightbulb size={24} color="#e87722" fill="#e87722" strokeWidth={1} className="text-[#ee9a2c]" />
-      <p className="text-[12.5px] text-[#333] m-0 text-left">
-        <strong>Contrôlez</strong> votre business à distance dès <strong>2 comptes</strong> : 1 admin + 1 vendeur (accès limité) = <strong>11 800 FCFA/mois</strong>
-      </p>
-    </div>
+<div
+  className="
+    bg-[#FFFF]
+    rounded-[14px]
+    border border-[#e87722]
+    px-5 py-4
+
+    flex flex-col items-center text-center
+    md:flex-row md:items-center md:text-left
+    gap-3
+  "
+>
+  {/* Icon */}
+  <Lightbulb
+    size={28}
+    color="#e87722"
+    fill="#e87722"
+    strokeWidth={1}
+    className="shrink-0"
+  />
+
+  {/* Text */}
+  <p className="text-[13px] text-[#333] m-0 leading-[18px]">
+    <strong>Contrôlez</strong> votre business à distance dès{" "}
+    <strong>2 comptes</strong> : 1 admin + 1 vendeur (accès limité) ={" "}
+    <strong>11 800 FCFA/mois</strong>
+  </p>
+</div>
   </div>
 </section>
   );

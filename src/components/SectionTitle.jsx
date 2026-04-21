@@ -8,7 +8,7 @@ export default function SectionTitle({ label, title, highlight, subtitle, center
           {label}
         </span>
       )}
-      <h2 className={`font-montserrat text-[38px] font-bold leading-[1.15] tracking-[-0.02em] mb-4 ${light ? 'text-white' : 'text-[var(--navy)]'}`}>
+      <h2 className={`font-montserrat text-[clamp(24px,5vw,38px)] font-bold leading-[1.15] tracking-[-0.02em] mb-4 ${light ? 'text-white' : 'text-[var(--navy)]'}`}>
         {title}{' '}
         {highlight && (
           <span className="text-[#E47000]">{highlight}</span>

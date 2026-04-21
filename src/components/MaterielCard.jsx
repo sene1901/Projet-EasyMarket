@@ -5,75 +5,46 @@ export default function MaterielCard({ image, name, price }) {
   const [liked, setLiked] = useState(false);
 
   return (
-    <div
-      className="relative rounded-2xl  flex flex-row items-start gap-4"
-      style={{ backgroundColor: "#f3f4f6" ,
-        padding: '30px',
-      }}
-    >
+    <div className="relative rounded-2xl bg-[#f3f4f6] p-[30px] flex flex-col sm:flex-row items-center sm:items-start gap-4">
 
       {/* Image */}
-      <div className="flex-shrink-0 flex items-center justify-center" style={{ width: "130px" }}>
+      <div className="flex-shrink-0 flex items-center justify-center w-[130px]">
         <img
           src={image}
           alt={name}
-          style={{ width: "130px", height: "130px", objectFit: "contain" }}
+          className="w-[130px] h-[130px] object-contain"
         />
       </div>
 
       {/* Content */}
-      <div className="flex-1" style={{ minWidth: 0 }}>
+      <div className="flex-1 min-w-0 w-full">
 
-        <h3 style={{ fontSize: "18px", fontWeight: "700", color: "#111827", margin: 0 }}>
+        <h3 className="text-[18px] font-bold text-[#111827] m-0 text-center sm:text-left">
           {name}
         </h3>
 
-        <p style={{ fontSize: "14px", color: "#777b85", marginTop: "4px" }}>
+        <p className="text-[14px] text-[#777b85] mt-1 text-center sm:text-left">
           Catégories / air frayer
         </p>
 
-        <p style={{ fontSize: "14px", color: "#a1a2a5", marginTop: "6px", lineHeight: "1.5" }}>
+        <p className="text-[14px] text-[#a1a2a5] mt-2 leading-[1.5] text-center sm:text-left">
           Lorem ipsum, Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem upsum
         </p>
 
         {/* Prix */}
-        <p style={{ marginTop: "10px", fontSize: "13px", color: "#374151" }}>
+        <p className="mt-3 text-[13px] text-[#374151] text-center sm:text-left">
           Prix :{" "}
-          <span style={{ fontWeight: "800", fontSize: "20px", color: "#111827" }}>
+          <span className="font-extrabold text-[20px] text-[#111827]">
             {price} FCFA
           </span>
         </p>
 
         {/* Buttons */}
-        <div style={{ marginTop: "14px", display: "flex", flexDirection: "column", gap: "8px" }}>
-          <button
-            style={{
-              width: "100%",
-              backgroundColor: "#f97316",
-              color: "#ffffff",
-              padding: "9px 0",
-              borderRadius: "999px",
-              fontSize: "13px",
-              fontWeight: "600",
-              border: "none",
-              cursor: "pointer",
-            }}
-          >
+        <div className="mt-4 flex flex-col gap-2">
+          <button className="w-full bg-[#f97316] hover:bg-[#ea6c0a] text-white py-[9px] rounded-full text-[13px] font-semibold border-none cursor-pointer transition-colors duration-200">
             Acheter maintenant
           </button>
-          <button
-            style={{
-              width: "100%",
-              backgroundColor: "transparent",
-              color: "#374151",
-              padding: "8px 0",
-              borderRadius: "999px",
-              fontSize: "13px",
-              fontWeight: "500",
-              border: "1.5px solid #d1d5db",
-              cursor: "pointer",
-            }}
-          >
+          <button className="w-full bg-transparent text-[#374151] py-[8px] rounded-full text-[13px] font-medium border-[1.5px] border-[#d1d5db] cursor-pointer hover:bg-gray-100 transition-colors duration-200">
             Ajouter au panier
           </button>
         </div>
@@ -83,15 +54,7 @@ export default function MaterielCard({ image, name, price }) {
       {/* Heart */}
       <button
         onClick={() => setLiked(!liked)}
-        style={{
-          position: "absolute",
-          bottom: "16px",
-          right: "16px",
-          background: "none",
-          border: "none",
-          cursor: "pointer",
-          padding: 0,
-        }}
+        className="absolute bottom-4 right-4 bg-none border-none cursor-pointer p-0"
       >
         <Heart
           size={18}

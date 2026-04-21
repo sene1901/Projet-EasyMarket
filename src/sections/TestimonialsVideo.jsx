@@ -66,7 +66,7 @@ export default function TestimonialsVideo() {
   return (
     <section id="temoignages" className="py-12 px-4">
 
-      <h2 className="text-[38px] font-extrabold text-center text-[#111827] my-5">
+      <h2 className="text-[clamp(24px,5vw,38px)] font-extrabold text-center text-[#111827] my-5">
         Témoignages
       </h2>
 

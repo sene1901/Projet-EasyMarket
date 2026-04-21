@@ -134,7 +134,7 @@ export default function Frequence() {
   return (
     <section id="faq" className="bg-[#F5F5F5B2]">
       <div className="px-4 py-12 max-w-2xl mx-auto my-5">
-        <h2 className="text-[33px] font-bold text-center text-black mb-8">
+        <h2 className="text-[clamp(24px,5vw,38px)] font-bold text-center text-black mb-8">
           Questions fréquemment posées
         </h2>
         <div>

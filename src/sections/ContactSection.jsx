@@ -1,75 +1,81 @@
 import { useState } from 'react';
 
-const inputStyle = {
-  width: '100%', background: '#fff', border: 'none', borderRadius: '10px',
-  padding: '12px 16px', fontSize: '13px', fontWeight: 500, color: '#1a1a1a',
-  fontFamily: 'inherit', outline: 'none', appearance: 'none',
-};
-
-const labelStyle = { fontSize: '13px', fontWeight: 600, color: '#fff', marginBottom: '6px', display: 'block' };
-
 export default function ContactSection() {
-  const [form, setForm] = useState({ nom:'', email:'', tel:'', formule:'', source:'', message:'', consent: false });
+  const [form, setForm] = useState({
+    nom: '', email: '', tel: '', formule: '', source: '', message: '', consent: false
+  });
 
   const handle = e => {
     const { name, value, type, checked } = e.target;
     setForm(f => ({ ...f, [name]: type === 'checkbox' ? checked : value }));
   };
 
+  const inputClass = "w-full bg-white border-none rounded-[10px] px-4 py-3 text-[13px] font-medium text-[#1a1a1a] outline-none appearance-none font-[Montserrat]";
+  const labelClass = "text-[13px] font-semibold text-white mb-[6px] block";
+
   return (
-    <section  style={{ background: '#FFFF', padding: '80px 24px', fontFamily: 'Montserrat, sans-serif' }}>
+    <section className="bg-white py-[80px] px-6 font-[Montserrat]">
+
       {/* Header */}
-      <div style={{ textAlign: 'center', marginBottom: '40px' }}>
-        <h2 style={{ fontSize: '38px', fontWeight: 900, color: '#1a1a1a', marginBottom: '8px' }}>Contactez-nous</h2>
-        <p style={{ fontSize: '15px', color: '#888', fontWeight: 400 }}>Notre équipe est là pour vous aider</p>
+      <div className="text-center mb-10">
+        <h2 className="text-[clamp(24px,5vw,38px)] font-black text-[#1a1a1a] mb-2">
+          Contactez-nous
+        </h2>
+        <p className="text-[15px] text-[#888] font-normal">
+          Notre équipe est là pour vous aider
+        </p>
       </div>
 
       {/* Card */}
-      <div style={{
-        maxWidth: '600px', margin: '0 auto',
-        background: 'linear-gradient(145deg, #105088, #053965)',
-        borderRadius: '20px', padding: '40px 40px 44px',
-      }}>
+      <div className="max-w-[600px] mx-auto bg-gradient-to-br from-[#105088] to-[#053965] rounded-[20px] p-8 md:p-10">
 
-        {/* Nom + Email */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '16px' }}>
+        {/* Nom + Email — 1 colonne mobile, 2 colonnes desktop */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
           <div>
-            <label style={labelStyle}>Nom</label>
-            <input name="nom" value={form.nom} onChange={handle} style={inputStyle} type="text" />
+            <label className={labelClass}>Nom</label>
+            <input name="nom" value={form.nom} onChange={handle} className={inputClass} type="text" />
           </div>
           <div>
-            <label style={labelStyle}>E-mail (optionnel)</label>
-            <input name="email" value={form.email} onChange={handle} style={inputStyle} type="email" />
+            <label className={labelClass}>E-mail (optionnel)</label>
+            <input name="email" value={form.email} onChange={handle} className={inputClass} type="email" />
           </div>
         </div>
 
         {/* Téléphone */}
-        <div style={{ marginBottom: '16px' }}>
-          <label style={labelStyle}>Numéro sur lequel on peut vous joindre *</label>
-          <input name="tel" value={form.tel} onChange={handle} style={inputStyle} type="tel" />
+        <div className="mb-4">
+          <label className={labelClass}>Numéro sur lequel on peut vous joindre *</label>
+          <input name="tel" value={form.tel} onChange={handle} className={inputClass} type="tel" />
         </div>
 
         {/* Formule */}
-        <div style={{ marginBottom: '16px' }}>
-          <label style={labelStyle}>Sur quelle formule souhaitez-vous partir ? *</label>
-          <div style={{ position: 'relative' }}>
-            <select name="formule" value={form.formule} onChange={handle}
-              style={{ ...inputStyle, cursor: 'pointer', color: form.formule ? '#1a1a1a' : '#aaa' }}>
+        <div className="mb-4">
+          <label className={labelClass}>Sur quelle formule souhaitez-vous partir ? *</label>
+          <div className="relative">
+            <select
+              name="formule"
+              value={form.formule}
+              onChange={handle}
+              className={`${inputClass} cursor-pointer ${!form.formule ? 'text-[#aaa]' : 'text-[#1a1a1a]'}`}
+            >
               <option value="" disabled>Sélectionnez</option>
               <option>Formule Starter</option>
               <option>Formule Pro</option>
               <option>Formule Enterprise</option>
             </select>
-            <span style={{ position:'absolute', right:'14px', top:'50%', transform:'translateY(-50%)', pointerEvents:'none', fontSize:'10px', color:'#888' }}>▼</span>
+            <span className="absolute right-[14px] top-1/2 -translate-y-1/2 pointer-events-none text-[10px] text-[#888]">▼</span>
           </div>
         </div>
 
         {/* Source */}
-        <div style={{ marginBottom: '16px' }}>
-          <label style={labelStyle}>Comment vous nous avez connu ? *</label>
-          <div style={{ position: 'relative' }}>
-            <select name="source" value={form.source} onChange={handle}
-              style={{ ...inputStyle, cursor: 'pointer', color: form.source ? '#1a1a1a' : '#aaa' }}>
+        <div className="mb-4">
+          <label className={labelClass}>Comment vous nous avez connu ? *</label>
+          <div className="relative">
+            <select
+              name="source"
+              value={form.source}
+              onChange={handle}
+              className={`${inputClass} cursor-pointer ${!form.source ? 'text-[#aaa]' : 'text-[#1a1a1a]'}`}
+            >
               <option value="" disabled>Sélectionnez</option>
               <option>Réseaux sociaux</option>
               <option>Bouche à oreille</option>
@@ -77,37 +83,46 @@ export default function ContactSection() {
               <option>Événement</option>
               <option>Autre</option>
             </select>
-            <span style={{ position:'absolute', right:'14px', top:'50%', transform:'translateY(-50%)', pointerEvents:'none', fontSize:'10px', color:'#888' }}>▼</span>
+            <span className="absolute right-[14px] top-1/2 -translate-y-1/2 pointer-events-none text-[10px] text-[#888]">▼</span>
           </div>
         </div>
 
         {/* Message */}
-        <div style={{ marginBottom: '16px' }}>
-          <label style={labelStyle}>
+        <div className="mb-4">
+          <label className={labelClass}>
             Pourriez-vous nous expliquer brièvement votre business ? ou nous dire vos attentes par rapport à EASYMARKET. *
           </label>
-          <textarea name="message" value={form.message} onChange={handle}
-            style={{ ...inputStyle, resize: 'none', height: '100px', lineHeight: 1.5 }} />
+          <textarea
+            name="message"
+            value={form.message}
+            onChange={handle}
+            className={`${inputClass} resize-none h-[100px] leading-[1.5]`}
+          />
         </div>
 
         {/* Checkbox */}
-        <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', marginBottom: '24px' }}>
-          <input type="checkbox" name="consent" id="consent" checked={form.consent} onChange={handle}
-            style={{ width: '16px', height: '16px', marginTop: '2px', flexShrink: 0, accentColor: '#053965', cursor: 'pointer' }} />
-          <label htmlFor="consent" style={{ fontSize: '12px', fontWeight: 500, color: 'rgba(255,255,255,0.9)', lineHeight: 1.5, cursor: 'pointer' }}>
+        <div className="flex items-start gap-[10px] mb-6">
+          <input
+            type="checkbox"
+            name="consent"
+            id="consent"
+            checked={form.consent}
+            onChange={handle}
+            className="w-4 h-4 mt-[2px] shrink-0 cursor-pointer accent-[#053965]"
+          />
+          <label htmlFor="consent" className="text-[12px] font-medium text-white/90 leading-[1.5] cursor-pointer">
             En remplissant ce formulaire, j'autorise l'équipe EasyMarket à me contacter pour d'éventuelles discussions.
           </label>
         </div>
 
         {/* Bouton */}
         <button
-          style={{ width: '100%', background: '#FFA800', color: '#fff', border: 'none', borderRadius: '10px', padding: '15px', fontSize: '14px', fontWeight: 800, letterSpacing: '1.5px', textTransform: 'uppercase', cursor: 'pointer', fontFamily: 'inherit', transition: 'background 0.2s' }}
-          onMouseEnter={e => { e.currentTarget.style.background = '#eb8614'; }}
-          onMouseLeave={e => { e.currentTarget.style.background = '#ec9a1f'; }}
-          onClick={() => { /* votre logique d'envoi */ }}
+          onClick={() => {}}
+          className="w-full bg-[#FFA800] hover:bg-[#eb8614] text-white border-none rounded-[10px] py-[15px] text-[14px] font-extrabold tracking-[1.5px] uppercase cursor-pointer transition-colors duration-200"
         >
           Envoyer
         </button>
+
       </div>
     </section>
   );

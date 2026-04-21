@@ -5,47 +5,20 @@ import MaterielCard from "../components/MaterielCard";
 
 export default function Matériel() {
   const products = [
-    {
-      id: 1,
-      name: "Nom du produit",
-      price: "50.000",
-      image: printer1,
-    },
-    {
-      id: 2,
-      name: "Nom du produit",
-      price: "50.000",
-      image: printer2,
-    },
+    { id: 1, name: "Nom du produit", price: "50.000", image: printer1 },
+    { id: 2, name: "Nom du produit", price: "50.000", image: printer2 },
   ];
 
   return (
-    <section  id='equipements' style={{ padding: "64px 24px", backgroundColor: "#ffffff" }}>
-
-      {/* Title */}
-      <h2 style={{
-        fontSize: "38px",
-        fontWeight: "800",
-        textAlign: "center",
-        color: "#111827",
-        marginBottom: "40px",
-      }}>
+    <section id="equipements" className="py-16 px-6 bg-white">
+      <h2 className="text-[clamp(24px,5vw,38px)] font-extrabold text-center text-[#111827] mb-10">
         Matériel &amp; équipements
       </h2>
-
-      {/* Cards */}
-      <div style={{
-        display: "grid",
-        gridTemplateColumns: "repeat(auto-fit, minmax(350px, 1fr))",
-        gap: "24px",
-        maxWidth: "900px",
-        margin: "0 auto",
-      }}>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-[900px] mx-auto">
         {products.map((product) => (
           <MaterielCard key={product.id} {...product} />
         ))}
       </div>
-
     </section>
   );
 }

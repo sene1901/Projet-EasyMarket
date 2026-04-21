@@ -36,10 +36,12 @@ const SOCIALS = [
 
 export default function Footer() {
   return (
-    <footer className="font-Montserrat bg-[#0a3460] px-12 pt-12">
-      <div className="max-w-[1100px] mx-auto grid grid-cols-3 gap-10 pb-10 items-start">
+    <footer className=" bg-[#0a3460]  pt-12">
 
-        {/* Logo + Tagline */}
+      
+      <div className="max-w-[1100px] mx-auto hidden md:grid grid-cols-3 gap-10 pb-10 items-start">
+
+      
         <div>
           <img src={logo} alt="EasyMarket" className="h-[36px] mb-4 object-contain" />
           <p className="text-[18px] font-medium leading-[1.6] text-white/90 max-w-[180px] m-0">
@@ -47,7 +49,7 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* Navigation */}
+        
         <nav>
           <ul className="list-none m-0 p-0 flex flex-col gap-3">
             {NAV_LINKS.map((link) => (
@@ -62,32 +64,51 @@ export default function Footer() {
 
         {/* Réseaux sociaux */}
         <div>
-          <p className="text-[15px] font-bold text-white mb-4 mt-0">
-            Rejoignez nous
-          </p>
+          <p className="text-[15px] font-bold text-white mb-4 mt-0">Rejoignez nous</p>
           <div className="flex gap-2.5">
             {SOCIALS.map((s) => (
-              <a
-                key={s.label}
-                href="#"
-                aria-label={s.label}
-                className="w-[38px] h-[38px]  iconsocial rounded-full border border-white/60 flex items-center justify-center hover:bg-white/10 transition-colors"
-              >
-                <svg viewBox="0 0 24 24" fill="none" width="17" height="17">
-                  {s.icon}
-                </svg>
+              <a key={s.label} href="#" aria-label={s.label}
+                className="w-[38px] h-[38px] rounded-full border border-white/60 flex items-center justify-center hover:bg-white/10 transition-colors">
+                <svg viewBox="0 0 24 24" fill="none" width="17" height="17">{s.icon}</svg>
               </a>
             ))}
           </div>
         </div>
       </div>
 
-      {/* Copyright */}
+      {/* MOBILE : centré, sans nav */}
+      <div className="md:hidden flex flex-col items-center text-center pb-10 gap-6">
+
+        
+        <div className="flex flex-col items-center">
+          <img src={logo} alt="EasyMarket" className="h-[36px] mb-4 object-contain" />
+          <p className="text-[16px] font-medium leading-[1.6] text-white/90 max-w-[240px] m-0">
+            L'outil d'aide à la décision des commerçants africains
+          </p>
+        </div>
+
+        {/* Réseaux sociaux */}
+        <div className="flex flex-col items-center gap-4">
+          <p className="text-[15px] font-bold text-white m-0">Rejoignez nous</p>
+          <div className="flex gap-3">
+            {SOCIALS.map((s) => (
+              <a key={s.label} href="#" aria-label={s.label}
+                className="w-[42px] h-[42px] rounded-full border border-white/60 flex items-center justify-center hover:bg-white/10 transition-colors">
+                <svg viewBox="0 0 24 24" fill="none" width="18" height="18">{s.icon}</svg>
+              </a>
+            ))}
+          </div>
+        </div>
+
+      </div>
+
+      
       <div className="max-w-[1100px] mx-auto border-t border-white/25 py-[18px] text-center">
         <p className="text-[13px] text-white/85 m-0 font-semibold">
           © 2026 EasyMarket. Tous droits réservés.
         </p>
       </div>
+
     </footer>
   );
 }

@@ -1,7 +1,16 @@
 import React from 'react';
-import logo from '../assets/test.png';
+import icon1 from '../assets/test.png';
+import icon2 from '../assets/ICON4.png';
+import icon3 from '../assets/ICON1.png';
+import icon4 from '../assets/ICON3.png';
+import icon5 from '../assets/ICON2.png'
 
-export default function FeatureCard({ title }) {
+
+const ICONS = [icon1, icon2, icon3, icon4, icon5];
+
+export default function FeatureCard({ title, index = 0 }) {
+  const icon = ICONS[index % ICONS.length];
+
   return (
     <div
       className="
@@ -14,27 +23,22 @@ export default function FeatureCard({ title }) {
       "
     >
       {/* Icon box */}
-      <div
-        className="
-          w-[36px] h-[36px] rounded-[10px]
-          flex items-center justify-center shrink-0
-          transition-all duration-200
-           
-        "
-      >
-        <img
-  src={logo}
-  alt="EasyMarket"
-  className="w-[28px] h-[28px] object-contain transition-all duration-200"
-  style={{ filter: 'invert(48%) sepia(95%) saturate(1500%) hue-rotate(5deg) brightness(1.1)' }}
+      <div className="w-[36px] h-[36px] rounded-[10px] flex items-center justify-center shrink-0">
+<img
+  src={icon}
+  alt="feature icon"
+  className="w-[28px] h-[28px] object-contain"
+  style={{ filter: 'invert(45%) sepia(90%) saturate(800%) hue-rotate(360deg) brightness(1.05)' }}
 />
       </div>
 
       {/* Title */}
- <span className="text-[16px] leading-[22px] text-black font-bold flex-1">
-  {title}
-</span>
-      <div className="absolute left-[-14px] w-[14px] h-[25px] bg-[#E47000] rounded-[40px_0px_0px_40px]" /> 
+      <span className="text-[16px] leading-[20px] text-black font-bold flex-1">
+        {title}
+      </span>
+
+      {/* Left accent bar */}
+      <div className="absolute left-[-14px] w-[14px] h-[25px] bg-[#E47000] rounded-[40px_0px_0px_40px]" />
     </div>
   );
 }
